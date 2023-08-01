@@ -3,21 +3,23 @@
 # See the river(1), riverctl(1), and rivertile(1) man pages for documentation.
 
 ###########################################################################################
-# SUPER + ... KEYS
+# ACTION KEYS
 ###########################################################################################
 ###### WM Specific Keys ######
-riverctl map normal Super Q close                 # Super+Q to close the focused view
-riverctl map normal Super+Shift A toggle-float    # Super+Space to toggle float
-riverctl map normal Super F toggle-fullscreen     # Super+F to toggle fullscreen
+riverctl map normal Super Q close                 # Close the focused view
+riverctl map normal Super+Shift A toggle-float    # Toggle float
+riverctl map normal Super F toggle-fullscreen     # Toggle fullscreen
+#riverctl map normal Super Return zoom            # Bump the focused view to the top of the layout stack
 
 ###### Quick Session Managing ######
-riverctl map normal Super+Control+Shift Q exit    # Exit river session
+riverctl map normal Super+Control+Shift Q exit    # Exit wayland session/compositor
 
 ###### EWW Keys ######
 ###### Wofi Menu Keys ######
 
 ###### App Keys ######
-riverctl map normal Super Return spawn kitty
+riverctl map normal Super Return spawn 'kitty -1'
+riverctl map normal Super+Shift Return spawn 'footclient --app-id "foot-float"'
 riverctl map normal Super W spawn waterfox-g
 
 
@@ -31,9 +33,9 @@ do
     riverctl map $mode None XF86Eject spawn 'eject -T'
 
     # Control pulse audio volume with pamixer (https://github.com/cdemoulins/pamixer)
-    riverctl map $mode None XF86AudioRaiseVolume  spawn 'pamixer -i 5'
-    riverctl map $mode None XF86AudioLowerVolume  spawn 'pamixer -d 5'
-    riverctl map $mode None XF86AudioMute         spawn 'pamixer --toggle-mute'
+    riverctl map-repeat $mode None XF86AudioRaiseVolume  spawn 'pamixer -i 5'
+    riverctl map-repeat $mode None XF86AudioLowerVolume  spawn 'pamixer -d 5'
+    riverctl map-repeat $mode None XF86AudioMute         spawn 'pamixer --toggle-mute'
 
     # Control MPRIS aware media players with playerctl (https://github.com/altdesktop/playerctl)
     riverctl map $mode None XF86AudioMedia spawn 'playerctl play-pause'
@@ -42,8 +44,11 @@ do
     riverctl map $mode None XF86AudioNext  spawn 'playerctl next'
 
     # Control screen backlight brightness with light (https://github.com/haikarainen/light)
-    riverctl map $mode None XF86MonBrightnessUp   spawn 'light -A 5'
-    riverctl map $mode None XF86MonBrightnessDown spawn 'light -U 5'
+    riverctl map-repeat $mode None XF86MonBrightnessUp   spawn 'light -A 5'
+    riverctl map-repeat $mode None XF86MonBrightnessDown spawn 'light -U 5'
+
+    # Experimental - Suspend on closed laptop lid
+    #riverctl map-switch $mode close "systemctl suspend"
 done
 
 
@@ -90,9 +95,8 @@ riverctl map normal Super+Control H send-layout-cmd rivertile "main-count +1"
 riverctl map normal Super+Control L send-layout-cmd rivertile "main-count -1"
 
 
-
-
-# Super+Shift+{Period,Comma} to send the focused view to the next/previous output
+############################### idk #########################################
+# Send the focused view to the next/previous output
 riverctl map normal Super+Shift Period send-to-output next
 riverctl map normal Super+Shift Comma send-to-output previous
 
@@ -100,29 +104,31 @@ riverctl map normal Super+Shift Comma send-to-output previous
 riverctl map normal Super Period focus-output next
 riverctl map normal Super Comma focus-output previous
 
-# Super+Return to bump the focused view to the top of the layout stack
-#riverctl map normal Super Return zoom
-
-# Super+{Up,Right,Down,Left} to change layout orientation
+# Change layout orientation
 #riverctl map normal Super+Shift K send-layout-cmd rivertile "main-location top"
 #riverctl map normal Super+Shift H send-layout-cmd rivertile "main-location right"
 #riverctl map normal Super+Shift J send-layout-cmd rivertile "main-location bottom"
 #riverctl map normal Super+Shift L send-layout-cmd rivertile "main-location left"
 
+
+###########################################################################################
+# CUSTOM MODE                                                                             #
+###########################################################################################
 # Declare a passthrough mode. This mode has only a single mapping to return to
 # normal mode. This makes it useful for testing a nested wayland compositor
-riverctl declare-mode passthrough
+#riverctl declare-mode passthrough
 
-# Super+F11 to enter passthrough mode
-riverctl map normal Super F11 enter-mode passthrough
+# Enter passthrough mode
+#riverctl map normal Super F11 enter-mode passthrough
 
-# Super+F11 to return to normal mode
-riverctl map passthrough Super F11 enter-mode normal
-
-
+# Return to normal mode
+#riverctl map passthrough Super F11 enter-mode normal
 
 
-###### Workspaces ######
+###########################################################################################
+# TAG MANAGEMENT                                                                          #
+###########################################################################################
+# Single Tags
 for i in $(seq 1 9)
 do
     tags=$((1 << ($i - 1)))
@@ -140,17 +146,29 @@ do
     riverctl map normal Super+Shift+Control $i toggle-view-tags $tags
 done
 
-# Super+0 to focus all tags
-# Super+Shift+0 to tag focused view with all tags
+
+# All Tags
 all_tags=$(((1 << 32) - 1))
-riverctl map normal Super 0 set-focused-tags $all_tags
-riverctl map normal Super+Shift 0 set-view-tags $all_tags
+riverctl map normal Super 0 set-focused-tags $all_tags            # Focus all tags
+#riverctl map normal Super+Shift 0 set-view-tags $all_tags        # Tag focused view with all tags
+
+
+###########################################################################################
+# WINDOW RULES                                                                            #
+###########################################################################################
+# Floating windows
+riverctl float-filter-add title "Picture-in-Picture"
+riverctl float-filter-add app-id "musikcube"
+riverctl float-filter-add app-id "foot-float"
+
+# Set app-ids and titles of windows which should not use client side decorations (Xwayland apps)
+#riverctl csd-filter-remove app-id "logseq"
 
 
 ###########################################################################################
 # MISCS SETTINGS                                                                          #
 ###########################################################################################
-# Set background and border color
+# Background and Border Colors
 riverctl background-color 0x002b36
 riverctl border-color-focused 0x93a1a1
 riverctl border-color-unfocused 0x586e75
@@ -158,15 +176,19 @@ riverctl border-color-unfocused 0x586e75
 # Set keyboard repeat rate
 riverctl set-repeat 50 300
 
-# Make certain views start floating
-riverctl float-filter-add app-id float
-riverctl float-filter-add title "popup title with spaces"
+# Hide cursor after 5s
+hide-cursor timeout 5000
 
-# Set app-ids and titles of views which should use client side decorations
-#riverctl csd-filter-add app-id "gedit"
+# Hide cursor when typing
+hide-cursor when-typing enabled
+
+# Cursor theme (optionally add 24 as size)
+#xcursor-theme Numix-Cursor-Light
+
+# Swap caps with escape
+#keyboard-layout caps:swapescape
 
 # Set the default layout generator to be rivertile and start it.
 # River will send the process group of the init executable SIGTERM on exit.
 riverctl default-layout rivertile
 rivertile -view-padding 3 -outer-padding 3 &
-
