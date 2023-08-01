@@ -17,7 +17,7 @@ sudo bash -c 'cat > /usr/share/wayland-sessions/river.desktop' <<-'EOF'
 [Desktop Entry]
 Name=River
 Comment=A dynamic tiling Wayland compositor
-Exec="$HOME/.config/river/scripts/startr"
+Exec="$HOME/.config/river/startr"
 Type=Application
 EOF
 ```
