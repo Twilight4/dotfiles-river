@@ -51,9 +51,10 @@ riverctl map normal Super+Control M spawn 'footclient -a cmatrix -e cmatrix -a' 
 riverctl map normal Super+Control+Shift U spawn 'notify-send -u low -t 4000 -i "$HOME/.config/mako/icons/update.png" "Updating system..." && footclient --title yay -a yay -e yay --noconfirm -Syu'
 
 ####### Screenshot ######
-# for screenshot keybind
+# Screenshot Variables
 $w_pos=$(hyprctl activewindow | grep 'at:' | cut -d':' -f2 | tr -d ' ' | tail -n1)
 $w_size=$(hyprctl activewindow | grep 'size:' | cut -d':' -f2 | tr -d ' ' | tail -n1 | sed s/,/x/g)
+# Screenshot
 riverctl map normal None Print spawn 'grim -g "$(slurp -b 1B1F28CC -c E06B74ff -s C778DD0D -w 2)" - | wl-copy'
 riverctl map normal Shift Print spawn 'grim -g "$(slurp -b 1B1F28CC -c E06B74ff -s C778DD0D -w 2)" - | swappy -f -'
 # Screenshot Window
@@ -82,9 +83,9 @@ riverctl map normal Super+Alt V spawn '~/.config/hypr/scripts/vpn'
 riverctl map normal Super+Alt M spawn '~/.config/hypr/scripts/volume --toggle-mic'
 
 ###### System commands ######
-riverctl map normal Super+Alt W spawn '~/.config/hypr/scripts/cp-wlo1'
-riverctl map normal Super+Alt T spawn  '~/.config/hypr/scripts/cp-tun0'
-#riverctl map normal Super+Alt V spawn 'kitty -1 --class waifu-daemon -e waifu'
+riverctl map normal None Control+Alt W spawn '~/.config/hypr/scripts/cp-wlo1'
+riverctl map normal None Control+Alt T spawn  '~/.config/hypr/scripts/cp-tun0'
+#riverctl map normal None Control+Alt V spawn 'kitty -1 --class waifu-daemon -e waifu'
 
 
 ###########################################################################################
