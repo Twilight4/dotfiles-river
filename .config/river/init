@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# See the river(1), riverctl(1), and rivertile(1) man pages for documentation.
+# See the river(1) and riverctl(1) man pages for documentation.
 
 ###########################################################################################
 # ACTION KEYS
@@ -52,10 +52,11 @@ riverctl spawn "~/.config/hypr/scripts/gtkthemes"          # Apply themes
 # SUPER + SHIFT + ... KEYS                                                                #
 ###########################################################################################
 ####### Screenshot ######
-riverctl map normal None Print spawn "grim -g "$(slurp -b 1B1F28CC -c E06B74ff -s C778DD0D -w 2)" - | wl-copy"
+riverctl map normal None Print spawn 'grim -g "$(slurp -b 1B1F28CC -c E06B74ff -s C778DD0D -w 2)" - | wl-copy'
 
 # Change Wallpaper
 riverctl map normal Super+Shift N spawn "~/.config/hypr/scripts/wallpaper"
+
 
 ###########################################################################################
 # FUNCTION KEYS                                                                           #
@@ -67,9 +68,9 @@ do
     riverctl map $mode None XF86Eject spawn 'eject -T'
 
     # Control pulse audio volume with pamixer (https://github.com/cdemoulins/pamixer)
-    riverctl map-repeat $mode None XF86AudioRaiseVolume  spawn 'pamixer -i 5'
-    riverctl map-repeat $mode None XF86AudioLowerVolume  spawn 'pamixer -d 5'
-    riverctl map-repeat $mode None XF86AudioMute         spawn 'pamixer --toggle-mute'
+    riverctl map $mode None XF86AudioRaiseVolume  spawn 'pamixer -i 5'
+    riverctl map $mode None XF86AudioLowerVolume  spawn 'pamixer -d 5'
+    riverctl map $mode None XF86AudioMute         spawn 'pamixer --toggle-mute'
 
     # Control MPRIS aware media players with playerctl (https://github.com/altdesktop/playerctl)
     riverctl map $mode None XF86AudioMedia spawn 'playerctl play-pause'
@@ -78,8 +79,8 @@ do
     riverctl map $mode None XF86AudioNext  spawn 'playerctl next'
 
     # Control screen backlight brightness with light (https://github.com/haikarainen/light)
-    riverctl map-repeat $mode None XF86MonBrightnessUp   spawn 'light -A 5'
-    riverctl map-repeat $mode None XF86MonBrightnessDown spawn 'light -U 5'
+    riverctl map $mode None XF86MonBrightnessUp   spawn 'light -A 5'
+    riverctl map $mode None XF86MonBrightnessDown spawn 'light -U 5'
 
     # Experimental - Suspend on closed laptop lid
     #riverctl map-switch $mode close "systemctl suspend"
@@ -129,22 +130,17 @@ riverctl map normal Super+Shift Comma send-to-output previous
 riverctl map normal Super Period focus-output next
 riverctl map normal Super Comma focus-output previous
 
-###########################################################################################
-# RIVERTILE                                                                               #
-###########################################################################################
-# Change layout orientation
-#riverctl map normal Super+Shift K send-layout-cmd rivertile "main-location top"
-#riverctl map normal Super+Shift H send-layout-cmd rivertile "main-location right"
-#riverctl map normal Super+Shift J send-layout-cmd rivertile "main-location bottom"
-#riverctl map normal Super+Shift L send-layout-cmd rivertile "main-location left"
 
-####### Resize Window #######
-riverctl map normal Super+Alt H send-layout-cmd rivertile "main-ratio -0.05"
-riverctl map normal Super+Alt L send-layout-cmd rivertile "main-ratio +0.05"
-# Window Split Ratio
-# Increment/decrement the main count of rivertile(1)
-#riverctl map normal Super+Control H send-layout-cmd rivertile "main-count +1"
-#riverctl map normal Super+Control L send-layout-cmd rivertile "main-count -1"
+###########################################################################################
+# KILE LAYOUT GENERATOR                                                                   #
+###########################################################################################
+# Decrease/increase the main ratio of kile
+riverctl map normal Super+Alt H send-layout-cmd kile "mod-main-ratio -0.05"
+riverctl map normal Super+Alt L send-layout-cmd kile "mod-main-ratio +0.05"
+
+# Increment/decrement the main count of kile - what is this even
+#riverctl map normal Super+Control H send-layout-cmd kile "mod-main-count +1"
+#riverctl map normal Super+Control L send-layout-cmd kile "mod-main-count -1"
 
 
 ###########################################################################################
@@ -224,7 +220,6 @@ riverctl xcursor-theme Numix-Cursor-Light 24
 # Swap caps with escape
 #riverctl keyboard-layout "caps:swapescape"
 
-# Set the default layout generator to be rivertile and start it.
-# River will send the process group of the init executable SIGTERM on exit.
-riverctl default-layout rivertile
-rivertile -view-padding 3 -outer-padding 3 &
+# Set the default layout generator to be kile and start it
+riverctl default-layout kile
+kile &
