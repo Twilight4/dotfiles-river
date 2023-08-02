@@ -83,8 +83,8 @@ riverctl map normal Super+Alt V spawn '~/.config/hypr/scripts/vpn'
 riverctl map normal Super+Alt M spawn '~/.config/hypr/scripts/volume --toggle-mic'
 
 ###### System commands ######
-riverctl map normal None Control+Alt W spawn '~/.config/hypr/scripts/cp-wlo1'
-riverctl map normal None Control+Alt T spawn  '~/.config/hypr/scripts/cp-tun0'
+riverctl map normal None Control+Alt W spawn '~/.config/hypr/scripts/cp-wlan'
+riverctl map normal None Control+Alt T spawn  '~/.config/hypr/scripts/cp-tun'
 #riverctl map normal None Control+Alt V spawn 'kitty -1 --class waifu-daemon -e waifu'
 
 
