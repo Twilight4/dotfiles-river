@@ -1,16 +1,4 @@
-## Quick Bootstrap After CachyOS Install (No Desktop)
-### Connect to internet
-```bash
-nmcli dev wifi
-nmcli dev wifi connect "wifi_ssid" password "wifi_password"
-nmcli dev status
-```
-### Run install-tweaks script
-```bash
-su -
-bash <(curl -s https://raw.githubusercontent.com/Twilight4/alis-iso/main/install-tweaks.sh)
-exit
-```
+## Quick Working Setup
 ### Desktop entry
 ```bash
 sudo bash -c 'cat > /usr/share/wayland-sessions/river.desktop' <<-'EOF'
