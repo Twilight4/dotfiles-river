@@ -217,6 +217,9 @@ riverctl hide-cursor timeout 5000
 # Hide cursor when typing
 riverctl hide-cursor when-typing enabled
 
+# Disable accel profile on mouse
+riverctl input pointer-1267-12738-ELAN0752:00_04F3:31C2_Mouse accel-profile flat
+
 # Cursor theme (optionally add 24 as size)
 riverctl xcursor-theme Numix-Cursor-Light 24
 
