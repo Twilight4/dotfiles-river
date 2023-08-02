@@ -18,10 +18,17 @@ riverctl map normal Super Y spawn '~/.config/hypr/scripts/lock'                 
 riverctl map normal Super+Shift Y spawn 'lock && sleep 1 && systemctl suspend'   # Lock and suspend
 
 ###### Wofi Menu Keys ######
-riverctl map normal Super P spawn 'pkill wlogout || wlogout'                     # Session manager
+#riverctl map normal Super P spawn 'pkill wlogout || wlogout'                     # Session manager
 riverctl map normal Super U spawn 'pkill wofi || wofi-beats.sh'                  # Rofi radio
-riverctl map normal Super C spawn 'pkill wofi || wofi-clipboard.sh'              # Clipboard menu
-riverctl map normal Super+Shift Semicolon spawn 'pkill wofi || wofi-emoji.sh'    # Emoji menu
+#riverctl map normal Super C spawn 'pkill wofi || wofi-clipboard.sh'              # Clipboard menu
+#riverctl map normal Super+Shift Semicolon spawn 'pkill wofi || wofi-emoji.sh'    # Emoji menu
+
+###### Rofi Menu Keys ######
+riverctl map normal Super R spawn 'pkill rofi || launcher.sh'                     # Launcher menu
+riverctl map normal Super C spawn 'pkill rofi || clipboard.sh'                    # Clipboard menu
+riverctl map normal Super Semicolon spawn 'pkill rofi || quicklinks.sh'           # Quicklinks menu
+riverctl map normal Super Slash spawn 'pkill rofi || quicklinks-hack.sh'          # Second quicklinks menu
+riverctl map normal Super P spawn 'pkill rofi || powermenu.sh'                    # Power menu
 
 ###### App Keys ######
 riverctl map normal Super Return spawn 'kitty -1'                                # Terminal (Kitty)
