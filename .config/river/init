@@ -51,10 +51,11 @@ riverctl spawn "~/.config/hypr/scripts/gtkthemes"          # Apply themes
 ###########################################################################################
 # SUPER + SHIFT + ... KEYS                                                                #
 ###########################################################################################
-# Super Alt Keys
-riverctl map normal Super+Shift N spawn "~/.config/hypr/scripts/wallpaper"
-riverctl map normal Print spawn "grim -g "$(slurp -b 1B1F28CC -c E06B74ff -s C778DD0D -w 2)" - | wl-copy"
+####### Screenshot ######
+riverctl map normal Super Print spawn "grim -g "$(slurp -b 1B1F28CC -c E06B74ff -s C778DD0D -w 2)" - | wl-copy"
 
+# Change Wallpaper
+riverctl map normal Super+Shift N spawn "~/.config/hypr/scripts/wallpaper"
 
 ###########################################################################################
 # FUNCTION KEYS                                                                           #
@@ -119,29 +120,31 @@ riverctl map normal Super+Shift K swap previous
 riverctl map-pointer normal Super BTN_LEFT move-view
 riverctl map-pointer normal Super BTN_RIGHT resize-view
 
-####### Resize Window #######
-riverctl map normal Super+Alt H send-layout-cmd rivertile "main-ratio -0.05"
-riverctl map normal Super+Alt L send-layout-cmd rivertile "main-ratio +0.05"
-# Window Split Ratio
-# Increment/decrement the main count of rivertile(1)
-riverctl map normal Super+Control H send-layout-cmd rivertile "main-count +1"
-riverctl map normal Super+Control L send-layout-cmd rivertile "main-count -1"
-
-
-############################### idk #########################################
+####### Move Window to Output #######
 # Send the focused view to the next/previous output
 riverctl map normal Super+Shift Period send-to-output next
 riverctl map normal Super+Shift Comma send-to-output previous
-
+####### Move Focus to Output #######
 # Focus the next/previous output
 riverctl map normal Super Period focus-output next
 riverctl map normal Super Comma focus-output previous
 
+###########################################################################################
+# RIVERTILE                                                                               #
+###########################################################################################
 # Change layout orientation
 #riverctl map normal Super+Shift K send-layout-cmd rivertile "main-location top"
 #riverctl map normal Super+Shift H send-layout-cmd rivertile "main-location right"
 #riverctl map normal Super+Shift J send-layout-cmd rivertile "main-location bottom"
 #riverctl map normal Super+Shift L send-layout-cmd rivertile "main-location left"
+
+####### Resize Window #######
+riverctl map normal Super+Alt H send-layout-cmd rivertile "main-ratio -0.05"
+riverctl map normal Super+Alt L send-layout-cmd rivertile "main-ratio +0.05"
+# Window Split Ratio
+# Increment/decrement the main count of rivertile(1)
+#riverctl map normal Super+Control H send-layout-cmd rivertile "main-count +1"
+#riverctl map normal Super+Control L send-layout-cmd rivertile "main-count -1"
 
 
 ###########################################################################################
@@ -210,16 +213,16 @@ riverctl border-color-unfocused 0x586e75
 riverctl set-repeat 50 300
 
 # Hide cursor after 5s
-hide-cursor timeout 5000
+riverctl hide-cursor timeout 5000
 
 # Hide cursor when typing
-hide-cursor when-typing enabled
+riverctl hide-cursor when-typing enabled
 
 # Cursor theme (optionally add 24 as size)
-#xcursor-theme Numix-Cursor-Light
+riverctl xcursor-theme Numix-Cursor-Light 24
 
 # Swap caps with escape
-#keyboard-layout caps:swapescape
+#riverctl keyboard-layout "caps:swapescape"
 
 # Set the default layout generator to be rivertile and start it.
 # River will send the process group of the init executable SIGTERM on exit.

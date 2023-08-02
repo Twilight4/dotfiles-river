@@ -25,11 +25,5 @@ EOF
 ```bash
 gsettings set org.gnome.desktop.wm.preferences button-layout ""
 ```
-
-
-### Copy dotfiles
-```bash
-git clone --recurse-submodules "https://github.com/Twilight4/dotfiles-river" ~/dotfiles-river
-rsync -av "~/dotfiles-river" ~
-rm ~/README.md
-```
+### Remove Firefox window Title bar
+Right click on toolbar and click on "Customize Toolbar...". In the bottom left, uncheck "Title Bar"
