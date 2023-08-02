@@ -13,21 +13,21 @@ riverctl map normal Super F toggle-fullscreen     # Toggle fullscreen
 
 ###### Quick Session Managing ######
 riverctl map normal Super+Control+Shift Q exit                                   # Exit wayland session/compositor
-riverctl map normal Super+Control+Shift Delete spawn "systemctl poweroff"        # Rescue board option
-riverctl map normal Super Y spawn "~/.config/hypr/scripts/lock"                  # Lock screen
-riverctl map normal Super+Shift Y spawn "lock && sleep 1 && systemctl suspend"   # Lock and suspend
+riverctl map normal Super+Control+Shift Delete spawn 'systemctl poweroff'        # Rescue board option
+riverctl map normal Super Y spawn '~/.config/hypr/scripts/lock'                  # Lock screen
+riverctl map normal Super+Shift Y spawn 'lock && sleep 1 && systemctl suspend'   # Lock and suspend
 
 ###### Wofi Menu Keys ######
-riverctl map normal Super P spawn "pkill wlogout || wlogout"                     # Session manager
-riverctl map normal Super U spawn "pkill wofi || wofi-beats.sh"                  # Rofi radio
-riverctl map normal Super C spawn "pkill wofi || wofi-clipboard.sh"              # Clipboard menu
-riverctl map normal Super+Shift Semicolon spawn "pkill wofi || wofi-emoji.sh"    # Emoji menu
+riverctl map normal Super P spawn 'pkill wlogout || wlogout'                     # Session manager
+riverctl map normal Super U spawn 'pkill wofi || wofi-beats.sh'                  # Rofi radio
+riverctl map normal Super C spawn 'pkill wofi || wofi-clipboard.sh'              # Clipboard menu
+riverctl map normal Super+Shift Semicolon spawn 'pkill wofi || wofi-emoji.sh'    # Emoji menu
 
 ###### App Keys ######
-riverctl map normal Super Return spawn 'kitty -1'
-riverctl map normal Super W spawn 'waterfox-g'
-#riverctl map normal Super E spawn 'emacsclient -c -a emacs'
-riverctl map normal Super N spawn 'footclient -T newsboat -a newsboat -e newsboat'
+riverctl map normal Super Return spawn 'kitty -1'                                # Terminal (Kitty)
+riverctl map normal Super W spawn 'waterfox-g'                                   # Web browser (Waterfox)
+#riverctl map normal Super E spawn 'emacsclient -c -a emacs'                     # Editor (Emacs)
+riverctl map normal Super N spawn 'footclient -a newsboat -e newsboat'           # News (Newsboat)
 
 ####### Floating Views #######
 riverctl map normal Super+Shift Return spawn 'footclient -a "foot-float"'        # Foot
@@ -66,30 +66,47 @@ riverctl map normal Control+Shift Print spawn 'grim - | swappy -f -'
 ####### Caffeine #######
 riverctl map normal Super+Shift C spawn '~/.config/hypr/scripts/caffeine'
 
+####### Screen record #######
+#riverctl map normal Super+Alt R spawn '~/.config/hypr/scripts/record-screen'
+riverctl map normal Super+Alt R spawn '~/.config/hypr/scripts/record-script'
+riverctl map normal Super+Shift+Alt R spawn '~/.config/hypr/scripts/record-script --sound'
+riverctl map normal Super+Control+Alt R spawn '~/.config/hypr/scripts/record-script-fullscreen'
+
 ####### Swaybg #######
-riverctl map normal Super+Alt B spawn "~/.config/hypr/scripts/wallpaper"
+riverctl map normal Super+Alt B spawn '~/.config/hypr/scripts/wallpaper'
+
+####### VPN #######
+riverctl map normal Super+Alt V spawn '~/.config/hypr/scripts/vpn'
+
+####### Custom Function keys #######
+riverctl map normal Super+Alt M spawn '~/.config/hypr/scripts/volume --toggle-mic'
+
+###### System commands ######
+riverctl map normal Super+Alt W spawn '~/.config/hypr/scripts/cp-wlo1'
+riverctl map normal Super+Alt T spawn  '~/.config/hypr/scripts/cp-tun0'
+#riverctl map normal Super+Alt V spawn 'kitty -1 --class waifu-daemon -e waifu'
 
 
 ###########################################################################################
 # AUTOSTART                                                                               #
 ###########################################################################################
 ####### Autostart ######
-riverctl spawn "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-riverctl spawn "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-riverctl spawn "/usr/lib/polkit-kde-authentification-agent-1"
-riverctl spawn "foot --server"
-#riverctl spawn "emacs --daemon"
-#riverctl spawn "mako"
-riverctl spawn "dunst"
-riverctl spawn "udiskie"
-riverctl spawn "swaybg -i ~/.config/hypr/wallpapers/default-wallpaper"
-riverctl spawn "udev-block-notify"
-#riverctl spawn "waybar"
-#riverctl spawn "nm-applet --indicator"
+riverctl spawn 'dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP'
+riverctl spawn 'systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP'
+riverctl spawn '/usr/lib/polkit-kde-authentification-agent-1'
+riverctl spawn 'foot --server'
+#riverctl spawn 'emacs --daemon'
+#riverctl spawn 'mako'
+riverctl spawn 'dunst'
+riverctl spawn 'udiskie'
+riverctl spawn 'swaybg -i ~/.config/hypr/wallpapers/default-wallpaper'
+riverctl spawn 'udev-block-notify'
+#riverctl spawn 'waybar'
+#riverctl spawn 'nm-applet --indicator'
 
 ####### Clipboard manager ######
-riverctl spawn "wl-clip-persist --clipboard regular"         # Persistent clipboard
-riverctl spawn "wl-paste --watch cliphist store"             # Store in clipboard history (cliphist wipe to clear the database)
+riverctl spawn 'wl-clip-persist --clipboard regular'         # Persistent clipboard
+riverctl spawn 'wl-paste --watch cliphist store'             # Store in clipboard history (cliphist wipe to clear the database)
 
 ####### Scripts ######
 #riverctl spawn "~/.config/hypr/scripts/idle-handler"         # Screen locking when idle
@@ -99,8 +116,6 @@ riverctl spawn 'gsettings set org.gnome.desktop.interface gtk-theme "cachyos-nor
 riverctl spawn 'gsettings set org.gnome.desktop.interface icon-theme "Papirus"'
 riverctl spawn 'gsettings set org.gnome.desktop.interface cursor-theme "Numix-Cursor-Light"'
 riverctl spawn 'gsettings set org.gnome.desktop.interface font-name "Sans 10"'
-
-
 
 
 ###########################################################################################
