@@ -251,12 +251,31 @@ riverctl map normal Super 0 set-focused-tags $all_tags            # Focus all ta
 # VIEW RULES                                                                            #
 ###########################################################################################
 ####### Floating Views #######
-riverctl float-filter-add title "Picture-in-Picture"
-riverctl float-filter-add app-id "musikcube"
-riverctl float-filter-add app-id "foot-float"
-riverctl float-filter-add app-id "swappy"
+# By Title
+riverctl float-filter-add title 'Picture-in-Picture'
+riverctl float-filter-add title 'Waterfox — Sharing Indicator'
+riverctl float-filter-add title 'qt5ct'
+riverctl float-filter-add title 'Calculator'
+riverctl float-filter-add title 'pavucontrol'
+riverctl float-filter-add title 'Lxappearance'
+riverctl float-filter-add title 'wdisplays'
+riverctl float-filter-add title 'nwg-look'
+riverctl float-filter-add title 'zenity'
+riverctl float-filter-add title 'wdisplays'
+# By App-id
+riverctl float-filter-add app-id 'musikcube'
+riverctl float-filter-add app-id 'kitty-waifu'
+riverctl float-filter-add app-id 'ffplay'
+riverctl float-filter-add app-id 'musikcube'
+riverctl float-filter-add app-id 'foot-float'
+riverctl float-filter-add app-id 'swappy'
+riverctl float-filter-add app-id 'blueman-manager'
+riverctl float-filter-add app-id 'xdg-desktop-portal-gtk'
+riverctl float-filter-add app-id 'xdg-desktop-portal-kde'
+riverctl float-filter-add app-id 'org.kde.polkit-kde-authentication-agent-1'
+riverctl float-filter-add app-id 'tty-clock'
 
-# Set app-ids and titles of views which should not use client side decorations (Xwayland apps)
+# Views which should not use client side decorations (Xwayland apps)
 #riverctl csd-filter-remove app-id "logseq"
 
 
