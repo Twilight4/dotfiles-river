@@ -29,6 +29,7 @@ riverctl map normal Super W spawn 'waterfox-g'
 ###########################################################################################
 # AUTOSTART                                                                               #
 ###########################################################################################
+####### Autostart ######
 riverctl spawn "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
 riverctl spawn "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
 riverctl spawn "/usr/lib/polkit-kde-authentification-agent-1"
@@ -42,13 +43,18 @@ riverctl spawn "udev-block-notify"
 #riverctl spawn "waybar"
 #riverctl spawn "nm-applet --indicator"
 
-# Clipboard manager
+####### Clipboard manager ######
 riverctl spawn "wl-clip-persist --clipboard regular"         # Persistent clipboard
 riverctl spawn "wl-paste --watch cliphist store"             # Store in clipboard history (cliphist wipe to clear the database)
 
-# Scripts
-riverctl spawn "~/.config/hypr/scripts/gtkthemes"          # Apply themes
-#riverctl spawn "~/.config/hypr/scripts/idle-handler"       # Screen locking when idle
+####### Scripts ######
+#riverctl spawn "~/.config/hypr/scripts/idle-handler"         # Screen locking when idle
+
+####### GTK Themes ######
+riverctl spawn 'gsettings set org.gnome.desktop.interface gtk-theme "cachyos-nord"'
+riverctl spawn 'gsettings set org.gnome.desktop.interface icon-theme "Papirus"'
+riverctl spawn 'gsettings set org.gnome.desktop.interface cursor-theme "Numix-Cursor-Light"'
+riverctl spawn 'gsettings set org.gnome.desktop.interface font-name "Sans 10"'
 
 
 ###########################################################################################
@@ -57,6 +63,7 @@ riverctl spawn "~/.config/hypr/scripts/gtkthemes"          # Apply themes
 ####### Screenshot ######
 riverctl map normal None Print spawn 'grim -g "$(slurp -b 1B1F28CC -c E06B74ff -s C778DD0D -w 2)" - | wl-copy'
 
+####### Screenshot ######
 # Change Wallpaper
 riverctl map normal Super+Shift N spawn "~/.config/hypr/scripts/wallpaper"
 
@@ -93,45 +100,42 @@ done
 ###########################################################################################
 # WINDOW MANAGER OPERATION KEYS                                                           #
 ###########################################################################################
-####### Move floating windows #######
+####### Move floating views #######
 #riverctl map normal Super+Alt H move left 100
 #riverctl map normal Super+Alt J move down 100
 #riverctl map normal Super+Alt K move up 100
 #riverctl map normal Super+Alt L move right 100
 
-####### Snap floating windows to screen edges #######
+####### Snap floating views to screen edges #######
 #riverctl map normal Super+Alt+Control H snap left
 #riverctl map normal Super+Alt+Control J snap down
 #riverctl map normal Super+Alt+Control K snap up
 #riverctl map normal Super+Alt+Control L snap right
 
-####### Resize floating windows #######
+####### Resize floating views #######
 #riverctl map normal Super+Alt+Shift H resize horizontal -100
 #riverctl map normal Super+Alt+Shift J resize vertical 100
 #riverctl map normal Super+Alt+Shift K resize vertical -100
 #riverctl map normal Super+Alt+Shift L resize horizontal 100
-
-####### Move Focus #######
-# Super+J and Super+K to focus the next/previous view in the layout stack
-riverctl map normal Super J focus-view next
-riverctl map normal Super K focus-view previous
-
-####### Move Window #######
-# Swap the focused view with the next/previous view in the layout stack
-riverctl map normal Super+Shift J swap next
-riverctl map normal Super+Shift K swap previous
 # Mouse move and resize (floating)
 riverctl map-pointer normal Super BTN_LEFT move-view
 riverctl map-pointer normal Super BTN_RIGHT resize-view
 
-####### Move Window to Output #######
-# Send the focused view to the next/previous output
-riverctl map normal Super+Shift Period send-to-output next
-riverctl map normal Super+Shift Comma send-to-output previous
+####### Move Focus #######
+riverctl map normal Super J focus-view next
+riverctl map normal Super K focus-view previous
+
+####### Move Views #######
+riverctl map normal Super+Shift J swap next
+riverctl map normal Super+Shift K swap previous
+
 ####### Move Focus to Output #######
-# Focus the next/previous output
 riverctl map normal Super Period focus-output next
 riverctl map normal Super Comma focus-output previous
+
+####### Move View to Output #######
+riverctl map normal Super+Shift Period send-to-output next
+riverctl map normal Super+Shift Comma send-to-output previous
 
 
 ###########################################################################################
@@ -163,7 +167,7 @@ riverctl map normal Super+Alt L send-layout-cmd kile "mod-main-ratio +0.05"
 ###########################################################################################
 # TAG MANAGEMENT                                                                          #
 ###########################################################################################
-# Single Tags
+####### Single Tags #######
 for i in $(seq 1 9)
 do
     tags=$((1 << ($i - 1)))
@@ -189,34 +193,20 @@ riverctl map normal Super 0 set-focused-tags $all_tags            # Focus all ta
 
 
 ###########################################################################################
-# WINDOW RULES                                                                            #
+# VIEW RULES                                                                            #
 ###########################################################################################
-# Floating windows
+####### Floating Views #######
 riverctl float-filter-add title "Picture-in-Picture"
 riverctl float-filter-add app-id "musikcube"
 riverctl float-filter-add app-id "foot-float"
 
-# Set app-ids and titles of windows which should not use client side decorations (Xwayland apps)
+# Set app-ids and titles of views which should not use client side decorations (Xwayland apps)
 #riverctl csd-filter-remove app-id "logseq"
 
 
 ###########################################################################################
 # MISCS SETTINGS                                                                          #
 ###########################################################################################
-####### Keyboard #######
-#riverctl keyboard-layout "caps:swapescape"
-riverctl set-repeat 50 300
-
-####### Cursor #######
-riverctl hide-cursor timeout 5000
-riverctl hide-cursor when-typing enabled
-riverctl xcursor-theme Numix-Cursor-Light 24
-
-####### River Options #######
-riverctl background-color 0x002b36
-riverctl border-color-focused 0x7AA2F7FF
-riverctl border-color-unfocused 0x04404aaa
-
 ####### Outputs #######
 #outputs['eDP-1']="{mode='1920x1080', pos='1920,0', transform='normal', scale='1.000000', preferred=true}"
 #outputs['HDMI-A-1']="{mode='2560x1080', pos='0,0', transform='normal', scale='1.000000', preferred=true}"
@@ -238,6 +228,24 @@ riverctl input pointer-1267-12738-ELAN0752:00_04F3:31C2_Touchpad tap enabled
 riverctl input pointer-1267-12738-ELAN0752:00_04F3:31C2_Touchpad tap-button-map left-right-middle
 riverctl input pointer-1267-12738-ELAN0752:00_04F3:31C2_Touchpad scroll-method two-finger
 
-# Set the default layout generator to be kile and start it
+####### River Options #######
+riverctl attach-mode top
+riverctl background-color 0x002b36
+riverctl border-color-focused 0x7AA2F7FF
+riverctl border-color-unfocused 0x04404aaa
+#riverctl border-color-urgent
+riverctl border-width 2
 riverctl default-layout kile
+# Keyboard
+riverctl keyboard-layout us
+#riverctl keyboard-options caps:swapescape
+riverctl set-repeat 50 300
+# Cursor
+riverctl hide-cursor timeout 5000
+riverctl hide-cursor when-typing enabled
+riverctl xcursor-theme Numix-Cursor-Light 24
+riverctl set-cursor-warp disabled
+riverctl focus-follows-cursor on-output-change
+
+# Start the default layout generator
 kile &
