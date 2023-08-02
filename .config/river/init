@@ -203,43 +203,40 @@ riverctl float-filter-add app-id "foot-float"
 ###########################################################################################
 # MISCS SETTINGS                                                                          #
 ###########################################################################################
-# Background and Border Colors
+####### Keyboard #######
+#riverctl keyboard-layout "caps:swapescape"
+riverctl set-repeat 50 300
+
+####### Cursor #######
+riverctl hide-cursor timeout 5000
+riverctl hide-cursor when-typing enabled
+riverctl xcursor-theme Numix-Cursor-Light 24
+
+####### River Options #######
 riverctl background-color 0x002b36
 riverctl border-color-focused 0x7AA2F7FF
 riverctl border-color-unfocused 0x04404aaa
 
-# Set keyboard repeat rate
-riverctl set-repeat 50 300
+####### Outputs #######
+#outputs['eDP-1']="{mode='1920x1080', pos='1920,0', transform='normal', scale='1.000000', preferred=true}"
+#outputs['HDMI-A-1']="{mode='2560x1080', pos='0,0', transform='normal', scale='1.000000', preferred=true}"
 
-# Hide cursor after 5s
-riverctl hide-cursor timeout 5000
-
-# Hide cursor when typing
-riverctl hide-cursor when-typing enabled
-
+####### Inputs #######
 # Mouse
 riverctl input pointer-5426-92-Razer_Razer_DeathAdder_Elite pointer-accel 0
 riverctl input pointer-5426-92-Razer_Razer_DeathAdder_Elite accel-profile flat
-
 # Touchpad
 riverctl input pointer-1267-12738-ELAN0752:00_04F3:31C2_Touchpad accel-profile flat
 riverctl input pointer-1267-12738-ELAN0752:00_04F3:31C2_Touchpad pointer-accel 1.0
-riverctl input pointer-1267-12738-ELAN0752:00_04F3:31C2_Touchpad events enabled
+riverctl input pointer-1267-12738-ELAN0752:00_04F3:31C2_Touchpad events disabled-on-external-mouse
 #riverctl input pointer-1267-12738-ELAN0752:00_04F3:31C2_Touchpad click-method clickfinger
 riverctl input pointer-1267-12738-ELAN0752:00_04F3:31C2_Touchpad drag enabled
-riverctl input pointer-1267-12738-ELAN0752:00_04F3:31C2_Touchpad drag-lock enabled
 riverctl input pointer-1267-12738-ELAN0752:00_04F3:31C2_Touchpad disable-while-typing enabled
 riverctl input pointer-1267-12738-ELAN0752:00_04F3:31C2_Touchpad middle-emulation disabled
 riverctl input pointer-1267-12738-ELAN0752:00_04F3:31C2_Touchpad natural-scroll enabled
 riverctl input pointer-1267-12738-ELAN0752:00_04F3:31C2_Touchpad tap enabled
 riverctl input pointer-1267-12738-ELAN0752:00_04F3:31C2_Touchpad tap-button-map left-right-middle
 riverctl input pointer-1267-12738-ELAN0752:00_04F3:31C2_Touchpad scroll-method two-finger
-
-# Cursor theme (optionally add 24 as size)
-riverctl xcursor-theme Numix-Cursor-Light 24
-
-# Swap caps with escape
-#riverctl keyboard-layout "caps:swapescape"
 
 # Set the default layout generator to be kile and start it
 riverctl default-layout kile
