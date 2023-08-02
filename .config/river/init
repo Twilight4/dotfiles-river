@@ -17,13 +17,57 @@ riverctl map normal Super+Control+Shift Delete spawn "systemctl poweroff"       
 riverctl map normal Super Y spawn "~/.config/hypr/scripts/lock"                  # Lock screen
 riverctl map normal Super+Shift Y spawn "lock && sleep 1 && systemctl suspend"   # Lock and suspend
 
-###### EWW Keys ######
 ###### Wofi Menu Keys ######
+riverctl map normal Super P spawn "pkill wlogout || wlogout"                     # Session manager
+riverctl map normal Super U spawn "pkill wofi || wofi-beats.sh"                  # Rofi radio
+riverctl map normal Super C spawn "pkill wofi || wofi-clipboard.sh"              # Clipboard menu
+riverctl map normal Super+Shift Semicolon spawn "pkill wofi || wofi-emoji.sh"    # Emoji menu
 
 ###### App Keys ######
 riverctl map normal Super Return spawn 'kitty -1'
-riverctl map normal Super+Shift Return spawn 'footclient --app-id "foot-float"'
 riverctl map normal Super W spawn 'waterfox-g'
+#riverctl map normal Super E spawn 'emacsclient -c -a emacs'
+riverctl map normal Super N spawn 'footclient -T newsboat -a newsboat -e newsboat'
+
+####### Floating Views #######
+riverctl map normal Super+Shift Return spawn 'footclient -a "foot-float"'        # Foot
+riverctl map normal Super+Shift Z spawn 'webcam'                                 # Webcam
+riverctl map normal Super T spawn 'athena-welcome'                               # Athena welcome
+riverctl map normal Super V spawn 'hacking-variables'                            # Payload list
+riverctl map normal Super X spawn 'role-viewer'                                  # Tools list 
+
+####### Fun Commands: musikcube, btop, cava, tty-clock, cmatrix, neofetch, pipes, mpv, waifu ######
+riverctl map normal Super+Shift Escape spawn 'footclient -a btop -e btop'                                  # Btop
+riverctl map normal Super+Control N spawn 'footclient -a musikcube -e musikcube'                           # Music
+riverctl map normal Super+Control C spawn 'footclient -a cava -e cava'                                     # Cava
+riverctl map normal Super+Control U spawn 'footclient -a clock -e tty-clock -c -C 6 -r -s -f "%A, %B, %d"' # Clock
+riverctl map normal Super+Control P spawn 'footclient -a pipes -e ~/.config/zsh/bash-scripts/pipes.sh'     # Pipes
+riverctl map normal Super+Control M spawn 'footclient -a cmatrix -e cmatrix -a'                            # Matrix
+
+###### Updates ######
+riverctl map normal Super+Control+Shift C spawn 'notify-send -u low -t 4000 "Updating cheatsheets..." && footclient --title update -a update -e ~/.config/hypr/scripts/cheatsheets push'
+riverctl map normal Super+Control M spawn 'notify-send -u low -t 4000 -i "$HOME/.config/mako/icons/mirror.png" "Updating mirrors..." && footclient --title reflector -a reflector -e sudo reflector --score 100 --fastest 10 --number 10 --verbose --save /etc/pacman.d/mirrorlist'
+riverctl map normal Super+Control M spawn 'notify-send -u low -t 4000 -i "$HOME/.config/mako/icons/keyring.png" "Refreshing keyrings..." && footclient --title keys -a keys -e bash ~/.config/hypr/scripts/fix-keys'
+riverctl map normal Super+Control M spawn 'notify-send -u low -t 4000 -i "$HOME/.config/mako/icons/update.png" "Updating system..." && footclient --title yay -a yay -e yay --noconfirm -Syu'
+
+####### Screenshot ######
+# for screenshot keybind
+$w_pos=$(hyprctl activewindow | grep 'at:' | cut -d':' -f2 | tr -d ' ' | tail -n1)
+$w_size=$(hyprctl activewindow | grep 'size:' | cut -d':' -f2 | tr -d ' ' | tail -n1 | sed s/,/x/g)
+riverctl map normal None Print spawn 'grim -g "$(slurp -b 1B1F28CC -c E06B74ff -s C778DD0D -w 2)" - | wl-copy'
+riverctl map normal Shift Print spawn 'grim -g "$(slurp -b 1B1F28CC -c E06B74ff -s C778DD0D -w 2)" - | swappy -f -'
+# Screenshot Window
+riverctl map normal Super Print spawn 'grim -g "$w_pos $w_size" - | wl-copy'
+riverctl map normal Super+Shift Print spawn 'grim -g "$w_pos $w_size" - | swappy -f -'
+# Screenshot Full Screen
+riverctl map normal Control Print spawn 'grim - | wl-copy'
+riverctl map normal Control+Shift Print spawn 'grim - | swappy -f -'
+
+####### Caffeine #######
+riverctl map normal Super+Shift C spawn '~/.config/hypr/scripts/caffeine'
+
+####### Swaybg #######
+riverctl map normal Super+Alt B spawn "~/.config/hypr/scripts/wallpaper"
 
 
 ###########################################################################################
@@ -57,15 +101,6 @@ riverctl spawn 'gsettings set org.gnome.desktop.interface cursor-theme "Numix-Cu
 riverctl spawn 'gsettings set org.gnome.desktop.interface font-name "Sans 10"'
 
 
-###########################################################################################
-# SUPER + SHIFT + ... KEYS                                                                #
-###########################################################################################
-####### Screenshot ######
-riverctl map normal None Print spawn 'grim -g "$(slurp -b 1B1F28CC -c E06B74ff -s C778DD0D -w 2)" - | wl-copy'
-
-####### Screenshot ######
-# Change Wallpaper
-riverctl map normal Super+Shift N spawn "~/.config/hypr/scripts/wallpaper"
 
 
 ###########################################################################################
@@ -91,10 +126,11 @@ do
     # Control screen backlight brightness with light (https://github.com/haikarainen/light)
     riverctl map $mode None XF86MonBrightnessUp   spawn 'light -A 5'
     riverctl map $mode None XF86MonBrightnessDown spawn 'light -U 5'
-
-    # Experimental - Suspend on closed laptop lid
-    #riverctl map-switch $mode close "systemctl suspend"
 done
+
+# Suspend on closed laptop lid
+#riverctl map-switch normal lid close 'lock && sleep 1 && systemctl suspend'
+#riverctl map-switch locked lid close 'systemctl suspend'
 
 
 ###########################################################################################
@@ -199,6 +235,7 @@ riverctl map normal Super 0 set-focused-tags $all_tags            # Focus all ta
 riverctl float-filter-add title "Picture-in-Picture"
 riverctl float-filter-add app-id "musikcube"
 riverctl float-filter-add app-id "foot-float"
+riverctl float-filter-add app-id "swappy"
 
 # Set app-ids and titles of views which should not use client side decorations (Xwayland apps)
 #riverctl csd-filter-remove app-id "logseq"
@@ -208,8 +245,9 @@ riverctl float-filter-add app-id "foot-float"
 # MISCS SETTINGS                                                                          #
 ###########################################################################################
 ####### Outputs #######
-#outputs['eDP-1']="{mode='1920x1080', pos='1920,0', transform='normal', scale='1.000000', preferred=true}"
-#outputs['HDMI-A-1']="{mode='2560x1080', pos='0,0', transform='normal', scale='1.000000', preferred=true}"
+#wlr-randr --output
+#outputs['eDP-1']="{mode='1920x1080', pos='0,0', transform='normal', scale='1.000000', preferred=true}"
+#outputs['DP-2']="{mode='2560x1080', pos='1920,0', transform='normal', scale='1.000000', preferred=true}"
 
 ####### Inputs #######
 # Mouse
