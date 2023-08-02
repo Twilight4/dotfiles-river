@@ -1,0 +1,162 @@
+@import "colors.css";
+* {
+  font-family: MesloLGM Nerd Font;
+  font-size: 15px;
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+}
+
+window#waybar {
+  transition-property: background-color;
+  transition-duration: 0s;
+  background-color: rgba(26, 27, 38, 0.5);
+  color: @base;
+  padding: 0;
+  margin: 0;
+}
+
+window#waybar.hidden {
+  opacity: 0;
+}
+
+#waybar.empty #window {
+  background: none;
+}
+
+.modules-left, .modules-center, .modules-right {
+  background: @base;
+  border: 2px solid @overlay0;
+  padding: 0px 5px;
+}
+
+.modules-center {
+  margin: 0px 5px;
+}
+
+#backlight,
+#battery,
+#clock,
+#cpu,
+#disk,
+#mode,
+#memory,
+#tray,
+#pulseaudio,
+#custom-weather,
+#custom-updater,
+#custom-vpncheck,
+#custom-playerctl,
+#custom-uptime,
+#custom-cputemp,
+#window,
+#network {
+  padding: 0px 4px;
+}
+
+#backlight {
+  color: @blue;
+}
+
+#battery {
+  color: @blue;
+}
+
+@keyframes blink {
+  to {
+    color: @surface0;
+  }
+}
+
+#battery.critical:not(.charging) {
+  background-color: @red;
+  color: @theme_text_color;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#clock {
+  color: @blue;
+}
+
+#cpu {
+  color: @blue;
+}
+
+#memory {
+  color: @blue;
+}
+
+#disk {
+  color: @blue;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+}
+
+#tags button {
+  color: @crust;
+}
+
+#tags button.occupied {
+  color: @blue;
+  background-color: @mantle;
+  border-radius: 0px;
+}
+#tags button.focused {
+  background-color: @lavender;
+}
+
+#custom-updater {
+  color: @blue;
+}
+
+#custom-playerctl {
+  color: @blue;
+}
+
+#custom-uptime {
+  color: @blue;
+}
+
+#custom-weather {
+  color: @blue;
+}
+
+#custom-vpncheck {
+  color: @blue;
+}
+#custom-cputemp {
+  color: @blue;
+}
+
+#pulseaudio {
+  color: @blue;
+}
+
+#pulseaudio.bluetooth {
+  color: @blue;
+}
+#pulseaudio.muted {
+  color: @blue;
+}
+
+#window {
+  color: @sapphire;
+}
+
+#network {
+  color: @blue;
+}
+#network.disconnected,
+#network.disabled {
+  background-color: @surface0;
+  color: @text;
+}
