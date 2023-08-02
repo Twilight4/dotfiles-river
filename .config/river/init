@@ -20,7 +20,40 @@ riverctl map normal Super+Control+Shift Q exit    # Exit wayland session/composi
 ###### App Keys ######
 riverctl map normal Super Return spawn 'kitty -1'
 riverctl map normal Super+Shift Return spawn 'footclient --app-id "foot-float"'
-riverctl map normal Super W spawn waterfox-g
+riverctl map normal Super W spawn 'waterfox-g'
+
+
+###########################################################################################
+# AUTOSTART                                                                               #
+###########################################################################################
+riverctl spawn "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+riverctl spawn "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+riverctl spawn "/usr/lib/polkit-kde-authentification-agent-1"
+riverctl spawn "foot --server"
+#riverctl spawn "emacs --daemon"
+#riverctl spawn "mako"
+riverctl spawn "dunst"
+riverctl spawn "udiskie"
+riverctl spawn "swaybg -i ~/.config/hypr/wallpapers/default-wallpaper"
+riverctl spawn "udev-block-notify"
+#riverctl spawn "waybar"
+#riverctl spawn "nm-applet --indicator"
+
+# Clipboard manager
+riverctl spawn "wl-clip-persist --clipboard regular"         # Persistent clipboard
+riverctl spawn "wl-paste --watch cliphist store"             # Store in clipboard history (cliphist wipe to clear the database)
+
+# Scripts
+riverctl spawn "~/.config/hypr/scripts/gtkthemes"          # Apply themes
+#riverctl spawn "~/.config/hypr/scripts/idle-handler"       # Screen locking when idle
+
+
+###########################################################################################
+# SUPER + SHIFT + ... KEYS                                                                #
+###########################################################################################
+# Super Alt Keys
+riverctl map normal Super+Shift N spawn "~/.config/hypr/scripts/wallpaper"
+riverctl map normal Print spawn "grim -g "$(slurp -b 1B1F28CC -c E06B74ff -s C778DD0D -w 2)" - | wl-copy"
 
 
 ###########################################################################################
