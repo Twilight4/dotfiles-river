@@ -27,3 +27,7 @@ gsettings set org.gnome.desktop.wm.preferences button-layout ""
 ```
 ### Remove Firefox window Title bar
 Right click on toolbar and click on "Customize Toolbar...". In the bottom left, uncheck "Title Bar"
+### Install kile, better layout generator for river
+```bash
+cargo install --git https://gitlab.com/snakedye/kile
+```

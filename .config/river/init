@@ -52,7 +52,7 @@ riverctl spawn "~/.config/hypr/scripts/gtkthemes"          # Apply themes
 # SUPER + SHIFT + ... KEYS                                                                #
 ###########################################################################################
 ####### Screenshot ######
-riverctl map normal Super Print spawn "grim -g "$(slurp -b 1B1F28CC -c E06B74ff -s C778DD0D -w 2)" - | wl-copy"
+riverctl map normal None Print spawn "grim -g "$(slurp -b 1B1F28CC -c E06B74ff -s C778DD0D -w 2)" - | wl-copy"
 
 # Change Wallpaper
 riverctl map normal Super+Shift N spawn "~/.config/hypr/scripts/wallpaper"
