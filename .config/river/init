@@ -21,7 +21,7 @@ riverctl map normal Super+Shift Y spawn 'lock && sleep 1 && systemctl suspend'  
 #riverctl map normal Super P spawn 'pkill wlogout || wlogout'                     # Session manager
 riverctl map normal Super U spawn 'pkill wofi || wofi-beats.sh'                  # Rofi radio
 #riverctl map normal Super C spawn 'pkill wofi || wofi-clipboard.sh'              # Clipboard menu
-#riverctl map normal Super+Shift Semicolon spawn 'pkill wofi || wofi-emoji.sh'    # Emoji menu
+riverctl map normal Super+Shift Semicolon spawn 'pkill wofi || wofi-emoji.sh'    # Emoji menu
 
 ###### Rofi Menu Keys ######
 riverctl map normal Super R spawn 'pkill rofi || launcher.sh'                     # Launcher menu
