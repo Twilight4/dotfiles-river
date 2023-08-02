@@ -240,11 +240,9 @@ do
     riverctl map normal Super+Shift+Control $i toggle-view-tags $tags
 done
 
-
 # All Tags
 all_tags=$(((1 << 32) - 1))
 riverctl map normal Super 0 set-focused-tags $all_tags            # Focus all tags
-#riverctl map normal Super+Shift 0 set-view-tags $all_tags        # Tag focused view with all tags
 
 
 ###########################################################################################
