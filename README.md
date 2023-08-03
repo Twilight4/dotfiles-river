@@ -24,3 +24,11 @@ cargo install --git https://gitlab.com/snakedye/kile
 sed -i 's/background_opacity 0\.80/background_opacity 1/' ~/.config/kitty/kitty.conf
 sed -i 's/if \[\[ "$XDG_SESSION_DESKTOP" == "Hyprland" \]\]; then/if \[\[ "$XDG_SESSION_DESKTOP" == "river" \]\]; then/' ~/.config/rofi/applets/bin/clipboard.sh
 ```
+### Default MIME types/GTK applications
+every graphical application uses xdg-open. It uses a database to automatically figure out the best program to open the provided path or URL based on MIME type. Sometimes it can breaks and you have to configure it yourself.
+
+Also to set the GTK default applications, for example if you want the "open in terminal" context menu entry in graphical file managers to work. For that you will need to know the name of the .desktop file of your applications: 
+```bash
+nvim /usr/share/glib-2.0/schemas/org.gnome.desktop.default-applications.gschema.xml
+gsettings set org.gnome.desktop.default-applications.terminal exec alacritty.desktop
+```
