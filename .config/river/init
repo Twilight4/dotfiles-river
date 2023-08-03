@@ -90,6 +90,9 @@ riverctl map normal Super+Alt V spawn '~/.config/hypr/scripts/vpn'
 ####### Custom Function keys #######
 riverctl map normal Super+Alt M spawn '~/.config/hypr/scripts/volume --toggle-mic'
 
+####### Waybar toggle #######
+riverctl map normal Super+Alt W spawn '~/.config/hypr/scripts/waybar-toggle'
+
 ###### System commands ######
 riverctl map normal None Control+Alt W spawn '~/.config/hypr/scripts/cp-wlan'
 riverctl map normal None Control+Alt T spawn  '~/.config/hypr/scripts/cp-tun'
@@ -100,8 +103,8 @@ riverctl map normal None Control+Alt T spawn  '~/.config/hypr/scripts/cp-tun'
 # AUTOSTART                                                                               #
 ###########################################################################################
 ####### Autostart ######
-riverctl spawn 'dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP'
-riverctl spawn 'systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP'
+riverctl spawn 'dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river'
+riverctl spawn 'systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river'
 riverctl spawn '/usr/lib/polkit-kde-authentification-agent-1'
 riverctl spawn 'foot --server'
 #riverctl spawn 'emacs --daemon'
