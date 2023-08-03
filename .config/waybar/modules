@@ -166,5 +166,13 @@
 "river/tags": {
     "num-tags": 6,
     "disable-click": true,
+		"tag-labels":[
+			"",
+			"",
+			"󰙯",
+			"",
+			"",
+			"",
+		],
   },
 }
