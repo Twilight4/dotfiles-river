@@ -109,7 +109,7 @@ riverctl spawn 'foot --server'
 riverctl spawn 'udiskie'
 riverctl spawn 'swaybg -i ~/.config/hypr/wallpapers/default-wallpaper'
 riverctl spawn 'udev-block-notify'
-#riverctl spawn 'waybar'
+riverctl spawn 'waybar'
 
 ####### Clipboard manager ######
 riverctl spawn 'wl-clip-persist --clipboard regular'         # Persistent clipboard
