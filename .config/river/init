@@ -36,7 +36,7 @@ riverctl map normal Control+Alt W spawn 'waterfox-g'                            
 #riverctl map normal Control+Alt E spawn 'emacsclient -c -a emacs'                # Editor (Emacs)
 riverctl map normal Control+Alt N spawn 'footclient -a newsboat -e newsboat'     # News (Newsboat)
 # Experimental
-###riverctl map normal Super W spawn 'pgrep "waterfox" && riverctl set-focused-tags 3 || waterfox-g'                             
+###riverctl map normal Super W spawn 'pgrep "waterfox" && riverctl set-focused-tags 3 || riverctl set-focused-tags 3 && waterfox-g'
 
 ####### Floating Views #######
 riverctl map normal Super+Shift Return spawn 'footclient -a "foot-float"'        # Foot
