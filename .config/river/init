@@ -33,6 +33,7 @@ riverctl map normal Super P spawn 'pkill rofi || powermenu.sh'                  
 ###### App Keys ######
 riverctl map normal Super Return spawn 'kitty -1'                          # Terminal (Kitty)
 riverctl map normal Super 1 spawn 'waterfox-g'                             # Web browser (Waterfox)
+riverctl map normal Super 2 spawn 'logseq-desktop'                         # Editor (Emacs)
 #riverctl map normal Super 2 spawn 'emacsclient -c -a emacs'                # Editor (Emacs)
 riverctl map normal Super 3 spawn 'footclient -a newsboat -e newsboat'     # News (Newsboat)
 
@@ -288,9 +289,13 @@ riverctl float-filter-add app-id 'tty-clock'
 # MISCS SETTINGS                                                                          #
 ###########################################################################################
 ####### Outputs #######
-#wlr-randr --output
-#outputs['eDP-1']="{mode='1920x1080', pos='0,0', transform='normal', scale='1.000000', preferred=true}"
-#outputs['DP-2']="{mode='2560x1080', pos='1920,0', transform='normal', scale='1.000000', preferred=true}"
+# Monitor on the left
+#wlr-randr --output eDP-1 --mode 1920x1080@144 --pos 0,0 --transform normal --scale 1.000000 --preferred true
+#wlr-randr --output DP-2 --mode 2560x1080@75 --pos 1920,0 --transform normal --scale 1.000000 --preferred true
+
+# Monitor on the right
+#wlr-randr --output eDP-1 --mode 1920x1080@144 --pos 2560,0 --transform normal --scale 1.000000 --preferred true
+#wlr-randr --output DP-2 --mode 2560x1080@75 --pos 0,0 --transform normal --scale 1.000000 --preferred true
 
 ####### Inputs #######
 # Mouse
