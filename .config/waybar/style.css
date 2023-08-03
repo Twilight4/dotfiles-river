@@ -16,6 +16,20 @@ window#waybar {
   margin: 0;
 }
 
+#tags button {
+  color: @crust;
+}
+
+#tags button.occupied {
+  color: @blue;
+  background-color: @mantle;
+  border-radius: 0px;
+}
+
+#tags button.focused {
+  background-color: @lavender;
+}
+
 window#waybar.hidden {
   opacity: 0;
 }
@@ -97,21 +111,9 @@ window#waybar.hidden {
 #tray > .passive {
   -gtk-icon-effect: dim;
 }
+
 #tray > .needs-attention {
   -gtk-icon-effect: highlight;
-}
-
-#tags button {
-  color: @crust;
-}
-
-#tags button.occupied {
-  color: @blue;
-  background-color: @mantle;
-  border-radius: 0px;
-}
-#tags button.focused {
-  background-color: @lavender;
 }
 
 #custom-updater {
@@ -133,6 +135,7 @@ window#waybar.hidden {
 #custom-vpncheck {
   color: @blue;
 }
+
 #custom-cputemp {
   color: @blue;
 }
@@ -144,6 +147,7 @@ window#waybar.hidden {
 #pulseaudio.bluetooth {
   color: @blue;
 }
+
 #pulseaudio.muted {
   color: @blue;
 }
