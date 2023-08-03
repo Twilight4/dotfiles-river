@@ -7,8 +7,8 @@
 ###########################################################################################
 ###### WM Specific Keys ######
 riverctl map normal Super Q close                 # Close the focused view
-riverctl map normal Super+Shift A toggle-float    # Toggle float
 riverctl map normal Super F toggle-fullscreen     # Toggle fullscreen
+riverctl map normal Super+Shift F toggle-float    # Toggle float
 #riverctl map normal Super Return zoom            # Bump the focused view to the top of the layout stack
 
 ###### Quick Session Managing ######
@@ -18,10 +18,10 @@ riverctl map normal Super Y spawn '~/.config/hypr/scripts/lock'                 
 riverctl map normal Super+Shift Y spawn 'lock && sleep 1 && systemctl suspend'   # Lock and suspend
 
 ###### Wofi Menu Keys ######
-#riverctl map normal Super P spawn 'pkill wlogout || wlogout'                     # Session manager
 riverctl map normal Super U spawn 'pkill wofi || wofi-beats.sh'                  # Rofi radio
-#riverctl map normal Super C spawn 'pkill wofi || wofi-clipboard.sh'              # Clipboard menu
 riverctl map normal Super+Shift Semicolon spawn 'pkill wofi || wofi-emoji.sh'    # Emoji menu
+#riverctl map normal Super P spawn 'pkill wlogout || wlogout'                     # Session manager
+#riverctl map normal Super C spawn 'pkill wofi || wofi-clipboard.sh'              # Clipboard menu
 
 ###### Rofi Menu Keys ######
 riverctl map normal Super R spawn 'pkill rofi || launcher.sh'                    # Launcher menu
@@ -230,29 +230,32 @@ riverctl map normal Super+Alt L send-layout-cmd kile "mod-main-ratio +0.05"
 ###########################################################################################
 # TAG MANAGEMENT                                                                          #
 ###########################################################################################
-####### Focus Tag #######
-riverctl map normal Super I set-focused-tags 1
-riverctl map normal Super O set-focused-tags 2
-riverctl map normal Super W set-focused-tags 3
-riverctl map normal Super E set-focused-tags 4
-riverctl map normal Super M set-focused-tags 5
-riverctl map normal Super N set-focused-tags 6
+# Define the letter tags
+tags=("I" "O" "W" "E" "M" "N")
 
-####### Tag Focused View #######
-riverctl map normal Super+Shift I set-view-tags 1
-riverctl map normal Super+Shift O set-view-tags 2
-riverctl map normal Super+Shift W set-view-tags 3
-riverctl map normal Super+Shift E set-view-tags 4
-riverctl map normal Super+Shift M set-view-tags 5
-riverctl map normal Super+Shift N set-view-tags 6
+for i in $(seq 1 6)
+do
+    tag="${tags[i - 1]}"
+    tags_bit=$((1 << (i - 1)))
 
-####### Toggle Focus of Tag #######
-riverctl map normal Super+Control I toggle-focused-tags 1
-riverctl map normal Super+Control O toggle-focused-tags 2
-riverctl map normal Super+Control W toggle-focused-tags 3
-riverctl map normal Super+Control E toggle-focused-tags 4
-riverctl map normal Super+Control M toggle-focused-tags 5
-riverctl map normal Super+Control N toggle-focused-tags 6
+    # Super+[I-O-W-E-M-N] to focus tag [0-5]
+    riverctl map normal Super "$tag" set-focused-tags "$tags_bit"
+
+    # Super+Shift+[I-O-W-E-M-N] to tag focused view with tag [0-5]
+    riverctl map normal Super+Shift "$tag" set-view-tags "$tags_bit"
+
+    # Super+Ctrl+[I-O-W-E-M-N] to toggle focus of tag [0-5]
+    riverctl map normal Super+Control "$tag" toggle-focused-tags "$tags_bit"
+
+    # Super+Shift+Ctrl+[I-O-W-E-M-N] to toggle tag [0-5] of focused view
+    riverctl map normal Super+Shift+Control "$tag" toggle-view-tags "$tags_bit"
+done
+
+# Super+A to focus all tags
+# Super+Shift+A to tag focused view with all tags
+all_tags=$(((1 << 32) - 1))
+riverctl map normal Super A set-focused-tags "$all_tags"
+riverctl map normal Super+Shift A set-view-tags "$all_tags"
 
 
 ###########################################################################################
