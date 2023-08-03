@@ -244,9 +244,6 @@ do
 
     # Super+Ctrl+[I-O-W-E-M-N] to toggle focus of tag [0-5]
     riverctl map normal Super+Control "$tag" toggle-focused-tags "$tags_bit"
-
-    # Super+Shift+Ctrl+[I-O-W-E-M-N] to toggle tag [0-5] of focused view
-    riverctl map normal Super+Shift+Control "$tag" toggle-view-tags "$tags_bit"
 done
 
 # Super+A to focus all tags
