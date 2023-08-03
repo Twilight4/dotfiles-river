@@ -24,17 +24,17 @@ riverctl map normal Super U spawn 'pkill wofi || wofi-beats.sh'                 
 riverctl map normal Super+Shift Semicolon spawn 'pkill wofi || wofi-emoji.sh'    # Emoji menu
 
 ###### Rofi Menu Keys ######
-riverctl map normal Super R spawn 'pkill rofi || launcher.sh'                     # Launcher menu
-riverctl map normal Super C spawn 'pkill rofi || clipboard.sh'                    # Clipboard menu
-riverctl map normal Super Semicolon spawn 'pkill rofi || quicklinks.sh'           # Quicklinks menu
-riverctl map normal Super Slash spawn 'pkill rofi || quicklinks-hack.sh'          # Second quicklinks menu
-riverctl map normal Super P spawn 'pkill rofi || powermenu.sh'                    # Power menu
+riverctl map normal Super R spawn 'pkill rofi || launcher.sh'                    # Launcher menu
+riverctl map normal Super C spawn 'pkill rofi || clipboard.sh'                   # Clipboard menu
+riverctl map normal Super Semicolon spawn 'pkill rofi || quicklinks.sh'          # Quicklinks menu
+riverctl map normal Super Slash spawn 'pkill rofi || quicklinks-hack.sh'         # Second quicklinks menu
+riverctl map normal Super P spawn 'pkill rofi || powermenu.sh'                   # Power menu
 
 ###### App Keys ######
-riverctl map normal Super Return spawn 'kitty -1'                                # Terminal (Kitty)
-riverctl map normal Super W spawn 'waterfox-g'                                   # Web browser (Waterfox)
-#riverctl map normal Super E spawn 'emacsclient -c -a emacs'                     # Editor (Emacs)
-riverctl map normal Super N spawn 'footclient -a newsboat -e newsboat'           # News (Newsboat)
+riverctl map normal Super+Shift Return spawn 'kitty -1'                          # Terminal (Kitty)
+riverctl map normal Super+Shift W spawn 'waterfox-g'                             # Web browser (Waterfox)
+#riverctl map normal Super+Shift E spawn 'emacsclient -c -a emacs'               # Editor (Emacs)
+riverctl map normal Super+Shift N spawn 'footclient -a newsboat -e newsboat'     # News (Newsboat)
 
 ####### Floating Views #######
 riverctl map normal Super+Shift Return spawn 'footclient -a "foot-float"'        # Foot
@@ -110,7 +110,6 @@ riverctl spawn 'udiskie'
 riverctl spawn 'swaybg -i ~/.config/hypr/wallpapers/default-wallpaper'
 riverctl spawn 'udev-block-notify'
 #riverctl spawn 'waybar'
-#riverctl spawn 'nm-applet --indicator'
 
 ####### Clipboard manager ######
 riverctl spawn 'wl-clip-persist --clipboard regular'         # Persistent clipboard
@@ -229,7 +228,7 @@ riverctl map normal Super+Alt L send-layout-cmd kile "mod-main-ratio +0.05"
 ###########################################################################################
 # TAG MANAGEMENT                                                                          #
 ###########################################################################################
-####### Single Tags #######
+####### Tags for Keys 1-9 #######
 for i in $(seq 1 9)
 do
     tags=$((1 << ($i - 1)))
@@ -247,9 +246,34 @@ do
     riverctl map normal Super+Shift+Control $i toggle-view-tags $tags
 done
 
-# All Tags
+####### Toggle Focus of All Tags #######
 all_tags=$(((1 << 32) - 1))
-riverctl map normal Super 0 set-focused-tags $all_tags            # Focus all tags
+#riverctl map normal Super 0 set-focused-tags $all_tags
+riverctl map normal Super Z toggle-focused-tags $all_tags
+
+####### Focus Tag #######
+riverctl map normal Super I set-focused-tags 1
+riverctl map normal Super O set-focused-tags 2
+riverctl map normal Super W set-focused-tags 3
+riverctl map normal Super E set-focused-tags 4
+riverctl map normal Super M set-focused-tags 5
+riverctl map normal Super N set-focused-tags 6
+
+####### Tag Focused View ######
+riverctl map normal Super+Shift I set-view-tags 1
+riverctl map normal Super+Shift O set-view-tags 2
+riverctl map normal Super+Shift W set-view-tags 3
+riverctl map normal Super+Shift E set-view-tags 4
+riverctl map normal Super+Shift M set-view-tags 5
+riverctl map normal Super+Shift N set-view-tags 6
+
+####### Toggle Focus of Tag ######
+riverctl map normal Super+Control I toggle-focused-tags 1
+riverctl map normal Super+Control O toggle-focused-tags 2
+riverctl map normal Super+Control W toggle-focused-tags 3
+riverctl map normal Super+Control E toggle-focused-tags 4
+riverctl map normal Super+Control M toggle-focused-tags 5
+riverctl map normal Super+Control N toggle-focused-tags 6
 
 
 ###########################################################################################
