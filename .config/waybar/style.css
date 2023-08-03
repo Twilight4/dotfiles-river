@@ -41,7 +41,7 @@ window#waybar.hidden {
 
 .modules-left, .modules-right {
   background: @base;
-  border: 2px solid @base;
+  border: 1px solid #222222;
   padding: 0px 0px;
 }
 
