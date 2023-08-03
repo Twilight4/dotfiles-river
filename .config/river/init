@@ -31,7 +31,7 @@ riverctl map normal Super Slash spawn 'pkill rofi || quicklinks-hack.sh'        
 riverctl map normal Super P spawn 'pkill rofi || powermenu.sh'                   # Power menu
 
 ###### App Keys ######
-riverctl map normal Super+Shift Return spawn 'kitty -1'                          # Terminal (Kitty)
+riverctl map normal Super Return spawn 'kitty -1'                          # Terminal (Kitty)
 riverctl map normal Super+Shift W spawn 'waterfox-g'                             # Web browser (Waterfox)
 #riverctl map normal Super+Shift E spawn 'emacsclient -c -a emacs'               # Editor (Emacs)
 riverctl map normal Super+Shift N spawn 'footclient -a newsboat -e newsboat'     # News (Newsboat)
@@ -259,7 +259,7 @@ riverctl map normal Super E set-focused-tags 4
 riverctl map normal Super M set-focused-tags 5
 riverctl map normal Super N set-focused-tags 6
 
-####### Tag Focused View ######
+####### Tag Focused View #######
 riverctl map normal Super+Shift I set-view-tags 1
 riverctl map normal Super+Shift O set-view-tags 2
 riverctl map normal Super+Shift W set-view-tags 3
@@ -267,7 +267,7 @@ riverctl map normal Super+Shift E set-view-tags 4
 riverctl map normal Super+Shift M set-view-tags 5
 riverctl map normal Super+Shift N set-view-tags 6
 
-####### Toggle Focus of Tag ######
+####### Toggle Focus of Tag #######
 riverctl map normal Super+Control I toggle-focused-tags 1
 riverctl map normal Super+Control O toggle-focused-tags 2
 riverctl map normal Super+Control W toggle-focused-tags 3
