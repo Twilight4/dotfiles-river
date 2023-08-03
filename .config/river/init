@@ -128,7 +128,7 @@ riverctl spawn 'wl-paste --watch cliphist store'             # Store in clipboar
 #riverctl spawn "~/.config/hypr/scripts/idle-handler"         # Screen locking when idle
 
 ####### GTK Themes ######
-riverctl spawn 'gsettings set org.gnome.desktop.interface gtk-theme "cachyos-nord"'
+riverctl spawn 'gsettings set org.gnome.desktop.interface gtk-theme "cachyos-nord-kde"'
 riverctl spawn 'gsettings set org.gnome.desktop.interface icon-theme "Papirus"'
 riverctl spawn 'gsettings set org.gnome.desktop.interface cursor-theme "Numix-Cursor-Light"'
 riverctl spawn 'gsettings set org.gnome.desktop.interface font-name "Sans 10"'
