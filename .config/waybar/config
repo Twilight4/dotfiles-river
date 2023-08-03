@@ -14,13 +14,13 @@
 //"output": "DP-2",
   "exclusive": true,
   "passthrough": false,
-  "height": 32,
+  "height": 30,
   "position": "top",
   "fixed-center": true,
   "spacing": 3,
   "gtk-layer-shell": true,
 
   "modules-left": ["river/tags", "river/window"],
-  "modules-center": ["clock", "custom/weather"],
-  "modules-right": ["custom/playerctl", "custom/uptime", "cpu", "custom/cputemp", "memory", "disk", "custom/vpncheck", "network", "backlight", "pulseaudio", "battery", "custom/updater", "tray"],
+//"modules-center": [],
+  "modules-right": ["custom/playerctl", "custom/uptime", "cpu", "custom/cputemp", "memory", "disk", "custom/vpncheck", "network", "backlight", "pulseaudio", "battery", "custom/updater", "custom/weather", "clock", "tray"]
 }

@@ -1,7 +1,7 @@
 @import "colors.css";
 * {
   font-family: MesloLGM Nerd Font;
-  font-size: 15px;
+  font-size: 14px;
   border: none;
   border-radius: 0;
   min-height: 0;
@@ -11,23 +11,24 @@ window#waybar {
   transition-property: background-color;
   transition-duration: 0s;
   background-color: rgba(26, 27, 38, 0.5);
+  background: #222222;
   color: @base;
   padding: 0;
   margin: 0;
 }
 
 #tags button {
-  color: @crust;
+  color: #f1f1f1;
 }
 
 #tags button.occupied {
-  color: @blue;
-  background-color: @mantle;
+  color: #f1f1f1;
+  background-color: #393939;
   border-radius: 0px;
 }
 
 #tags button.focused {
-  background-color: @lavender;
+  background-color: #2b4375;
 }
 
 window#waybar.hidden {
@@ -38,14 +39,10 @@ window#waybar.hidden {
   background: none;
 }
 
-.modules-left, .modules-center, .modules-right {
+.modules-left, .modules-right {
   background: @base;
-  border: 2px solid @overlay0;
-  padding: 0px 5px;
-}
-
-.modules-center {
-  margin: 0px 5px;
+  border: 2px solid @base;
+  padding: 0px 0px;
 }
 
 #backlight,
@@ -153,7 +150,7 @@ window#waybar.hidden {
 }
 
 #window {
-  color: @sapphire;
+  color: @blue;
 }
 
 #network {
