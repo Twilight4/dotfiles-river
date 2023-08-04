@@ -15,7 +15,7 @@ riverctl map normal Super+Shift R spawn "bash ~/.config/river/scripts/killall-an
 
 ###### Quick Session Managing ######
 riverctl map normal Super+Control+Shift Q exit                                   # Exit wayland session/compositor
-riverctl map normal Super+Control+Shift Delete spawn 'systemctl poweroff'        # Rescue board option
+riverctl map normal Super+Control+Shift Delete spawn 'systemctl poweroff'        # Shutdown
 riverctl map normal Super Y spawn '~/.config/hypr/scripts/lock'                  # Lock screen
 riverctl map normal Super+Shift Y spawn 'lock-suspend'                           # Lock and suspend
 
