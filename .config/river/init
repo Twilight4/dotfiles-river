@@ -17,7 +17,7 @@ riverctl map normal Super+Shift R spawn "bash ~/.config/river/scripts/killall-an
 riverctl map normal Super+Control+Shift Q exit                                   # Exit wayland session/compositor
 riverctl map normal Super+Control+Shift Delete spawn 'systemctl poweroff'        # Rescue board option
 riverctl map normal Super Y spawn '~/.config/hypr/scripts/lock'                  # Lock screen
-riverctl map normal Super+Shift Y spawn 'lock && sleep 1 && systemctl suspend'   # Lock and suspend
+riverctl map normal Super+Shift Y spawn 'lock-suspend'                           # Lock and suspend
 
 ###### Wofi Menu Keys ######
 riverctl map normal Super U spawn 'pkill wofi || wofi-beats.sh'                  # Rofi radio
