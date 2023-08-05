@@ -32,13 +32,6 @@ riverctl map normal Super Semicolon spawn 'pkill rofi || quicklinks.sh'         
 riverctl map normal Super Slash spawn 'pkill rofi || quicklinks-hack.sh'         # Second quicklinks menu
 riverctl map normal Super P spawn 'pkill rofi || powermenu.sh'                   # Power menu
 
-###### App Keys ######
-riverctl map normal Super Return spawn 'kitty -1'                          # Terminal (Kitty)
-riverctl map normal Super 1 spawn 'waterfox-g'                             # Web browser (Waterfox)
-riverctl map normal Super 2 spawn 'logseq-desktop'                         # Editor (Emacs)
-#riverctl map normal Super 2 spawn 'emacsclient -c -a emacs'                # Editor (Emacs)
-riverctl map normal Super 3 spawn 'footclient -a newsboat -e newsboat'     # News (Newsboat)
-
 ####### Floating Views #######
 riverctl map normal Super+Shift Return spawn 'footclient -a "foot-float"'        # Foot
 riverctl map normal Super+Shift Z spawn 'webcam'                                 # Webcam
@@ -237,21 +230,37 @@ riverctl map normal Super+Alt L send-layout-cmd kile "mod-main-ratio +0.05"
 ###########################################################################################
 # TAG MANAGEMENT                                                                          #
 ###########################################################################################
+###### Focus Tags of App Keys ######
+riverctl map normal Super Return spawn 'kitty -1'                          # Terminal (Kitty)
+riverctl map normal Super W spawn '~/.config/river/scripts/tag-waterfox'   # Web browser (Waterfox)
+riverctl map normal Super E spawn '~/.config/river/scripts/tag-logseq'     # Editor (Logseq)
+#riverctl map normal Super E spawn '~/.config/river/scripts/tag-emacs'     # Editor (Emacs)
+riverctl map normal Super N spawn '~/.config/river/scripts/tag-newsboat'   # News (Newsboat)
+
+# Define the letter tags for focus tag [0-4]
+tags_focus=("I" "O" "M" "Comma" "Period")
+
 # Define the letter tags
 tags=("I" "O" "W" "E" "M" "N" "Comma" "Period")
 
-for i in $(seq 1 8)
-do
+# Super+[I-O-M-Comma-Period] to focus tag [0-4]
+for i in $(seq 1 5); do
+    tag="${tags_focus[i - 1]}"
+    tags_bit=$((1 << (i - 1)))
+    riverctl map normal Super "$tag" set-focused-tags "$tags_bit"
+done
+
+# Super+Shift+[I-O-W-E-M-N-Comma-Period] to tag focused view with tag [0-7]
+for i in $(seq 1 8); do
     tag="${tags[i - 1]}"
     tags_bit=$((1 << (i - 1)))
-
-    # Super+[I-O-W-E-M-N-Comma-Period] to focus tag [0-7]
-    riverctl map normal Super "$tag" set-focused-tags "$tags_bit"
-
-    # Super+Shift+[I-O-W-E-M-N-Comma-Period] to tag focused view with tag [0-7]
     riverctl map normal Super+Shift "$tag" set-view-tags "$tags_bit"
+done
 
-    # Super+Ctrl+[I-O-W-E-M-N-Comma-Period] to toggle focus of tag [0-7]
+# Super+Ctrl+[I-O-W-E-M-N-Comma-Period] to toggle focus of tag [0-7]
+for i in $(seq 1 8); do
+    tag="${tags[i - 1]}"
+    tags_bit=$((1 << (i - 1)))
     riverctl map normal Super+Control "$tag" toggle-focused-tags "$tags_bit"
 done
 
