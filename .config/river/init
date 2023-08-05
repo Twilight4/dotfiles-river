@@ -61,15 +61,15 @@ riverctl map normal Super+Control P spawn 'footclient -a pipes -e ~/.config/zsh/
 riverctl map normal Super+Control+Shift U spawn 'notify-send -u low -t 4000 -i "$HOME/.config/mako/icons/update.png" "Updating system..." && footclient --title yay -a yay -e yay --noconfirm -Syu'
 
 ####### Screenshot ######
-# Screenshot Variables
-$w_pos=$(hyprctl activewindow | grep 'at:' | cut -d':' -f2 | tr -d ' ' | tail -n1)
-$w_size=$(hyprctl activewindow | grep 'size:' | cut -d':' -f2 | tr -d ' ' | tail -n1 | sed s/,/x/g)
+# Screenshot Variables for window
+#$w_pos=
+#$w_size=
 # Screenshot
 riverctl map normal None Print spawn 'grim -g "$(slurp -b 1B1F28CC -c E06B74ff -s C778DD0D -w 2)" - | wl-copy'
 riverctl map normal Shift Print spawn 'grim -g "$(slurp -b 1B1F28CC -c E06B74ff -s C778DD0D -w 2)" - | swappy -f -'
 # Screenshot Window
-riverctl map normal Super Print spawn 'grim -g "$w_pos $w_size" - | wl-copy'
-riverctl map normal Super+Shift Print spawn 'grim -g "$w_pos $w_size" - | swappy -f -'
+#riverctl map normal Super Print spawn 'grim -g "$w_pos $w_size" - | wl-copy'
+#riverctl map normal Super+Shift Print spawn 'grim -g "$w_pos $w_size" - | swappy -f -'
 # Screenshot Full Screen
 riverctl map normal Control Print spawn 'grim - | wl-copy'
 riverctl map normal Control+Shift Print spawn 'grim - | swappy -f -'
