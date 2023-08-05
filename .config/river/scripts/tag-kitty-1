@@ -12,14 +12,14 @@ focus_tag() {
 
 # Function to check if 'kitty-1' process is running
 is_kitty_running() {
-    pgrep -x "kitty" >/dev/null
+    lswt | grep kitty-1 >/dev/null
 }
 
 # Focus on tag "I" if 'kitty -1' is not running, else just focus
 if ! is_kitty_running; then
     focus_tag 1  # Use tag "I" (tag number 1)
-    # Spawn 'kitty -1' only if it was not running
-    riverctl spawn 'kitty -1'
+    # Spawn kitty only if it was not running
+    riverctl spawn 'kitty -1 -T kitty-1 --class kitty-1'
 else
     focus_tag 1  # Use tag "I" (tag number 1)
 fi

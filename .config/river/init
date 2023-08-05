@@ -232,7 +232,8 @@ riverctl map normal Super+Alt L send-layout-cmd kile "mod-main-ratio +0.05"
 ###########################################################################################
 ###### Focus Tags of App Keys ######
 riverctl map normal Super Return spawn 'kitty -1'                          # Terminal standalone (Kitty)
-riverctl map normal Super I spawn '~/.config/river/scripts/tag-kitty'      # Terminal (Kitty)
+riverctl map normal Super I spawn '~/.config/river/scripts/tag-kitty-1'    # Terminal (Kitty)
+riverctl map normal Super I spawn '~/.config/river/scripts/tag-kitty-2'    # Terminal (Kitty)
 riverctl map normal Super W spawn '~/.config/river/scripts/tag-waterfox'   # Web browser (Waterfox)
 riverctl map normal Super E spawn '~/.config/river/scripts/tag-logseq'     # Editor (Logseq)
 #riverctl map normal Super E spawn '~/.config/river/scripts/tag-emacs'     # Editor (Emacs)
@@ -240,8 +241,8 @@ riverctl map normal Super N spawn '~/.config/river/scripts/tag-newsboat'   # New
 
 # Define the letter tags for focus tag [0-7]
 # If you don't want to use my "Focus Tags of App Keys" implementation then 
-# just comment it out and add the letters back respectively: "I", "W", "E", "N"
-tags_focus=("" "O" "" "" "M" "" "Comma" "Period")
+# just comment it out and add the letters back respectively: "I" "O" "W" "E" "N"
+tags_focus=("" "" "" "" "M" "" "Comma" "Period")
 
 # Define the letter tags
 tags=("I" "O" "W" "E" "M" "N" "Comma" "Period")
