@@ -16,6 +16,7 @@ killall wallpaper-changer
 killall emacs
 killall battery-notif
 killall swaybg
+killall kitty
 
 # Reload river
 ~/.config/river/init
