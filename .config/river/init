@@ -237,14 +237,14 @@ riverctl map normal Super E spawn '~/.config/river/scripts/tag-logseq'     # Edi
 #riverctl map normal Super E spawn '~/.config/river/scripts/tag-emacs'     # Editor (Emacs)
 riverctl map normal Super N spawn '~/.config/river/scripts/tag-newsboat'   # News (Newsboat)
 
-# Define the letter tags for focus tag [0-4]
-tags_focus=("I" "O" "M" "Comma" "Period")
+# Define the letter tags for focus tag [0-7]
+tags_focus=("I" "O" "" "" "M" "" "Comma" "Period")
 
 # Define the letter tags
 tags=("I" "O" "W" "E" "M" "N" "Comma" "Period")
 
-# Super+[I-O-M-Comma-Period] to focus tag [0-4]
-for i in $(seq 1 5); do
+# Super+[I-O-M-Comma-Period] to focus tag [0-7]
+for i in $(seq 1 8); do
     tag="${tags_focus[i - 1]}"
     tags_bit=$((1 << (i - 1)))
     riverctl map normal Super "$tag" set-focused-tags "$tags_bit"
