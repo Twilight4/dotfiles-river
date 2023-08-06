@@ -19,7 +19,7 @@ is_kitty_running() {
 if ! is_kitty_running; then
     focus_tag 1  # Use tag "I" (tag number 1)
     # Spawn kitty only if it was not running
-    riverctl spawn 'kitty -1 -T kitty-1 --class kitty-1'
+    riverctl spawn 'kitty -1 -T kitty-1 --class kitty-1 --session ~/.config/kitty/session-1'
 else
     focus_tag 1  # Use tag "I" (tag number 1)
 fi
