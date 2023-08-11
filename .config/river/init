@@ -344,8 +344,7 @@ riverctl border-color-unfocused 0x04404aaa
 riverctl border-width 2
 riverctl default-layout kile
 # Keyboard
-riverctl keyboard-layout us
-#riverctl keyboard-options caps:swapescape
+riverctl keyboard-layout -options "caps:swapescape" us
 riverctl set-repeat 50 300
 # Cursor
 riverctl hide-cursor timeout 5000
