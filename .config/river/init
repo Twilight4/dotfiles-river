@@ -267,12 +267,6 @@ for i in $(seq 1 8); do
     riverctl map normal Super+Control "$tag" toggle-focused-tags "$tags_bit"
 done
 
-# Super+A to focus all tags
-# Super+Shift+A to tag focused view with all tags
-all_tags=$(((1 << 32) - 1))
-riverctl map normal Super A set-focused-tags "$all_tags"
-riverctl map normal Super+Shift A set-view-tags "$all_tags"
-
 
 ###########################################################################################
 # VIEW RULES                                                                            #
