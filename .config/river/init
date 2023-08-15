@@ -319,7 +319,7 @@ riverctl input pointer-5426-92-Razer_Razer_DeathAdder_Elite accel-profile flat
 # Touchpad
 riverctl input pointer-1267-12738-ELAN0752:00_04F3:31C2_Touchpad accel-profile flat
 riverctl input pointer-1267-12738-ELAN0752:00_04F3:31C2_Touchpad pointer-accel 1.0
-riverctl input pointer-1267-12738-ELAN0752:00_04F3:31C2_Touchpad events disabled-on-external-mouse
+#riverctl input pointer-1267-12738-ELAN0752:00_04F3:31C2_Touchpad events disabled-on-external-mouse   # Disable touchpad when plugged external mouse
 #riverctl input pointer-1267-12738-ELAN0752:00_04F3:31C2_Touchpad click-method clickfinger
 riverctl input pointer-1267-12738-ELAN0752:00_04F3:31C2_Touchpad drag enabled
 riverctl input pointer-1267-12738-ELAN0752:00_04F3:31C2_Touchpad disable-while-typing enabled
