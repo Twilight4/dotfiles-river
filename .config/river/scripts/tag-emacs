@@ -12,7 +12,7 @@ focus_tag() {
 
 # Function to check if 'emacsclient' process is running
 is_emacsclient_running() {
-    pgrep -x "emacsclient" >/dev/null
+    pgrep -x "emacs" >/dev/null
 }
 
 # Focus on tag "E" if 'emacsclient' is not running, else just focus
