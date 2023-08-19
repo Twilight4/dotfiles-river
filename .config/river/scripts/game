@@ -8,6 +8,6 @@ if [ -f "/tmp/toggle-gamemode" ]; then
 else
     touch "/tmp/toggle-gamemode"
     notify-send -t 3000 "Gamemode Enabled"
-    riverctl map normal Shift D spawn '~/s-d.sh'
-    riverctl map normal Shift W spawn '~/s-w.sh'
+    riverctl map normal Shift D spawn '~/.config/river/scripts/s-d.sh'
+    riverctl map normal Shift W spawn '~/.config/river/scripts/s-w.sh'
 fi
