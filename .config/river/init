@@ -88,7 +88,7 @@ riverctl map normal Super+Alt M spawn '~/.config/hypr/scripts/volume --toggle-mi
 riverctl map normal Super+Alt W spawn '~/.config/hypr/scripts/waybar-toggle'
 
 ####### Gamemode toggle #######
-riverctl map normal Super+Shift G spawn '~/.config/river/scripts/game.sh'
+riverctl map normal Super+Shift G spawn '~/.config/river/scripts/game'
 
 ###### System commands ######
 riverctl map normal None Control+Alt W spawn '~/.config/hypr/scripts/cp-wlan'
