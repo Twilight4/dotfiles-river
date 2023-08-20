@@ -19,7 +19,7 @@ Right click on toolbar and click on "Customize Toolbar...". In the bottom left, 
 ```bash
 cargo install --git https://gitlab.com/snakedye/kile
 ```
-### Other tiny adjustments
+### Other small adjustments
 ```bash
 sed -i 's/background_opacity 0\.80/background_opacity 1/' ~/.config/kitty/kitty.conf
 sed -i 's/if \[\[ "$XDG_SESSION_DESKTOP" == "Hyprland" \]\]; then/if \[\[ "$XDG_SESSION_DESKTOP" == "river" \]\]; then/' ~/.config/rofi/applets/bin/clipboard.sh
