@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Proper primary monitor setup
+wlr-randr --output DP-2 --mode 1920x1080@165 --pos 0,0 --transform normal --scale 1.000000
+
+# Disable monitors
+wlr-randr --output eDP-1 --off
+wlr-randr --output DP-3 --off
