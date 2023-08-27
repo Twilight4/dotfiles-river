@@ -75,21 +75,17 @@ riverctl map normal Super+Alt R spawn '~/.config/hypr/scripts/record-script'
 riverctl map normal Super+Shift+Alt R spawn '~/.config/hypr/scripts/record-script --sound'
 riverctl map normal Super+Control+Alt R spawn '~/.config/hypr/scripts/record-script-fullscreen'
 
+####### Waybar toggle #######
+riverctl map normal Super+Shift W spawn '~/.config/hypr/scripts/waybar-toggle'
+
 ####### Swaybg #######
-riverctl map normal Super+Alt B spawn '~/.config/hypr/scripts/wallpaper'
+riverctl map normal Super+Shift B spawn '~/.config/hypr/scripts/wallpaper'
 
 ####### VPN #######
-riverctl map normal Super+Alt V spawn '~/.config/hypr/scripts/vpn'
+riverctl map normal Super+Shift V spawn '~/.config/hypr/scripts/vpn'
 
-####### Custom Function keys #######
-riverctl map normal Super+Alt M spawn '~/.config/hypr/scripts/volume --toggle-mic'
-
-####### Waybar toggle #######
-riverctl map normal Super+Alt W spawn '~/.config/hypr/scripts/waybar-toggle'
-
-####### lol toggle #######
+####### LOL toggle #######
 riverctl map normal Super+Alt G spawn '~/.config/river/scripts/lol'
-
 ####### Game-monitors toggle #######
 riverctl map normal Super+Shift G spawn '~/.config/river/scripts/game-monitors'
 
@@ -97,6 +93,7 @@ riverctl map normal Super+Shift G spawn '~/.config/river/scripts/game-monitors'
 riverctl map normal None Control+Alt W spawn '~/.config/hypr/scripts/cp-wlan'
 riverctl map normal None Control+Alt T spawn  '~/.config/hypr/scripts/cp-tun'
 #riverctl map normal None Control+Alt V spawn 'kitty -1 --class waifu-daemon -e waifu'
+riverctl map normal Super+Alt M spawn '~/.config/hypr/scripts/volume --toggle-mic'     # Custom function key
 
 
 ###########################################################################################
