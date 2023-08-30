@@ -38,7 +38,7 @@ riverctl map normal Super+Shift V spawn 'role-viewer'                           
 riverctl map normal Super V spawn 'hacking-variables'                            # Payload list
 riverctl map normal Super T spawn 'athena-welcome'                               # Athena welcome
 
-####### Fun Commands: musikcube, btop, cava, tty-clock, cmatrix, neofetch, pipes, mpv, waifu ######
+####### Fun Commands: musikcube, btop, cava, tty-clock, cmatrix, neofetch, pipes, mpv ######
 riverctl map normal Super+Shift Escape spawn 'footclient -a btop -e btop'                                  # Btop
 riverctl map normal Super+Control Y spawn 'footclient -a cava -e cava'                                     # Cava
 riverctl map normal Super+Control U spawn 'footclient -a clock -e tty-clock -c -C 6 -r -s -f "%A, %B, %d"' # Clock
@@ -92,7 +92,6 @@ riverctl map normal Super+Shift G spawn '~/.config/river/scripts/game-monitors'
 ###### System commands ######
 riverctl map normal None Control+Alt W spawn '~/.config/hypr/scripts/cp-wlan'
 riverctl map normal None Control+Alt T spawn  '~/.config/hypr/scripts/cp-tun'
-#riverctl map normal None Control+Alt V spawn 'kitty -1 --class waifu-daemon -e waifu'
 riverctl map normal Super+Alt M spawn '~/.config/hypr/scripts/volume --toggle-mic'     # Custom function key
 
 
@@ -288,7 +287,6 @@ riverctl float-filter-add title 'zenity'
 riverctl float-filter-add title 'wdisplays'
 # By App-id
 riverctl float-filter-add app-id 'musikcube'
-riverctl float-filter-add app-id 'kitty-waifu'
 riverctl float-filter-add app-id 'ffplay'
 riverctl float-filter-add app-id 'musikcube'
 riverctl float-filter-add app-id 'foot-float'
