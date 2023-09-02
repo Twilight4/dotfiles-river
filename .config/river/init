@@ -305,9 +305,12 @@ riverctl float-filter-add app-id 'tty-clock'
 # MISCS SETTINGS                                                                          #
 ###########################################################################################
 ####### Outputs #######
-#wlr-randr --output eDP-1 --mode 1920x1080@144 --pos 0,0 --transform normal --scale 1.000000
-#wlr-randr --output DP-2 --mode 1920x1080@165 --pos 1920,0 --transform normal --scale 1.000000
+wlr-randr --output eDP-1 --mode 1920x1080@144.005005 --pos 0,0 --transform normal --scale 1.000000
+wlr-randr --output DP-2 --mode 1920x1080@120 --pos 1920,0 --transform normal --scale 1.000000
+#wlr-randr --output DP-2 --mode 1920x1080@165 --pos 1920,0 --transform normal --scale 1.000000   # Alternative resolution
 #wlr-randr --output DP-3 --mode 2560x1080@75 --pos 2560,0 --transform normal --scale 1.000000
+#
+#wlr-randr --output eDP-1 --off           # Turn off output
 
 ####### Inputs #######
 # Mouse
