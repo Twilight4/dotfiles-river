@@ -208,13 +208,13 @@ riverctl map normal Super+Shift Comma send-to-output previous
 ###########################################################################################
 # KILE LAYOUT GENERATOR                                                                   #
 ###########################################################################################
-# Decrease/increase the main ratio of kile
-riverctl map normal Super+Alt H send-layout-cmd kile "mod-main-ratio -0.05"
-riverctl map normal Super+Alt L send-layout-cmd kile "mod-main-ratio +0.05"
+# Decrease/increase the main ratio of rivertile
+riverctl map normal Super+Alt H send-layout-cmd rivertile "main-ratio -0.05"
+riverctl map normal Super+Alt L send-layout-cmd rivertile "main-ratio +0.05"
 
-# Increment/decrement the main count of kile - what is this even
-#riverctl map normal Super+Control H send-layout-cmd kile "mod-main-count +1"
-#riverctl map normal Super+Control L send-layout-cmd kile "mod-main-count -1"
+# Increment/decrement the main count of rivertile (stack views on left side) - deafult is 1
+riverctl map normal Super H send-layout-cmd rivertile "main-count +1"
+riverctl map normal Super L send-layout-cmd rivertile "main-count -1"
 
 
 ###########################################################################################
@@ -350,6 +350,6 @@ riverctl set-cursor-warp disabled
 riverctl focus-follows-cursor on-output-change
 
 # Default layout generator
-riverctl default-layout kile
+riverctl default-layout rivertile
 # Start the default layout generator
-kile &
+rivertile -view-padding 0 -outer-padding 0 -main-ratio 0.5 &
