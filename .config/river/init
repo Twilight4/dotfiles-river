@@ -53,7 +53,7 @@ riverctl map normal Super+Control P spawn 'footclient -a pipes -e ~/.config/zsh/
 riverctl map normal Super+Control+Shift U spawn 'notify-send -u low -t 4000 -i "$HOME/.config/mako/icons/update.png" "Updating system..." && footclient --title yay -a yay -e yay --noconfirm -Syu'
 
 ####### Screenshot ######
-# Screenshot Variables for window
+# Screenshot Variables to select a window to screenshot (need to find additional tool)
 #$w_pos=
 #$w_size=
 # Screenshot
