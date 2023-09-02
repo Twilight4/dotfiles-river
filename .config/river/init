@@ -11,10 +11,10 @@ riverctl map normal Super F toggle-fullscreen     # Toggle fullscreen
 riverctl map normal Super+Shift F toggle-float    # Toggle float
 
 ###### Quick Session Managing ######
-riverctl map normal Super+Control+Shift R spawn "bash ~/.config/river/scripts/killall-and-restart"   # Reload river
+riverctl map normal Super+Control+Shift R spawn "~/.config/river/scripts/killall-and-restart"   # Reload river
 riverctl map normal Super+Control+Shift Q exit                                   # Exit wayland session/compositor
 riverctl map normal Super+Control+Shift Delete spawn 'systemctl poweroff'        # Shutdown
-riverctl map normal Super Y spawn '~/.config/hypr/scripts/lock'                  # Lock screen
+riverctl map normal Super Y spawn 'lock'                                         # Lock screen
 riverctl map normal Super+Shift Y spawn 'lock-suspend'                           # Lock and suspend
 
 ###### Wofi Menu Keys ######
@@ -140,18 +140,18 @@ do
     riverctl map $mode None XF86Eject spawn 'eject -T'
 
     # Control pulse audio volume with pamixer (https://github.com/cdemoulins/pamixer)
-    riverctl map $mode None XF86AudioRaiseVolume  spawn '~/.config/hypr/scripts/volume --inc'
-    riverctl map $mode None XF86AudioLowerVolume  spawn '~/.config/hypr/scripts/volume --dec'
-    riverctl map $mode None XF86AudioMute         spawn '~/.config/hypr/scripts/volume --toggle'
+    riverctl map $mode None XF86AudioRaiseVolume spawn '~/.config/hypr/scripts/volume --inc'
+    riverctl map $mode None XF86AudioLowerVolume spawn '~/.config/hypr/scripts/volume --dec'
+    riverctl map $mode None XF86AudioMute spawn '~/.config/hypr/scripts/volume --toggle'
 
     # Control MPRIS aware media players with playerctl (https://github.com/altdesktop/playerctl)
     riverctl map $mode None XF86AudioMedia spawn 'playerctl play-pause && notify-send -u low -t 1500 "Pause-Play"'
-    riverctl map $mode None XF86AudioPlay  spawn 'playerctl play-pause && notify-send -u low -t 1500 "Pause-Play"'
-    riverctl map $mode None XF86AudioPrev  spawn 'playerctl previous && notify-send -u low -t 1500 "Previous"'
-    riverctl map $mode None XF86AudioNext  spawn 'playerctl next && notify-send -u low -t 1500 "Next"'
+    riverctl map $mode None XF86AudioPlay spawn 'playerctl play-pause && notify-send -u low -t 1500 "Pause-Play"'
+    riverctl map $mode None XF86AudioPrev spawn 'playerctl previous && notify-send -u low -t 1500 "Previous"'
+    riverctl map $mode None XF86AudioNext spawn 'playerctl next && notify-send -u low -t 1500 "Next"'
 
     # Control screen backlight brightness with light (https://github.com/haikarainen/light)
-    riverctl map $mode None XF86MonBrightnessUp   spawn '~/.config/hypr/scripts/brightness --inc'
+    riverctl map $mode None XF86MonBrightnessUp spawn '~/.config/hypr/scripts/brightness --inc'
     riverctl map $mode None XF86MonBrightnessDown spawn '~/.config/hypr/scripts/brightness --dec'
 done
 
@@ -159,7 +159,7 @@ done
 riverctl map normal None XF86Calculator spawn 'gnome-calculator'
 
 # Suspend on closed laptop lid
-#riverctl map-switch normal lid close 'lock && sleep 1 && systemctl suspend'
+#riverctl map-switch normal lid close 'lock-suspend'
 #riverctl map-switch locked lid close 'systemctl suspend'
 
 
