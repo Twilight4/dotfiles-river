@@ -76,7 +76,7 @@ riverctl map normal Super+Shift+Alt R spawn '~/.config/hypr/scripts/record-scrip
 riverctl map normal Super+Control+Alt R spawn '~/.config/hypr/scripts/record-script-fullscreen'
 
 ####### Waybar toggle #######
-riverctl map normal Super+Shift W spawn '~/.config/hypr/scripts/waybar-toggle'
+riverctl map normal Super+Alt W spawn '~/.config/hypr/scripts/waybar-toggle'
 
 ####### Swaybg #######
 riverctl map normal Super+Shift B spawn '~/.config/hypr/scripts/wallpaper'
@@ -86,7 +86,7 @@ riverctl map normal Super+Shift V spawn '~/.config/hypr/scripts/vpn'
 
 ####### LOL toggle #######
 riverctl map normal Super+Alt G spawn '~/.config/river/scripts/lol'
-####### Game-monitors toggle #######
+####### Game-monitors #######
 riverctl map normal Super+Shift G spawn '~/.config/river/scripts/game-monitors'
 
 ###### System commands ######
