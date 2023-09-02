@@ -14,7 +14,7 @@ EOF
 gsettings set org.gnome.desktop.wm.preferences button-layout ""
 ```
 ### Remove Firefox window Title bar
-Right click on toolbar and click on "Customize Toolbar...". In the bottom left, uncheck "Title Bar"
+Right click on toolbar and click on `Customize Toolbar...` and in the bottom left uncheck `Title Bar`.
 ### Other small adjustments
 ```bash
 sed -i 's/background_opacity 0\.80/background_opacity 1/' ~/.config/kitty/kitty.conf
