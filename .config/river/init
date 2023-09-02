@@ -194,7 +194,7 @@ riverctl map normal Super+Shift J swap next
 riverctl map normal Super+Shift K swap previous
 
 ####### Move Focus to Output #######
-riverctl map normal Super Period focus-output next        # Period and Comma are for workspaces
+riverctl map normal Super Period focus-output next        # Period and Comma are for outputs
 riverctl map normal Super Comma focus-output previous
 
 ######## Move View to Output #######
@@ -243,26 +243,26 @@ riverctl map normal Super N spawn '~/.config/river/scripts/tag-newsboat'   # New
 # Define the letter tags for focus tag [0-7]
 # If you don't want to use my "Focus Tags of App Keys" implementation then 
 # just comment it out and add the letters back respectively: "I" "O" "W" "E" "N"
-tags_focus=("" "" "" "" "M" "" "Comma" "Period")
+tags_focus=("" "" "" "" "M" "" "Semicolon" "Apostrophe")
 
 # Define the letter tags
-tags=("I" "O" "W" "E" "M" "N" "Comma" "Period")
+tags=("I" "O" "W" "E" "M" "N" "Semicolon" "Apostrophe")
 
-# Super+[I-O-M-Comma-Period] to focus tag [0-7]
+# Super+[I-O-M-Semicolon-Apostrophe] to focus tag [0-7]
 for i in $(seq 1 8); do
     tag="${tags_focus[i - 1]}"
     tags_bit=$((1 << (i - 1)))
     riverctl map normal Super "$tag" set-focused-tags "$tags_bit"
 done
 
-# Super+Shift+[I-O-W-E-M-N-Comma-Period] to tag focused view with tag [0-7]
+# Super+Shift+[I-O-W-E-M-N-Semicolon-Apostrophe] to tag focused view with tag [0-7]
 for i in $(seq 1 8); do
     tag="${tags[i - 1]}"
     tags_bit=$((1 << (i - 1)))
     riverctl map normal Super+Shift "$tag" set-view-tags "$tags_bit"
 done
 
-# Super+Ctrl+[I-O-W-E-M-N-Comma-Period] to toggle focus of tag [0-7]
+# Super+Ctrl+[I-O-W-E-M-N-Semicolon-Apostrophe] to toggle focus of tag [0-7]
 for i in $(seq 1 8); do
     tag="${tags[i - 1]}"
     tags_bit=$((1 << (i - 1)))
