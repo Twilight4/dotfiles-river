@@ -189,12 +189,12 @@ riverctl map-pointer normal Super BTN_LEFT move-view
 riverctl map-pointer normal Super BTN_RIGHT resize-view
 
 ####### Move Focus #######
-riverctl map normal Super J focus-view next
-riverctl map normal Super K focus-view previous
+riverctl map normal Super K focus-view next
+riverctl map normal Super J focus-view previous
 
 ####### Move Views #######
-riverctl map normal Super+Shift J swap next
-riverctl map normal Super+Shift K swap previous
+riverctl map normal Super+Shift K swap next
+riverctl map normal Super+Shift J swap previous
 
 ####### Move Focus to Output #######
 riverctl map normal Super Period focus-output next        # Period and Comma are for outputs
