@@ -339,7 +339,6 @@ riverctl border-color-focused 0x7AA2F7FF
 riverctl border-color-unfocused 0x04404aaa
 #riverctl border-color-urgent
 riverctl border-width 2
-riverctl default-layout kile
 # Keyboard
 riverctl keyboard-layout -options "caps:swapescape" us
 riverctl set-repeat 50 300
@@ -350,5 +349,7 @@ riverctl xcursor-theme Numix-Cursor-Light 24
 riverctl set-cursor-warp disabled
 riverctl focus-follows-cursor on-output-change
 
+# Default layout generator
+riverctl default-layout kile
 # Start the default layout generator
 kile &
