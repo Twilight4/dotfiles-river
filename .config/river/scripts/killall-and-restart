@@ -17,6 +17,7 @@ killall emacs
 killall battery-notif
 killall swaybg
 killall kitty
+killall rivertile
 
 # Reload river
 ~/.config/river/init
