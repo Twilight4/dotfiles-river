@@ -158,7 +158,7 @@ done
 # Calculator
 riverctl map normal None XF86Calculator spawn 'gnome-calculator'
 
-# Suspend on closed laptop lid
+# Suspend on closed laptop lid - doesn't work
 riverctl map-switch normal lid close 'lock-suspend'
 riverctl map-switch locked lid close 'systemctl suspend'
 
