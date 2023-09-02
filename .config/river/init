@@ -69,25 +69,28 @@ riverctl map normal Control+Shift Print spawn 'grim - | swappy -f -'
 ####### Caffeine #######
 riverctl map normal Super+Shift C spawn '~/.config/hypr/scripts/caffeine'
 
-####### Screen record #######
-#riverctl map normal Super+Alt R spawn '~/.config/hypr/scripts/record-screen'
-riverctl map normal Super+Alt R spawn '~/.config/hypr/scripts/record-script'
-riverctl map normal Super+Shift+Alt R spawn '~/.config/hypr/scripts/record-script --sound'
-riverctl map normal Super+Control+Alt R spawn '~/.config/hypr/scripts/record-script-fullscreen'
-
-####### Waybar toggle #######
-riverctl map normal Super+Alt W spawn '~/.config/hypr/scripts/waybar-toggle'
-
 ####### Swaybg #######
 riverctl map normal Super+Shift B spawn '~/.config/hypr/scripts/wallpaper'
 
 ####### VPN #######
 riverctl map normal Super+Shift V spawn '~/.config/hypr/scripts/vpn'
 
+##################
+# Super+Alt keys #
+##################
+####### Screen record #######
+#riverctl map normal Super+Alt R spawn '~/.config/hypr/scripts/record-screen'
+riverctl map normal Super+Alt R spawn '~/.config/hypr/scripts/record-script'
+riverctl map normal Super+Shift+Alt R spawn '~/.config/hypr/scripts/record-script --sound'
+riverctl map normal Super+Control+Alt R spawn '~/.config/hypr/scripts/record-script-fullscreen'
+
+####### Waybar restart #######
+riverctl map normal Super+Alt W spawn '~/.config/hypr/scripts/waybar-restart'
+
 ####### LOL toggle #######
 riverctl map normal Super+Alt G spawn '~/.config/river/scripts/lol'
 ####### Game-monitors #######
-riverctl map normal Super+Shift G spawn '~/.config/river/scripts/game-monitors'
+riverctl map normal Super+Shift+Alt G spawn '~/.config/river/scripts/game-monitors'
 
 ###### System commands ######
 riverctl map normal None Control+Alt W spawn '~/.config/hypr/scripts/cp-wlan'
