@@ -11,11 +11,12 @@ riverctl map normal Super F toggle-fullscreen     # Toggle fullscreen
 riverctl map normal Super+Shift F toggle-float    # Toggle float
 
 ###### Quick Session Managing ######
-riverctl map normal Super+Control+Shift R spawn "~/.config/river/scripts/killall-and-restart"   # Reload river
-riverctl map normal Super+Control+Shift Q exit                                   # Exit wayland session/compositor
-riverctl map normal Super+Control+Shift Delete spawn 'systemctl poweroff'        # Shutdown
 riverctl map normal Super Y spawn 'lock'                                         # Lock screen
 riverctl map normal Super+Shift Y spawn 'lock-suspend'                           # Lock and suspend
+riverctl map normal Super+Control+Shift Q exit                                   # Exit wayland session/compositor
+riverctl map normal Super+Control+Shift Delete spawn 'systemctl poweroff'        # Shutdown
+riverctl map normal Super+Control+Shift Backtick spawn 'systemctl reboot'        # Reboot
+riverctl map normal Super+Control R spawn "~/.config/river/scripts/killall-and-restart"   # Reload river
 
 ###### Wofi Menu Keys ######
 riverctl map normal Super U spawn 'pkill wofi || wofi-beats.sh'                  # Wofi radio
@@ -28,7 +29,6 @@ riverctl map normal Super R spawn 'pkill rofi || launcher.sh'                   
 riverctl map normal Super C spawn 'pkill rofi || clipboard.sh'                   # Clipboard menu
 riverctl map normal Super Slash spawn 'pkill rofi || quicklinks.sh'              # Quicklinks menu
 riverctl map normal Super+Shift Slash spawn 'pkill rofi || quicklinks-hack.sh'   # Second quicklinks menu
-riverctl map normal Super P spawn 'pkill rofi || powermenu.sh'                   # Power menu
 
 ####### Floating Views #######
 riverctl map normal Super+Shift Return spawn 'footclient -a "foot-float"'        # Foot
