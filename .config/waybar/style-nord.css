@@ -1,0 +1,184 @@
+@import "colors.css";
+* {
+  font-family: MesloLGM Nerd Font;
+  font-size: 14px;
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+}
+
+window#waybar {
+  transition-property: background-color;
+  transition-duration: 0s;
+  background-color: rgba(26, 27, 38, 0.5);
+  background: @theme_base_color;
+  color: @base;
+  padding: 0;
+  margin: 0;
+}
+
+window#waybar {
+    background: #1C2030;
+    border-bottom: 1px solid @unfocused_borders;
+    color: @theme_text_color;
+}
+
+#tags button {
+  min-width: 40px;
+}
+
+#tags button:hover {
+    box-shadow: inherit;
+    text-shadow: inherit;
+}
+
+#tags button:hover {
+    background: rgba(26, 27, 38, 0.5);
+    border: none;
+}
+
+#tags button {
+  color: #e2e2e2;
+}
+
+#tags button.occupied {
+  color: #e2e2e2;
+  background-color: #393939;
+  border-radius: 0px;
+}
+
+#tags button.focused {
+  background-color: #2b4375;
+}
+
+window#waybar.hidden {
+  opacity: 0;
+}
+
+#waybar.empty #window {
+  background: @theme_base_color;
+}
+
+.modules-left, .modules-right {
+  background: @theme_base_color;
+  border: 1px solid #222222;
+  padding: 0px 0px;
+}
+
+#backlight,
+#battery,
+#clock,
+#cpu,
+#disk,
+#mode,
+#memory,
+#tray,
+#pulseaudio,
+#custom-weather,
+#custom-updater,
+#custom-vpncheck,
+#custom-playerctl,
+#custom-uptime,
+#custom-cputemp,
+#window,
+#network {
+  padding: 0px 4px;
+}
+
+#backlight {
+  color: #abb2bf;
+}
+
+#battery {
+  color: #abb2bf;
+}
+
+@keyframes blink {
+  to {
+    color: @surface0;
+  }
+}
+
+#battery.critical:not(.charging) {
+  background: @theme_base_color;
+  color: @theme_text_color;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#clock {
+  color: #abb2bf;
+}
+
+#cpu {
+  color: #abb2bf;
+}
+
+#memory {
+  color: #abb2bf;
+}
+
+#disk {
+  color: #abb2bf;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+}
+
+#custom-updater {
+  color: #abb2bf;
+}
+
+#custom-playerctl {
+  color: #abb2bf;
+}
+
+#custom-uptime {
+  color: #abb2bf;
+}
+
+#custom-weather {
+  color: #abb2bf;
+}
+
+#custom-vpncheck {
+  color: #abb2bf;
+}
+
+#custom-cputemp {
+  color: #abb2bf;
+}
+
+#pulseaudio {
+  color: #abb2bf;
+}
+
+#pulseaudio.bluetooth {
+  color: #abb2bf;
+}
+
+#pulseaudio.muted {
+  color: #abb2bf;
+}
+
+#window {
+  color: #e2e2e2;
+  background: @theme_base_color;
+}
+
+#network {
+  color: #abb2bf;
+}
+#network.disconnected,
+#network.disabled {
+  background-color: @theme_base_color;
+  color: @text;
+}
