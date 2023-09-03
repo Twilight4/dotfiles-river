@@ -17,6 +17,16 @@ window#waybar {
   margin: 0;
 }
 
+#tags button:hover {
+    box-shadow: inherit;
+    text-shadow: inherit;
+}
+
+#tags button:hover {
+    background: rgba(26, 27, 38, 0.5);
+    border: none;
+}
+
 #tags button {
   color: #e2e2e2;
 }
