@@ -83,8 +83,8 @@ riverctl map normal Super+Alt R spawn '~/.config/hypr/scripts/record-script'
 riverctl map normal Super+Shift+Alt R spawn '~/.config/hypr/scripts/record-script --sound'
 riverctl map normal Super+Control+Alt R spawn '~/.config/hypr/scripts/record-script-fullscreen'
 
-####### Waybar restart #######
-riverctl map normal Super+Alt W spawn '~/.config/hypr/scripts/waybar-restart'
+####### Waybar toggle #######
+riverctl map normal Super+Alt W spawn '~/.config/hypr/scripts/waybar-toggle'
 
 ####### LOL toggle #######
 riverctl map normal Super+Alt G spawn '~/.config/river/scripts/lol'
