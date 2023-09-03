@@ -17,6 +17,10 @@ window#waybar {
   margin: 0;
 }
 
+#tags button {
+  min-width: 15px;
+}
+
 #tags button:hover {
     box-shadow: inherit;
     text-shadow: inherit;
