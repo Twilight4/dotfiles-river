@@ -87,7 +87,7 @@ riverctl map normal Super+Control+Alt R spawn '~/.config/hypr/scripts/record-scr
 riverctl map normal Super+Alt W spawn '~/.config/hypr/scripts/waybar-toggle'
 
 ####### LOL toggle #######
-riverctl map normal Super+Alt G spawn '~/.config/river/scripts/lol'
+#riverctl map normal Super+Alt G spawn '~/.config/river/scripts/lol'
 ####### Game-monitors #######
 riverctl map normal Super+Shift+Alt G spawn '~/.config/river/scripts/game-monitors'
 
