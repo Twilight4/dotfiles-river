@@ -27,5 +27,5 @@
 
   "modules-left": ["river/tags", "river/window", "custom/audio_idle_inhibitor"],
 //"modules-center": [],
-  "modules-right": ["custom/playerctl", "custom/uptime", "cpu", "custom/cputemp", "memory", "disk", "custom/vpncheck", "network", "backlight", "pulseaudio", "battery", "custom/updater", "custom/weather", "clock", "tray"]
+  "modules-right": ["custom/uptime", "cpu", "custom/cputemp", "memory", "disk", "custom/vpncheck", "network", "backlight", "pulseaudio", "battery", "custom/updater", "custom/weather", "clock", "tray"]
 }]
