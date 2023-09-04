@@ -121,7 +121,7 @@ riverctl spawn 'wl-clip-persist --clipboard regular'         # Persistent clipbo
 riverctl spawn 'wl-paste --watch cliphist store'             # Store in clipboard history (cliphist wipe to clear the database)
 
 ####### Scripts ######
-#riverctl spawn "~/.config/hypr/scripts/idle-handler"         # Screen locking when idle
+riverctl spawn "~/.config/hypr/scripts/idle-handler"         # Screen locking when idle
 
 ####### GTK Themes ######
 riverctl spawn 'gsettings set org.gnome.desktop.interface gtk-theme "cachyos-nord"'
