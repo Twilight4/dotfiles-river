@@ -105,7 +105,7 @@ riverctl spawn 'dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG
 riverctl spawn 'systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river'
 riverctl spawn '/usr/lib/polkit-kde-authentification-agent-1'
 riverctl spawn 'foot --server'
-#riverctl spawn 'emacs --daemon'
+riverctl spawn 'emacs --daemon'
 #riverctl spawn 'mako'
 riverctl spawn 'udiskie'
 riverctl spawn 'udev-block-notify'
@@ -159,8 +159,8 @@ done
 riverctl map normal None XF86Calculator spawn 'gnome-calculator'
 
 # Suspend on closed laptop lid - doesn't work
-riverctl map-switch normal lid close 'lock-suspend'
-riverctl map-switch locked lid close 'systemctl suspend'
+#riverctl map-switch normal lid close 'lock-suspend'
+#riverctl map-switch locked lid close 'systemctl suspend'
 
 
 ###########################################################################################
