@@ -94,7 +94,6 @@ riverctl map normal Super+Alt W spawn '~/.config/hypr/scripts/waybar-toggle'
 ###### System commands ######
 riverctl map normal None Control+Alt W spawn '~/.config/hypr/scripts/cp-wlan'
 riverctl map normal None Control+Alt T spawn  '~/.config/hypr/scripts/cp-tun'
-riverctl map normal Super+Alt M spawn '~/.config/hypr/scripts/volume --toggle-mic'     # Custom function key
 
 
 ###########################################################################################
