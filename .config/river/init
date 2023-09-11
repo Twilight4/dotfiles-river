@@ -78,10 +78,10 @@ riverctl map normal Super+Shift V spawn '~/.config/hypr/scripts/vpn'
 # Super+Alt keys #
 ##################
 ####### Screen record #######
-#riverctl map normal Super+Alt R spawn '~/.config/hypr/scripts/record-screen'
-riverctl map normal Super+Alt R spawn '~/.config/hypr/scripts/record-script'
-riverctl map normal Super+Shift+Alt R spawn '~/.config/hypr/scripts/record-script --sound'
-riverctl map normal Super+Control+Alt R spawn '~/.config/hypr/scripts/record-script-fullscreen'
+riverctl map normal Super+Alt R spawn '~/.config/hypr/scripts/record-screen'
+#riverctl map normal Super+Alt R spawn '~/.config/hypr/scripts/record-script'
+#riverctl map normal Super+Shift+Alt R spawn '~/.config/hypr/scripts/record-script --sound'
+#riverctl map normal Super+Control+Alt R spawn '~/.config/hypr/scripts/record-script-fullscreen'
 
 ####### Waybar toggle #######
 riverctl map normal Super+Alt W spawn '~/.config/hypr/scripts/waybar-toggle'
