@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the letter tags
-tags=("I" "O" "W" "E" "M" "N" "Comma" "Period")
+tags=("I" "O" "W" "E" "M" "N" "P" "U")
 
 # Function to focus a specific tag
 focus_tag() {
