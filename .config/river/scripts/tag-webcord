@@ -22,4 +22,5 @@ if ! is_waterfox_running; then
     riverctl spawn 'webcord'
 else
     focus_tag 5
+    riverctl spawn 'webcord'
 fi
