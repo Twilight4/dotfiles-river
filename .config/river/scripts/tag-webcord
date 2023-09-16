@@ -22,5 +22,6 @@ if ! is_waterfox_running; then
     riverctl spawn 'webcord'
 else
     focus_tag 5
+    # Spawn 'webcord' command to open up client, the daemon is ran from autostart
     riverctl spawn 'webcord'
 fi
