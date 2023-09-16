@@ -15,8 +15,9 @@ is_waterfox_running() {
     pgrep -x "waterfox-g" >/dev/null
 }
 
-is_youtube_runnning() {
-    ps aux | grep -v grep | grep -i -e VSZ -e https://www.youtube.com/ >/dev/null
+# Function to check if 'waterfox-g' is running with YouTube
+is_youtube_running() {
+    pgrep -a "waterfox-g" | grep -i "youtube.com" >/dev/null
 }
 
 # Focus on tag "P" if 'waterfox-g' is not running
@@ -25,13 +26,11 @@ if ! is_waterfox_running; then
     # Spawn 'waterfox-g' only if it was not running
     riverctl spawn 'waterfox-g --new-window "https://www.youtube.com/"'
 else
-    focus_tag 7
-fi
-
-if ! is_youtube_runnning; then
-    focus_tag 7
-    # Spawn 'waterfox-g' only if youtube is not running
-    riverctl spawn 'waterfox-g --new-window "https://www.youtube.com/"'
-else
-    focus_tag 7
+    # Check if it's running with YouTube, if so, focus on tag "P"
+    if is_youtube_running; then
+        focus_tag 7
+    else
+        focus_tag 7
+        riverctl spawn 'waterfox-g --new-window "https://www.youtube.com/"'
+    fi
 fi
