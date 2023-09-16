@@ -23,5 +23,5 @@ if ! is_emacsclient_running; then
 else
     focus_tag 4  # Use tag "E" (tag number 4)
     # Spawn 'emacsclient' command to open up client, the daemon is ran from autostart
-    riverctl spawn 'emacsclient -c -a emacs'
+    riverctl spawn 'emacsclient -r -a emacs'
 fi
