@@ -9,6 +9,7 @@ killall cmst
 killall udiskie
 killall waybar
 killall foot
+killall electron
 killall udev-block-notify
 killall wl-clip-persist
 killall wl-paste
