@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# Define the letter tags
+tags=("I" "O" "W" "E" "M" "N" "P" "U")
+
+# Function to focus a specific tag
+focus_tag() {
+    tag=$1
+    tags_bit=$((1 << (tag - 1)))
+    riverctl set-focused-tags "$tags_bit"
+}
+
+# Function to check if 'waterfox-g' process is running
+is_waterfox_running() {
+    pgrep -x "waterfox-g" >/dev/null
+}
+
+is_youtube_runnning() {
+    ps aux | grep -v grep | grep -i -e VSZ -e https://www.youtube.com/ >/dev/null
+}
+
+# Focus on tag "P" if 'waterfox-g' is not running
+if ! is_waterfox_running; then
+    focus_tag 7
+    # Spawn 'waterfox-g' only if it was not running
+    riverctl spawn 'waterfox-g --new-window "https://www.youtube.com/"'
+else
+    focus_tag 7
+fi
+
+if ! is_youtube_runnning; then
+    focus_tag 7
+    # Spawn 'waterfox-g' only if youtube is not running
+    riverctl spawn 'waterfox-g --new-window "https://www.youtube.com/"'
+else
+    focus_tag 7
+fi
