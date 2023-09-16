@@ -240,26 +240,26 @@ riverctl map normal Super N spawn '~/.config/river/scripts/tag-newsboat'   # New
 # Define the letter tags for focus tag [0-7]
 # If you don't want to use my "Focus Tags of App Keys" implementation then 
 # just comment it out and add the letters back respectively: "I" "O" "W" "E" "N"
-tags_focus=("" "" "" "" "M" "" "Semicolon" "Apostrophe")
+tags_focus=("" "" "" "N" "M" "" "P" "U")
 
 # Define the letter tags
-tags=("I" "O" "W" "E" "M" "N" "Semicolon" "Apostrophe")
+tags=("I" "O" "W" "E" "M" "N" "P" "U")
 
-# Super+[I-O-M-Semicolon-Apostrophe] to focus tag [0-7]
+# Super+[I-O-M-P-U] to focus tag [0-7]
 for i in $(seq 1 8); do
     tag="${tags_focus[i - 1]}"
     tags_bit=$((1 << (i - 1)))
     riverctl map normal Super "$tag" set-focused-tags "$tags_bit"
 done
 
-# Super+Shift+[I-O-W-E-M-N-Semicolon-Apostrophe] to tag focused view with tag [0-7]
+# Super+Shift+[I-O-W-E-M-N-P-U] to tag focused view with tag [0-7]
 for i in $(seq 1 8); do
     tag="${tags[i - 1]}"
     tags_bit=$((1 << (i - 1)))
     riverctl map normal Super+Shift "$tag" set-view-tags "$tags_bit"
 done
 
-# Super+Ctrl+[I-O-W-E-M-N-Semicolon-Apostrophe] to toggle focus of tag [0-7]
+# Super+Ctrl+[I-O-W-E-M-N-P-U] to toggle focus of tag [0-7]
 for i in $(seq 1 8); do
     tag="${tags[i - 1]}"
     tags_bit=$((1 << (i - 1)))
@@ -268,7 +268,7 @@ done
 
 
 ###########################################################################################
-# VIEW RULES                                                                            #
+# VIEW RULES                                                                              #
 ###########################################################################################
 ####### Floating Views #######
 # By Title
