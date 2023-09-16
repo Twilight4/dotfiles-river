@@ -10,15 +10,15 @@ focus_tag() {
     riverctl set-focused-tags "$tags_bit"
 }
 
-# Function to check if 'logseq-desktop' process is running
+# Function to check if 'logseq' process is running
 is_logseq_running() {
     pgrep -x "logseq" >/dev/null
 }
 
-# Focus on tag "E" if 'logseq-desktop' is not running, else just focus
+# Focus on tag "E" if 'logseq' is not running, else just focus
 if ! is_logseq_running; then
     focus_tag 4  # Use tag "E" (tag number 4)
-    # Spawn 'logseq-desktop' only if it was not running
+    # Spawn 'logseq' only if it was not running
     riverctl spawn 'logseq'
 else
     focus_tag 4  # Use tag "E" (tag number 4)
