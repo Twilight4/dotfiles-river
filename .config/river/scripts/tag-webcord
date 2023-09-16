@@ -10,15 +10,15 @@ focus_tag() {
     riverctl set-focused-tags "$tags_bit"
 }
 
-# Function to check if 'waterfox-g' process is running
+# Function to check if 'electron' process is running
 is_waterfox_running() {
     pgrep -x "electron" >/dev/null
 }
 
-# Focus on tag "W" if 'waterfox-g' is not running, else just focus
+# Focus on tag "W" if 'webcord' is not running, else just focus
 if ! is_waterfox_running; then
     focus_tag 5
-    # Spawn 'waterfox-g' only if it was not running
+    # Spawn 'webcord' only if it was not running
     riverctl spawn 'webcord'
 else
     focus_tag 5
