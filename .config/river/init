@@ -105,13 +105,13 @@ riverctl spawn 'systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_
 riverctl spawn '/usr/lib/polkit-kde-authentification-agent-1'
 riverctl spawn 'foot --server'
 riverctl spawn 'emacs --daemon'
-riverctl spawn 'webcord --start-minimized'
+#riverctl spawn 'webcord --start-minimized'   # Starts on tag 1 by default
 #riverctl spawn 'mako'
 riverctl spawn 'udiskie'
 riverctl spawn 'udev-block-notify'
 riverctl spawn 'waybar'
 
-####### wallpaper #######
+####### Wallpaper #######
 # Resize the image to match your screens dimensions and avoid taking up a lot of memory by swaybg:
   # convert <input_jpg> -resize 1920x1080 <output_jpg>         
 [[ -e ~/.config/hypr/wallpapers/nordic.jpg ]] && riverctl spawn "swaybg -m fill -i ~/.config/hypr/wallpapers/nordic.jpg"
