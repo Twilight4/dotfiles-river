@@ -19,8 +19,8 @@ riverctl map normal Super+Control+Shift Grave spawn 'systemctl reboot'          
 riverctl map normal Super+Control R spawn "~/.config/river/scripts/killall-and-restart"   # Reload river
 
 ###### Wofi Menu Keys ######
-riverctl map normal Super+Shift U spawn 'pkill wofi || wofi-beats.sh'            # Wofi radio
-#riverctl map normal Super+Shift U spawn 'pkill wofi || wofi-emoji.sh'            # Emoji menu
+riverctl map normal Super Z spawn 'pkill wofi || wofi-beats.sh'                  # Wofi radio
+riverctl map normal Super X spawn 'pkill wofi || wofi-emoji.sh'                  # Emoji menu
 #riverctl map normal Super P spawn 'pkill wlogout || wlogout'                     # Session manager
 #riverctl map normal Super C spawn 'pkill wofi || wofi-clipboard.sh'              # Clipboard menu
 
