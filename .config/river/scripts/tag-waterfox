@@ -19,7 +19,7 @@ is_waterfox_running() {
 if ! is_waterfox_running; then
     focus_tag 3
     # Spawn 'waterfox-g' only if it was not running
-    riverctl spawn 'waterfox-g -P default-release'
+    riverctl spawn 'waterfox-g -P default-release --new-window'
 else
     focus_tag 3
 fi
