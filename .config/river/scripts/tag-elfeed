@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Define the letter tags
+tags=("I" "O" "W" "E" "M" "N" "P" "U")
+
+# Function to focus a specific tag
+focus_tag() {
+    tag=$1
+    tags_bit=$((1 << (tag - 1)))
+    riverctl set-focused-tags "$tags_bit"
+}
+
+# Function to check if the emacs process is running with specific command
+is_emacs_running_with_command() {
+    pgrep -af "emacsclient -c -e" >/dev/null
+}
+
+# Focus on tag "N" and spawn Emacs with the desired command if it's not running
+focus_tag 6  # Use tag "N" (tag number 6)
+
+if ! is_emacs_running_with_command; then
+    # Spawn Emacs only if it was not running with the specific command
+    riverctl spawn 'emacsclient -c -e "(run-elfeed-frame)"'
+fi
