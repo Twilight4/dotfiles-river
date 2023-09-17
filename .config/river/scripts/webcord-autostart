@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Run webcord
+riverctl spawn 'webcord'
+sleep 1
+
+# Move the window to tag 7 ("M")
+tags_bit="128" # 7th bit is set (2^7 = 128)
+riverctl set-view-tags "$tags_bit"
