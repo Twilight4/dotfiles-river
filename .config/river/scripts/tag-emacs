@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the letter tags
-tags=("I" "O" "W" "E" "M" "N" "P" "U")
+tags=("I" "O" "W" "E" "M" "N" "Comma" "Period")
 
 # Function to focus a specific tag
 focus_tag() {
@@ -12,16 +12,14 @@ focus_tag() {
 
 # Function to check if 'emacsclient' process is running
 is_emacsclient_running() {
-    pgrep -x "emacs" >/dev/null
+    pgrep -x "emacsclient" >/dev/null
 }
 
 # Focus on tag "E" if 'emacsclient' is not running, else just focus
 if ! is_emacsclient_running; then
     focus_tag 4  # Use tag "E" (tag number 4)
     # Spawn 'emacsclient' only if it was not running
-    riverctl spawn 'emacsclient -c -a emacs'
+    riverctl spawn 'emacsclient -r -a emacs'
 else
     focus_tag 4  # Use tag "E" (tag number 4)
-    # Spawn 'emacsclient' command to open up client, the daemon is ran from autostart
-    riverctl spawn 'emacsclient -r -a emacs'
 fi
