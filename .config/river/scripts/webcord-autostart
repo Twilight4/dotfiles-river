@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Run webcord
+# Run webcord (can't run as minimized bcs it moves currently focused view)
 riverctl spawn 'webcord'
 sleep 1
 
