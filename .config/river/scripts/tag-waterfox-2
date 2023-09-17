@@ -16,20 +16,20 @@ is_waterfox_running() {
 }
 
 is_profile_running() {
-    pgrep -a "waterfox-g" | grep -i "-P WORK" >/dev/null
+    pgrep -a "waterfox-g" | grep -i "-P work" >/dev/null
 }
 
 # Focus on tag "W" if 'waterfox-g' is not running, else just focus
 if ! is_waterfox_running; then
     focus_tag 3
     # Spawn 'waterfox-g' only if it was not running
-    riverctl spawn 'waterfox-g -P WORK --new-window'
+    riverctl spawn 'waterfox-g -P work --new-window'
 else
     # Check if it's running with profile, if so, focus on tag "W"
     if is_profile_running; then
         focus_tag 3
     else
         focus_tag 3
-        riverctl spawn 'waterfox-g -P WORK --new-window'
+        riverctl spawn 'waterfox-g -P work --new-window'
     fi
 fi
