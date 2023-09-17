@@ -1,10 +1,15 @@
 #!/bin/bash
 
+tags_bit="16" # 5th bit is set (2^4 = 16)
+riverctl set-focused-tags "$tags_bit"
+
 # Run webcord (can't run as minimized bcs it moves currently focused view)
 riverctl spawn 'webcord -m'
 # Wait untill the view pops up
-sleep 1
+#sleep 1
 
 # Move the window to tag 5 ("M")
-tags_bit="16" # 5th bit is set (2^4 = 16)
-riverctl set-view-tags "$tags_bit"
+
+#tags_bit="16" # 5th bit is set (2^4 = 16)
+#riverctl set-view-tags "$tags_bit"
+
