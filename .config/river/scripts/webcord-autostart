@@ -2,12 +2,13 @@
 
 # Switch to tag 5 ("M")
 tags_bit_5="16" # 5th bit is set (2^4 = 16)
-riverctl set-focused-tags "$tags_bit"
+riverctl set-focused-tags "$tags_bit_5"
 
 # Run webcord
 riverctl spawn 'webcord -m'
+sleep 0.5      # Wait untill the command runs
 
 # Switch back to tag 1 ("I")
 tags_bit_1="1" # 1st bit is set (2^0 = 1)
-riverctl set-focused-tags "$tags_bit"
+riverctl set-focused-tags "$tags_bit_1"
 
