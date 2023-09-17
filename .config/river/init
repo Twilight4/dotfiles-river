@@ -236,15 +236,14 @@ riverctl map normal Super O spawn '~/.config/river/scripts/tag-kitty-2'         
 riverctl map normal Super W spawn '~/.config/river/scripts/tag-waterfox'           # Web browser (Waterfox)
 riverctl map normal Super B spawn '~/.config/river/scripts/tag-waterfox-1'         # Web browser (Waterfox-1)
 riverctl map normal Super+Shift B spawn '~/.config/river/scripts/tag-waterfox-2'   # Web browser (Waterfox-2)
-riverctl map normal Super P spawn '~/.config/river/scripts/tag-waterfox-yt'        # Web browser (Waterfox-yt)
 riverctl map normal Super M spawn '~/.config/river/scripts/tag-webcord'            # Messenger (Webcord)
 riverctl map normal Super E spawn '~/.config/river/scripts/tag-emacs'              # Editor (Emacs)
 #riverctl map normal Super N spawn '~/.config/river/scripts/tag-newsboat'           # News (Newsboat)
 
 # Define the letter tags for focus tag [0-7]
 # If you don't want to use my "Focus Tags of App Keys" implementation then 
-# just comment it out and add the letters back respectively: "I" "O" "W" "E" "N"
-tags_focus=("" "" "" "" "" "N" "" "U")
+# just comment it out and add the letters back respectively: "I" "O" "W" "E" "M"
+tags_focus=("" "" "" "" "" "N" "P" "U")
 
 # Define the letter tags
 tags=("I" "O" "W" "E" "M" "N" "P" "U")
