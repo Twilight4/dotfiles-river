@@ -278,6 +278,7 @@ done
 # By Title
 riverctl float-filter-add title 'Picture-in-Picture'
 riverctl float-filter-add title 'Waterfox — Sharing Indicator'
+riverctl float-filter-add title '"Close Waterfox" waterfox'
 riverctl float-filter-add title 'qt5ct'
 riverctl float-filter-add title 'Calculator'
 riverctl float-filter-add title 'pavucontrol'
