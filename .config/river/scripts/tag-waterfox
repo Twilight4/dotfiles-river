@@ -12,7 +12,7 @@ focus_tag() {
 
 # Function to check if 'waterfox-g' process is running
 is_waterfox_running() {
-    pgrep -x "waterfox-g" >/dev/null
+    pgrep -a "waterfox-g" | grep "default-release" >/dev/null
 }
 
 # Focus on tag "W" if 'waterfox-g' is not running, else just focus
