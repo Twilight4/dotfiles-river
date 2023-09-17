@@ -19,7 +19,7 @@ is_emacsclient_running() {
 if ! is_emacsclient_running; then
     focus_tag 4  # Use tag "E" (tag number 4)
     # Spawn 'emacsclient' only if it was not running
-    riverctl spawn 'emacsclient -r -a emacs'
+    riverctl spawn 'emacsclient -r'
 else
     focus_tag 4  # Use tag "E" (tag number 4)
 fi
