@@ -16,7 +16,7 @@ is_waterfox_running() {
 }
 
 is_profile_running() {
-    pgrep -a "waterfox-g" | grep -i "-P osint" >/dev/null
+    pgrep -a "waterfox-g" | grep -i "osint" >/dev/null
 }
 
 # Focus on tag "W" if 'waterfox-g' is not running, else just focus
