@@ -12,14 +12,14 @@ focus_tag() {
 
 # Function to check if 'waterfox-g' process is running
 is_waterfox_running() {
-    pgrep -a "waterfox-g" | grep "twilight" >/dev/null
+    pgrep -a "waterfox-g" | grep "default" >/dev/null
 }
 
 # Focus on tag "W" if 'waterfox-g' is not running, else just focus
 if ! is_waterfox_running; then
     focus_tag 3
     # Spawn 'waterfox-g' only if it was not running
-    riverctl spawn 'waterfox-g -P twilight --new-window'
+    riverctl spawn 'waterfox-g -P default --new-window'
 else
     focus_tag 3
 fi
