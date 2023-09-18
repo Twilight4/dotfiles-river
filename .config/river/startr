@@ -17,7 +17,6 @@ export XDG_SESSION_TYPE=wayland                       # This effects Qt and othe
 export MUTTER_DEBUG_ENABLE_ATOMIC_KMS=0               # Fix slightly sloppy mouse response issue
 export CLUTTER_PAINT=disable-dynamic-max-render-time  # Get a smoother frame rate
 export XDG_CURRENT_DESKTOP=river                      # Sanity check for river on Wayland
-export XDG_CURRENT_DESKTOP=river                      # Sanity check for river on Wayland
 export _JAVA_AWT_WM_NONREPARENTING=1                  # Java apps do not support Wayland natively
 export XCURSOR_THEME=Numix-Cursor-Light               # Cursor theme for Xwayland (also set in config file)
 export XCURSOR_SIZE=24                                # Cursor size for Xwayland (also set in config file)
