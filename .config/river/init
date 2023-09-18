@@ -245,10 +245,10 @@ riverctl map normal Super P spawn '~/.config/river/scripts/tag-super-productivit
 # Define the letter tags for focus tag [0-7]
 # If you don't want to use my "Focus Tags of App Keys" implementation then 
 # just comment it out and add the letters back respectively: "I" "O" "W" "E" "M" "N" "P"
-tags_focus=("" "" "" "" "" "" "" "U")
+tags_focus=("" "" "" "" "" "" "U" "")
 
 # Define the letter tags
-tags=("I" "O" "W" "E" "M" "N" "P" "U")
+tags=("I" "O" "W" "E" "M" "N" "U" "P")
 
 # Super+[I-O-M-P-U] to focus tag [0-7]
 for i in $(seq 1 8); do
