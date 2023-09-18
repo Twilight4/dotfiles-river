@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Check if required commands exist
+commands=("riverctl" "webcord" "superproductivity")
+for cmd in "${commands[@]}"; do
+    if ! command -v "$cmd" &> /dev/null; then
+        echo "$cmd could not be found. Make sure it's installed and in your PATH."
+        exit 1
+    fi
+done
+
+# Absolute paths (replace /path/to/... with actual paths)
+RIVERCTL="/usr/bin/riverctl"
+WEBCORD="/usr/bin/webcord"
+SUPERPRODUCTIVITY="/usr/bin/superproductivity"
+LOGFILE="/tmp/logfile.log"
+
+# Webcord - tag 5 ("M")
+$RIVERCTL set-focused-tags "16" # 5th bit is set (2^4 = 16)
+$RIVERCTL spawn "$WEBCORD -m"
+sleep 0.6      # Wait until the command runs
+
+# Super-productivity - tag 8 ("P")
+$RIVERCTL set-focused-tags "128" # 7th bit is set (2^7 = 128)
+$RIVERCTL spawn "$SUPERPRODUCTIVITY"
+#$RIVERCTL set-focused-tags "256" # 8th bit is set (2^8 = 256)
+#$RIVERCTL spawn "$SUPERPRODUCTIVITY"
+sleep 1        # Wait until the command runs
+
+# Return to tag 1 ("I")
+$RIVERCTL set-focused-tags "1" # 1st bit is set (2^0 = 1)
+
+# Logging
+echo "Autostart script executed successfully" >> "$LOGFILE"
+
