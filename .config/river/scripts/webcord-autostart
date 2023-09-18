@@ -6,7 +6,7 @@ riverctl set-focused-tags "$tags_bit_5"
 
 # Run webcord
 riverctl spawn 'webcord -m'
-sleep 0.5      # Wait untill the command runs
+sleep 0.6      # Wait untill the command runs
 
 # Switch back to tag 1 ("I")
 tags_bit_1="1" # 1st bit is set (2^0 = 1)
