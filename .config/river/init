@@ -239,12 +239,13 @@ riverctl map normal Super+Shift B spawn '~/.config/river/scripts/tag-waterfox-2'
 riverctl map normal Super E spawn '~/.config/river/scripts/tag-emacs'              # Editor (Emacs)
 riverctl map normal Super M spawn '~/.config/river/scripts/tag-webcord'            # Messenger (Webcord)
 riverctl map normal Super N spawn '~/.config/river/scripts/tag-elfeed'             # News (Elfeed)
+riverctl map normal Super P spawn '~/.config/river/scripts/tag-super-productivity' # Productivity tool (Super-productivity)
 #riverctl map normal Super N spawn '~/.config/river/scripts/tag-newsboat'           # News (Newsboat)
 
 # Define the letter tags for focus tag [0-7]
 # If you don't want to use my "Focus Tags of App Keys" implementation then 
-# just comment it out and add the letters back respectively: "I" "O" "W" "E" "M"
-tags_focus=("" "" "" "" "" "" "P" "U")
+# just comment it out and add the letters back respectively: "I" "O" "W" "E" "M" "N" "P"
+tags_focus=("" "" "" "" "" "" "" "U")
 
 # Define the letter tags
 tags=("I" "O" "W" "E" "M" "N" "P" "U")

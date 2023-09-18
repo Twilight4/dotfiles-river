@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Define the letter tags
+tags=("I" "O" "W" "E" "M" "N" "P" "U")
+
+# Function to focus a specific tag
+focus_tag() {
+    tag=$1
+    tags_bit=$((1 << (tag - 1)))
+    riverctl set-focused-tags "$tags_bit"
+}
+
+# Function to check if 'superproductivity' process is running
+is_superproductivity_running() {
+    pgrep -f "superproductivity" >/dev/null
+}
+
+# Focus on tag "U" if 'superproductivity' is not running, else just focus
+if ! is_superproductivity_running; then
+    focus_tag 8
+    # Spawn 'superproductivity' only if it was not running
+    riverctl spawn 'superproductivity'
+else
+    focus_tag 8
+fi
