@@ -300,10 +300,6 @@ riverctl float-filter-add app-id 'xdg-desktop-portal-kde'
 riverctl float-filter-add app-id 'org.kde.polkit-kde-authentication-agent-1'
 riverctl float-filter-add app-id 'tty-clock'
 
-# Views which should not use client side decorations (Xwayland apps)
-#riverctl csd-filter-remove app-id "logseq"
-
-
 ###########################################################################################
 # MISCS SETTINGS                                                                          #
 ###########################################################################################
