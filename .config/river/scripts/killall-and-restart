@@ -16,6 +16,7 @@ killall wl-paste
 killall wallpaper-changer
 killall emacs
 killall battery-notif
+killall superproductivity
 killall swaybg
 killall kitty
 killall rivertile
