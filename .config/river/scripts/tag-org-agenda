@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the letter tags
-tags=("I" "O" "W" "E" "M" "N" "P" "U")
+tags=("I" "O" "W" "E" "M" "N" "U" "P")
 
 # Function to focus a specific tag
 focus_tag() {
@@ -15,7 +15,7 @@ is_emacs_running_with_command() {
     pgrep -af "emacsclient -c --eval" >/dev/null
 }
 
-# Focus on tag "N" and spawn Emacs with the desired command if it's not running
+# Focus on tag "P" and spawn Emacs with the desired command if it's not running
 focus_tag 8  # Use tag "P" (tag number 8)
 
 if ! is_emacs_running_with_command; then
