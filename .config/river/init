@@ -239,7 +239,8 @@ riverctl map normal Super+Shift B spawn '~/.config/river/scripts/tag-waterfox-2'
 riverctl map normal Super E spawn '~/.config/river/scripts/tag-emacs'              # Editor (Emacs)
 riverctl map normal Super M spawn '~/.config/river/scripts/tag-webcord'            # Messenger (Webcord)
 riverctl map normal Super N spawn '~/.config/river/scripts/tag-elfeed'             # News (Elfeed)
-riverctl map normal Super P spawn '~/.config/river/scripts/tag-super-productivity' # Productivity tool (Super-productivity)
+riverctl map normal Super P spawn '~/.config/river/scripts/tag-org-agenda'         # Agenda (Emacs)
+riverctl map normal Super+Shift Slash spawn '~/.config/river/scripts/tag-super-productivity'  # Productivity tool (Super-productivity)
 #riverctl map normal Super N spawn '~/.config/river/scripts/tag-newsboat'           # News (Newsboat)
 
 # Define the letter tags for focus tag [0-7]
