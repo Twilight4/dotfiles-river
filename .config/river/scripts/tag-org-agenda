@@ -16,7 +16,7 @@ is_emacs_running_with_command() {
 }
 
 # Focus on tag "N" and spawn Emacs with the desired command if it's not running
-focus_tag 8  # Use tag "P" (tag number 7)
+focus_tag 8  # Use tag "P" (tag number 8)
 
 if ! is_emacs_running_with_command; then
     # Spawn Emacs only if it was not running with the specific command
