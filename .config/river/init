@@ -182,10 +182,6 @@ riverctl map normal Super+Shift J swap previous
 riverctl map normal Super Comma focus-output next
 riverctl map normal Super Period send-to-output next
 
-######## Move View to Output #######
-riverctl map normal Super+Shift Period send-to-output next
-riverctl map normal Super+Shift Comma send-to-output previous
-
 ####### Increment/decrement the main count of rivertile - stack views on left side (default is 1) #######
 riverctl map normal Super H send-layout-cmd rivertile "main-count +1"
 riverctl map normal Super L send-layout-cmd rivertile "main-count -1"
