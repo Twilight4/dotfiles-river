@@ -34,5 +34,5 @@ echo '
 if [ "$(tty)" = "/dev/tty1" ]; then
     pgrep river || exec ~/.config/river/startr
 fi
-' > "~/.config/zsh/.zprofile"
+' > "$HOME/.config/zsh/.zprofile"
 ```
