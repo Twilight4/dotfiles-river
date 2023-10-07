@@ -28,7 +28,7 @@ Also to set the GTK default applications, for example if you want the "open in t
 nvim /usr/share/glib-2.0/schemas/org.gnome.desktop.default-applications.gschema.xml
 gsettings set org.gnome.desktop.default-applications.terminal exec alacritty.desktop
 ```
-### Automatic loading river upon log in
+### Automatically load river upon log in
 ```bash
 echo 'if [ "$(tty)" = "/dev/tty1" ]; then
     pgrep river || exec ~/.config/river/startr
