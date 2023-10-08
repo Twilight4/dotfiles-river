@@ -38,7 +38,7 @@ riverctl map normal Super T spawn 'athena-welcome'                              
 ####### Fun Commands: musikcube, btop, cava, tty-clock, cmatrix, neofetch, pipes, mpv ######
 riverctl map normal Super+Shift Escape spawn 'footclient -a btop -e btop'                                  # Btop
 riverctl map normal Super+Control Y spawn 'footclient -a cava -e cava'                                     # Cava
-riverctl map normal Super+Control U spawn 'footclient -a clock -e tty-clock -c -C 6 -r -s -f "%A, %B, %d"' # Clock
+riverctl map normal Super+Control U spawn 'footclient -a clock -e tty-clock -c -C 4 -r -s -f "%A, %B, %d"' # Clock
 riverctl map normal Super+Control I spawn 'footclient -a musikcube -e musikcube'                           # Music
 riverctl map normal Super+Control O spawn 'footclient -a cmatrix -e cmatrix -a'                            # Matrix
 riverctl map normal Super+Control P spawn 'footclient -a pipes -e ~/.config/zsh/bash-scripts/pipes.sh'     # Pipes
