@@ -67,7 +67,7 @@ riverctl map normal Control+Shift Print spawn 'grim - | swappy -f -'
 riverctl map normal Super+Shift C spawn '~/.config/hypr/scripts/caffeine'
 
 ####### Swaybg #######
-riverctl map normal Super+Shift B spawn '~/.config/hypr/scripts/wallpaper'
+riverctl map normal Super+at B spawn '~/.config/hypr/scripts/wallpaper'
 
 ####### VPN #######
 riverctl map normal Super+Shift V spawn '~/.config/hypr/scripts/vpn'
