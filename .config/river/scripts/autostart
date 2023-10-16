@@ -32,4 +32,3 @@ $RIVERCTL set-focused-tags "1" # 1st bit is set (2^0 = 1)
 
 # Logging
 echo "Autostart script executed successfully" >> "$LOGFILE"
-
