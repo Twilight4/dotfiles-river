@@ -231,7 +231,7 @@ riverctl map normal Super W spawn '~/.config/river/scripts/tag-firefox'         
 riverctl map normal Super B spawn '~/.config/river/scripts/tag-firefox-1'         # Web browser (Firefox-1)
 riverctl map normal Super+Shift B spawn '~/.config/river/scripts/tag-firefox-2'   # Web browser (Firefox-2)
 riverctl map normal Super E spawn '~/.config/river/scripts/tag-emacs'              # Editor (Emacs)
-#riverctl map normal Super H spawn '~/.config/river/scripts/tag-webcord'            # Messaging app (Webcord)
+riverctl map normal Super H spawn '~/.config/river/scripts/tag-webcord'            # Messaging app (Webcord)
 riverctl map normal Super N spawn '~/.config/river/scripts/tag-elfeed'             # Newsfeed (Elfeed)
 riverctl map normal Super P spawn '~/.config/river/scripts/tag-org-agenda'         # Agenda (Emacs)
 riverctl map normal Super Slash spawn '~/.config/river/scripts/tag-super-productivity'  # Productivity tool (Super-productivity)
