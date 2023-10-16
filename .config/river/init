@@ -245,21 +245,21 @@ tags_focus=("" "" "" "" "" "" "U" "")
 # Define the letter tags
 tags=("I" "O" "W" "E" "H" "N" "U" "P")
 
-# Super+[I-O-M-P-U] to focus tag [0-7]
+# Focus tag [0-7]
 for i in $(seq 1 8); do
     tag="${tags_focus[i - 1]}"
     tags_bit=$((1 << (i - 1)))
     riverctl map normal Super "$tag" set-focused-tags "$tags_bit"
 done
 
-# Super+Shift+[I-O-W-E-M-N-P-U] to tag focused view with tag [0-7]
+# Tag focused view with tag [0-7]
 for i in $(seq 1 8); do
     tag="${tags[i - 1]}"
     tags_bit=$((1 << (i - 1)))
     riverctl map normal Super+Shift "$tag" set-view-tags "$tags_bit"
 done
 
-# Super+Ctrl+[I-O-W-E-M-N-P-U] to toggle focus of tag [0-7]
+# Toggle focus of tag [0-7]
 for i in $(seq 1 8); do
     tag="${tags[i - 1]}"
     tags_bit=$((1 << (i - 1)))
