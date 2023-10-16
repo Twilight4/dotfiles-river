@@ -103,7 +103,7 @@ riverctl spawn 'systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_
 riverctl spawn '/usr/lib/polkit-kde-authentification-agent-1'
 riverctl spawn 'foot --server'
 riverctl spawn 'emacs --daemon'
-riverctl spawn '~/.config/river/scripts/autostart'
+#riverctl spawn '~/.config/river/scripts/autostart'
 #riverctl spawn 'mako'
 riverctl spawn 'udiskie'
 riverctl spawn 'udev-block-notify'
