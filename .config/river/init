@@ -16,7 +16,7 @@ riverctl map normal Super+Shift Y spawn 'lock-suspend'                          
 riverctl map normal Super+Control+Shift Q exit                                   # Exit wayland session/compositor
 riverctl map normal Super+Control+Shift S spawn 'systemctl poweroff'             # Shutdown
 riverctl map normal Super+Control+Shift R spawn 'systemctl reboot'               # Reboot
-riverctl map normal Super+Control R spawn "~/.config/river/scripts/killall-and-restart"   # Reload river
+#riverctl map normal Super+Control R spawn "~/.config/river/scripts/killall-and-restart"   # Reload river
 
 ###### Wofi Menu Keys ######
 riverctl map normal Super Z spawn 'pkill wofi || wofi-beats.sh'                  # Wofi radio
