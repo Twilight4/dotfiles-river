@@ -224,12 +224,12 @@ riverctl map resize Alt L resize horizontal 100
 # TAG MANAGEMENT                                                                          #
 ###########################################################################################
 ###### Focus Tags of App Keys ######
-riverctl map normal Super M spawn 'kitty -1 -T kitty-1 --class kitty-2'       # Terminal standalone (Kitty)
+riverctl map normal Super M spawn 'kitty -1 -T kitty-1 --class kitty-2'            # Terminal standalone (Kitty)
 riverctl map normal Super I spawn '~/.config/river/scripts/tag-kitty-1'            # Terminal (Kitty-1)
 riverctl map normal Super O spawn '~/.config/river/scripts/tag-kitty-2'            # Terminal (Kitty-2)
-riverctl map normal Super W spawn '~/.config/river/scripts/tag-firefox'           # Web browser (Firefox)
-riverctl map normal Super B spawn '~/.config/river/scripts/tag-firefox-1'         # Web browser (Firefox-1)
-riverctl map normal Super+Shift B spawn '~/.config/river/scripts/tag-firefox-2'   # Web browser (Firefox-2)
+riverctl map normal Super W spawn '~/.config/river/scripts/tag-firefox'            # Web browser (Firefox)
+riverctl map normal Super B spawn '~/.config/river/scripts/tag-firefox-1'          # Web browser (Firefox-1)
+riverctl map normal Super+Shift B spawn '~/.config/river/scripts/tag-firefox-2'    # Web browser (Firefox-2)
 #riverctl map normal Super E spawn '~/.config/river/scripts/tag-emacs'              # Editor (Emacs)
 #riverctl map normal Super H spawn '~/.config/river/scripts/tag-webcord'            # Messaging app (Webcord)
 riverctl map normal Super N spawn '~/.config/river/scripts/tag-elfeed'             # Newsfeed (Elfeed)
@@ -237,30 +237,30 @@ riverctl map normal Super P spawn '~/.config/river/scripts/tag-org-agenda'      
 riverctl map normal Super Slash spawn '~/.config/river/scripts/tag-super-productivity'  # Productivity tool (Super-productivity)
 #riverctl map normal Super N spawn '~/.config/river/scripts/tag-newsboat'           # Newsfeed (Newsboat)
 
-# Define the letter tags for focus tag [0-7]
+# Define the letter tags for focus tag [0-8]
 # If you don't want to use my "Focus Tags of App Keys" implementation then 
-# just comment it out and add the letters back respectively: "I" "O" "W" "E" "H" "N" "P"
-tags_focus=("" "" "" "E" "H" "" "U" "")
+# just comment it out and add the letters back respectively: "I" "O" "W" "E" "H" "N" "P" "L"
+tags_focus=("" "" "" "E" "H" "" "U" "" "L")
 
 # Define the letter tags
-tags=("I" "O" "W" "E" "H" "N" "U" "P")
+tags=("I" "O" "W" "E" "H" "N" "U" "P" "L")
 
-# Focus tag [0-7]
-for i in $(seq 1 8); do
+# Focus tag [0-8]
+for i in $(seq 1 9); do
     tag="${tags_focus[i - 1]}"
     tags_bit=$((1 << (i - 1)))
     riverctl map normal Super "$tag" set-focused-tags "$tags_bit"
 done
 
-# Tag focused view with tag [0-7]
-for i in $(seq 1 8); do
+# Tag focused view with tag [0-8]
+for i in $(seq 1 9); do
     tag="${tags[i - 1]}"
     tags_bit=$((1 << (i - 1)))
     riverctl map normal Super+Shift "$tag" set-view-tags "$tags_bit"
 done
 
-# Toggle focus of tag [0-7]
-for i in $(seq 1 8); do
+# Toggle focus of tag [0-8]
+for i in $(seq 1 9); do
     tag="${tags[i - 1]}"
     tags_bit=$((1 << (i - 1)))
     riverctl map normal Super+Control "$tag" toggle-focused-tags "$tags_bit"
