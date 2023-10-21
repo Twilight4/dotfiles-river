@@ -30,7 +30,7 @@ riverctl map normal Super C spawn 'pkill rofi || clipboard.sh'                  
 
 ####### Floating Views #######
 riverctl map normal Super+Shift Return spawn 'footclient -a "foot-float"'        # Foot
-riverctl map normal Super+Shift Z spawn 'webcam'                                 # Webcam
+riverctl map normal Super+Shift Z spawn 'webcam.sh'                              # Webcam
 riverctl map normal Super+Shift V spawn 'role-viewer'                            # Tools list 
 riverctl map normal Super V spawn 'hacking-variables'                            # Payload list
 riverctl map normal Super T spawn 'athena-welcome'                               # Athena welcome
