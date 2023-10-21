@@ -240,7 +240,7 @@ riverctl map normal Super P spawn '~/.config/river/scripts/tag-agenda'          
 # Other
 riverctl map normal Super Slash spawn '~/.config/river/scripts/tag-super-productivity'  # Productivity tool (Super-productivity)
 # Not bound
-#riverctl map normal Super H spawn '~/.config/river/scripts/tag-webcord'            # Messaging app (Webcord)
+#riverctl map normal Super H spawn '~/.config/river/scripts/tag-webcord'            # Messenger app (Webcord/Session)
 #riverctl map normal Super N spawn '~/.config/river/scripts/tag-newsboat'           # Newsfeed (Newsboat)
 
 # Define the letter tags for focus tag [0-8]
