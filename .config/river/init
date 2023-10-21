@@ -13,7 +13,7 @@ riverctl map normal Super+Shift F toggle-float    # Toggle float
 ###### Quick Session Managing ######
 riverctl map normal Super Y spawn 'lock'                                         # Lock screen
 riverctl map normal Super+Shift Y spawn 'lock-suspend'                           # Lock and suspend
-riverctl map normal Super+Control+Shift Q exit                                   # Exit wayland session/compositor
+riverctl map normal Super+Control Q exit                                         # Exit wayland session/compositor
 riverctl map normal Super+Control+Shift S spawn 'systemctl poweroff'             # Shutdown
 riverctl map normal Super+Control+Shift R spawn 'systemctl reboot'               # Reboot
 #riverctl map normal Super+Control R spawn "~/.config/river/scripts/killall-and-restart"   # Reload river
@@ -234,7 +234,7 @@ riverctl map normal Super B spawn '~/.config/river/scripts/tag-firefox-1'       
 riverctl map normal Super+Shift B spawn '~/.config/river/scripts/tag-firefox-2'  # Browser (Firefox-2)
 # Emacs - editor
 riverctl map normal Super E spawn '~/.config/river/scripts/tag-emacs'            # Editor (Emacs TUI)
-riverctl map normal Super H spawn '~/.config/river/scripts/tag-code'             # Editor (Emacs TUI)
+riverctl map normal Super U spawn '~/.config/river/scripts/tag-code'             # Editor (Emacs TUI)
 riverctl map normal Super N spawn '~/.config/river/scripts/tag-elfeed'           # Newsfeed (Elfeed GUI - required for viewing pictures)
 riverctl map normal Super P spawn '~/.config/river/scripts/tag-agenda'           # Agenda (Emacs TUI)
 # Other
@@ -247,11 +247,11 @@ riverctl map normal Super Slash spawn '~/.config/river/scripts/tag-super-product
 # Tag "U" is not bound bcs it's a tag to where I manually move browser windows with youtube
 # Tag "L" is for temporary windows/settings that require terminal to run
 # If you don't want to use my "Focus Tags of App Keys" implementation then 
-# just comment it out and add the letters back respectively: "I" "O" "W" "E" "H" "N" "P"
-tags_focus=("" "" "" "" "" "" "" "U" "L")
+# just comment it out and add the letters back respectively: "I" "O" "W" "E" "U" "N" "P"
+tags_focus=("" "W" "" "" "" "" "" "H" "L")
 
 # Define the letter tags
-tags=("I" "O" "W" "E" "H" "N" "P" "U" "L")
+tags=("I" "O" "W" "E" "U" "N" "P" "H" "L")
 
 # Focus tag [0-8]
 for i in $(seq 1 9); do
