@@ -20,5 +20,5 @@ focus_tag 8  # Use tag "P" (tag number 8)
 
 if ! is_emacs_running_with_command; then
     # Spawn Emacs only if it was not running with the specific command
-    riverctl spawn 'emacsclient -nw --eval "(open-org-agenda-frame)"'
+    riverctl spawn 'footclient -e emacsclient -nw --eval "(open-org-agenda-frame)"'
 fi
