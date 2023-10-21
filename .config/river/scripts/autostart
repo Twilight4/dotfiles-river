@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# This script only autostarts apps that start up slowly or use a daemon like webcord that can't be autostarted without running the frame
+# Starting up other apps like terminal session I have bound on river keybinds
+
 # Check if required commands exist
 commands=("riverctl" "webcord" "superproductivity")
 for cmd in "${commands[@]}"; do
