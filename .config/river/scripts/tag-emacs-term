@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Define the letter tags
+tags=("I" "O" "W" "E" "H" "N" "U" "P")
+
+# Function to focus a specific tag
+focus_tag() {
+    tag=$1
+    tags_bit=$((1 << (tag - 1)))
+    riverctl set-focused-tags "$tags_bit"
+}
+
+# Function to check if 'kitty-emacs' process is running
+is_kitty_running() {
+    lswt | grep kitty-emacs >/dev/null
+}
+
+# Focus on tag "O" if 'kitty-emacs' is not running, else just focus
+if ! is_kitty_running; then
+    focus_tag 4  # Use tag "E" (tag number 4)
+    # Spawn kitty only if it was not running
+    riverctl spawn 'kitty -1 -T kitty-emacs --class kitty-emacs --session session-emacs'
+else
+    focus_tag 4  # Use tag "E" (tag number 4)
+fi
