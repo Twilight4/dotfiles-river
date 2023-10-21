@@ -31,6 +31,6 @@ gsettings set org.gnome.desktop.default-applications.terminal exec alacritty.des
 ### Automatically load river upon log in
 ```bash
 echo 'if [ "$(tty)" = "/dev/tty1" ]; then
-    pgrep river || exec ~/.config/river/startr
+    pgrep river || exec ~/.config/river/scriptsstartr
 fi' > "$HOME/.config/zsh/.zprofile"
 ```
