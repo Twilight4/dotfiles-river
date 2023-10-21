@@ -12,7 +12,8 @@ focus_tag() {
 
 # Function to check if the emacs process is running with specific command
 is_emacs_running_with_command() {
-    pgrep -af "emacsclient -nw --eval" >/dev/null
+    lswt | grep kitty-agenda >/dev/null
+    #pgrep -af "emacsclient -nw --eval" >/dev/null
 }
 
 # Focus on tag "P" and spawn Emacs with the desired command if it's not running
@@ -20,5 +21,5 @@ focus_tag 8  # Use tag "P" (tag number 8)
 
 if ! is_emacs_running_with_command; then
     # Spawn Emacs only if it was not running with the specific command
-    riverctl spawn 'footclient -e emacsclient -nw --eval "(open-org-agenda-frame)"'
+    riverctl spawn 'kitty -1 -T kitty-agenda --class kitty-agenda --session ~/.config/kitty/session-agenda'
 fi

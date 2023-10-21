@@ -19,7 +19,7 @@ is_kitty_running() {
 if ! is_kitty_running; then
     focus_tag 4  # Use tag "E" (tag number 4)
     # Spawn kitty only if it was not running
-    riverctl spawn 'kitty -1 -T kitty-emacs --class kitty-emacs --session session-emacs'
+    riverctl spawn 'kitty -1 -T kitty-emacs --class kitty-emacs --session ~/.config/kitty/session-emacs'
 else
     focus_tag 4  # Use tag "E" (tag number 4)
 fi
