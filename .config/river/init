@@ -237,11 +237,11 @@ riverctl map normal Super Slash spawn '~/.config/river/scripts/tag-super-product
 #riverctl map normal Super N spawn '~/.config/river/scripts/tag-newsboat'           # Newsfeed (Newsboat)
 
 # Define the letter tags for focus tag [0-8]
-# Tag "U" is not bound bcs it's a tag to where I manually move browser windows with youtube
+# Tag "H" is not bound bcs it's a tag for youtube where I manually move browser windows
 # Tag "L" is for temporary windows/settings that require terminal to run
 # If you don't want to use my "Focus Tags of App Keys" implementation then 
 # just comment it out and add the letters back respectively: "I" "O" "W" "E" "U" "N" "P"
-tags_focus=("" "W" "" "" "" "" "" "H" "L")
+tags_focus=("" "" "" "" "" "" "" "H" "L")
 
 # Define the letter tags
 tags=("I" "O" "W" "E" "U" "N" "P" "H" "L")
