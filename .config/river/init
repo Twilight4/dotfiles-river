@@ -248,10 +248,10 @@ riverctl map normal Super Slash spawn '~/.config/river/scripts/tag-super-product
 # Tag "L" is for temporary windows/settings that require terminal to run
 # If you don't want to use my "Focus Tags of App Keys" implementation then 
 # just comment it out and add the letters back respectively: "I" "O" "W" "E" "H" "N" "P"
-tags_focus=("" "" "" "" "" "" "U" "" "L")
+tags_focus=("" "" "" "" "" "" "" "U" "L")
 
 # Define the letter tags
-tags=("I" "O" "W" "E" "H" "N" "U" "P" "L")
+tags=("I" "O" "W" "E" "H" "N" "P" "U" "L")
 
 # Focus tag [0-8]
 for i in $(seq 1 9); do
