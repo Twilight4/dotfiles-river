@@ -10,16 +10,16 @@ focus_tag() {
     riverctl set-focused-tags "$tags_bit"
 }
 
-# Function to check if 'emacsclient' process is running
-is_emacsclient_running() {
-    pgrep -x "emacsclient" >/dev/null
+# Function to check if 'kitty-emacs' process is running
+is_kitty_running() {
+    lswt | grep kitty-emacs >/dev/null
 }
 
-# Focus on tag "E" if 'emacsclient' is not running, else just focus
-if ! is_emacsclient_running; then
+# Focus on tag "O" if 'kitty-emacs' is not running, else just focus
+if ! is_kitty_running; then
     focus_tag 4  # Use tag "E" (tag number 4)
-    # Spawn 'emacsclient' only if it was not running
-    riverctl spawn 'emacsclient -r'
+    # Spawn kitty only if it was not running
+    riverctl spawn 'kitty -1 -T kitty-emacs --class kitty-emacs --session session-emacs'
 else
     focus_tag 4  # Use tag "E" (tag number 4)
 fi

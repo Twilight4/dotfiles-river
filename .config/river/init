@@ -233,15 +233,14 @@ riverctl map normal Super W spawn '~/.config/river/scripts/tag-firefox'         
 riverctl map normal Super B spawn '~/.config/river/scripts/tag-firefox-1'          # Browser (Firefox-1)
 riverctl map normal Super+Shift B spawn '~/.config/river/scripts/tag-firefox-2'    # Browser (Firefox-2)
 # Emacs - editor
-riverctl map normal Super E spawn '~/.config/river/scripts/tag-emacs-term'         # Editor (Emacs TUI)
-riverctl map normal Super H spawn '~/.config/river/scripts/tag-emacs-code'         # Editor (Emacs TUI)
+riverctl map normal Super E spawn '~/.config/river/scripts/tag-emacs'         # Editor (Emacs TUI)
+riverctl map normal Super H spawn '~/.config/river/scripts/tag-code'         # Editor (Emacs TUI)
 riverctl map normal Super N spawn '~/.config/river/scripts/tag-elfeed'             # Newsfeed (Elfeed GUI - required for viewing pictures)
 riverctl map normal Super P spawn '~/.config/river/scripts/tag-agenda'         # Agenda (Emacs TUI)
 # Other
 riverctl map normal Super Slash spawn '~/.config/river/scripts/tag-super-productivity'  # Productivity tool (Super-productivity)
 # Not bound
 #riverctl map normal Super H spawn '~/.config/river/scripts/tag-webcord'            # Messaging app (Webcord)
-#riverctl map normal Super E spawn '~/.config/river/scripts/tag-emacs'              # Editor (Emacs GUI)
 #riverctl map normal Super N spawn '~/.config/river/scripts/tag-newsboat'           # Newsfeed (Newsboat)
 
 # Define the letter tags for focus tag [0-8]

@@ -12,14 +12,14 @@ focus_tag() {
 
 # Function to check if 'kitty-emacs-code' process is running
 is_kitty_running() {
-    lswt | grep kitty-emacs-code >/dev/null
+    lswt | grep kitty-code >/dev/null
 }
 
 # Focus on tag "H" if 'kitty-emacs-code' is not running, else just focus
 if ! is_kitty_running; then
     focus_tag 5  # Use tag "H" (tag number 5)
     # Spawn kitty only if it was not running
-    riverctl spawn 'kitty -1 -T kitty-emacs-code --class kitty-emacs-code --session session-code'
+    riverctl spawn 'kitty -1 -T kitty-code --class kitty-code --session session-code'
 else
     focus_tag 5  # Use tag "H" (tag number 5)
 fi
