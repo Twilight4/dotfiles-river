@@ -88,8 +88,8 @@ riverctl map normal Super+Alt W spawn '~/.config/hypr/scripts/waybar-toggle'
 #riverctl map normal Super+Shift+Alt G spawn '~/.config/river/scripts/game-monitors'
 
 ###### System commands ######
-riverctl map normal None Control+Alt W spawn '~/.config/hypr/scripts/cp-wlan'
-riverctl map normal None Control+Alt T spawn  '~/.config/hypr/scripts/cp-tun'
+riverctl map normal None Control+Alt W spawn '~/.config/zsh/bash/scripts/cp-wlan.sh'
+riverctl map normal None Control+Alt T spawn  '~/.config/zsh/bash/scripts/cp-tun.sh'
 
 
 ###########################################################################################
