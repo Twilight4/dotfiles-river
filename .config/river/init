@@ -236,7 +236,7 @@ riverctl map normal Super+Shift B spawn '~/.config/river/scripts/tag-firefox-2' 
 riverctl map normal Super E spawn '~/.config/river/scripts/tag-emacs-term'         # Editor (Emacs TUI)
 riverctl map normal Super H spawn '~/.config/river/scripts/tag-emacs-code'         # Editor (Emacs TUI)
 riverctl map normal Super N spawn '~/.config/river/scripts/tag-elfeed'             # Newsfeed (Elfeed GUI - required for viewing pictures)
-riverctl map normal Super P spawn '~/.config/river/scripts/tag-org-agenda'         # Agenda (Emacs TUI)
+riverctl map normal Super P spawn '~/.config/river/scripts/tag-agenda'         # Agenda (Emacs TUI)
 # Other
 riverctl map normal Super Slash spawn '~/.config/river/scripts/tag-super-productivity'  # Productivity tool (Super-productivity)
 # Not bound
