@@ -13,7 +13,6 @@ focus_tag() {
 # Function to check if the emacs process is running with specific command
 is_emacs_running_with_command() {
     lswt | grep kitty-agenda >/dev/null
-    #pgrep -af "emacsclient -nw --eval" >/dev/null
 }
 
 # Focus on tag "P" and spawn Emacs with the desired command if it's not running
