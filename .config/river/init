@@ -116,6 +116,9 @@ riverctl spawn "~/.config/hypr/scripts/idle-handler"         # Screen locking wh
 
 ####### GTK Themes ######
 riverctl spawn 'gsettings set org.gnome.desktop.interface gtk-theme "cachyos-nord"'
+#riverctl spawn 'gsettings set org.gnome.desktop.interface gtk-theme "Sweet-Dark-v40"'
+#riverctl spawn 'gsettings set org.gnome.desktop.interface icon-theme "Sweet-Blue"'
+#riverctl spawn 'gsettings set org.gnome.desktop.interface icon-theme "Sweet-Red"'
 riverctl spawn 'gsettings set org.gnome.desktop.interface icon-theme "Papirus"'
 riverctl spawn 'gsettings set org.gnome.desktop.interface cursor-theme "Numix-Cursor-Light"'
 riverctl spawn 'gsettings set org.gnome.desktop.interface font-name "Sans 10"'
