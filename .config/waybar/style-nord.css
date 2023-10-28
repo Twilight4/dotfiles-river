@@ -24,7 +24,7 @@ window#waybar {
 }
 
 #tags button {
-  min-width: 40px;
+  min-width: 30px;
 }
 
 #tags button:hover {
