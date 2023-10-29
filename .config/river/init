@@ -220,15 +220,15 @@ riverctl map resize Alt L resize horizontal 100
 # TAG MANAGEMENT                                                                          #
 ###########################################################################################
 ###### Focus Tags of App Keys ######
-# Kitty - terminal
+# Terminal - kitty
 riverctl map normal Super M spawn 'kitty -1 -T kitty-1 --class kitty-2'          # Terminal standalone (Kitty)
 riverctl map normal Super I spawn '~/.config/river/scripts/tag-kitty-1'          # Terminal (Kitty-1)
 riverctl map normal Super O spawn '~/.config/river/scripts/tag-kitty-2'          # Terminal (Kitty-2)
-# Firefox - browser
+# Browser - firefox
 riverctl map normal Super W spawn '~/.config/river/scripts/tag-firefox'          # Browser (Firefox)
 riverctl map normal Super B spawn '~/.config/river/scripts/tag-firefox-1'        # Browser (Firefox-1)
 riverctl map normal Super+Shift B spawn '~/.config/river/scripts/tag-firefox-2'  # Browser (Firefox-2)
-# Emacs - editor
+# Editor - emacs
 riverctl map normal Super E spawn '~/.config/river/scripts/tag-emacs'            # Editor (Emacs TUI)
 riverctl map normal Super U spawn '~/.config/river/scripts/tag-emacs-code'       # Editor (Emacs TUI)
 riverctl map normal Super N spawn '~/.config/river/scripts/tag-elfeed'           # Newsfeed (Elfeed GUI - required for viewing pictures)
