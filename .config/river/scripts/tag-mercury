@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Define the letter tags
+tags=("I" "O" "W" "E" "U" "N" "P" "H" "L")
+
+# Function to focus a specific tag
+focus_tag() {
+    tag=$1
+    tags_bit=$((1 << (tag - 1)))
+    riverctl set-focused-tags "$tags_bit"
+}
+
+# Function to check if 'mercury-bin' process is running
+is_mercury_running() {
+    pgrep -a "mercury-bin" | grep "default-default" >/dev/null
+}
+
+# Focus on tag "W" if 'mercury-bin' is not running, else just focus
+if ! is_mercury_running; then
+    focus_tag 3
+    # Spawn 'mercury-browser' only if it was not running
+    riverctl spawn 'mercury-browser -P default-default --new-window'
+else
+    focus_tag 3
+fi
