@@ -13,9 +13,9 @@ riverctl map normal Super+Shift F toggle-float    # Toggle float
 ###### Quick Session Managing ######
 riverctl map normal Super Y spawn 'lock'                                         # Lock screen
 riverctl map normal Super+Shift Y spawn 'lock-suspend'                           # Lock and suspend
-riverctl map normal Super+Control Q exit                                         # Exit wayland session/compositor
-riverctl map normal Super+Control S spawn 'systemctl poweroff'                   # Shutdown
-riverctl map normal Super+Control R spawn 'systemctl reboot'                     # Reboot
+riverctl map normal Super+Control+Shift Q exit                                   # Exit wayland session/compositor
+riverctl map normal Super+Control+Shift S spawn 'systemctl poweroff'             # Shutdown
+riverctl map normal Super+Control+Shift R spawn 'systemctl reboot'               # Reboot
 
 ###### Wofi Menu Keys ######
 riverctl map normal Super Z spawn 'pkill wofi || wofi-beats.sh'                  # Wofi radio
@@ -80,7 +80,7 @@ riverctl map normal Super+Alt R spawn '~/.config/hypr/scripts/record-screen'
 #riverctl map normal Super+Control+Alt R spawn '~/.config/hypr/scripts/record-script-fullscreen'
 
 ####### Waybar toggle #######
-riverctl map normal Super+Alt W spawn '~/.config/hypr/scripts/waybar-toggle'
+riverctl map normal Super+Control R spawn '~/.config/hypr/scripts/waybar-toggle'
 
 ###### System commands ######
 riverctl map normal None Control+Alt W spawn '~/.config/zsh/bash-scripts/cp-wlan.sh'
@@ -107,22 +107,23 @@ riverctl spawn 'waybar'
   # convert <input_jpg> -resize 1920x1080 <output_jpg>         
 [[ -e ~/.config/hypr/wallpapers/tracks.jpg ]] && riverctl spawn "swaybg -m fill -i ~/.config/hypr/wallpapers/tracks.jpg"
 
-####### Clipboard manager ######
+###### Clipboard manager ######
 riverctl spawn 'wl-clip-persist --clipboard regular'         # Persistent clipboard
 riverctl spawn 'wl-paste --watch cliphist store'             # Store in clipboard history (cliphist wipe to clear the database)
 
-####### Scripts ######
+###### Scripts ######
 riverctl spawn "~/.config/hypr/scripts/idle-handler"         # Screen locking when idle
 
-####### GTK Themes ######
-#riverctl spawn 'gsettings set org.gnome.desktop.interface gtk-theme "cachyos-nord"'
+###### GTK Themes ######
 riverctl spawn 'gsettings set org.gnome.desktop.interface gtk-theme "Tokyonight-Dark-BL-LB"'
-#riverctl spawn 'gsettings set org.gnome.desktop.interface gtk-theme "Sweet-Dark-v40"'
-#riverctl spawn 'gsettings set org.gnome.desktop.interface icon-theme "Sweet-Blue"'
-#riverctl spawn 'gsettings set org.gnome.desktop.interface icon-theme "Sweet-Red"'
-riverctl spawn 'gsettings set org.gnome.desktop.interface icon-theme "Papirus"'
-riverctl spawn 'gsettings set org.gnome.desktop.interface cursor-theme "Numix-Cursor-Light"'
+riverctl spawn 'gsettings set org.gnome.desktop.interface icon-theme "Sweet-Blue"'       # Sweet-Red/Sweet-Teal
+riverctl spawn 'gsettings set org.gnome.desktop.interface cursor-theme "Bibata-Modern-Classic"'
 riverctl spawn 'gsettings set org.gnome.desktop.interface font-name "Sans 10"'
+
+###### Alternative GTK Themes ######
+#riverctl spawn 'gsettings set org.gnome.desktop.interface gtk-theme "Sweet-Dark-v40"'   # athena-sweetdark-theme
+#riverctl spawn 'gsettings set org.gnome.desktop.interface icon-theme "Papirus"'
+#riverctl spawn 'gsettings set org.gnome.desktop.interface cursor-theme "Numix-Cursor-Light"'
 
 
 ###########################################################################################
@@ -342,7 +343,8 @@ riverctl set-repeat 50 300
 # Cursor
 riverctl hide-cursor timeout 5000
 riverctl hide-cursor when-typing enabled
-riverctl xcursor-theme Numix-Cursor-Light 24
+riverctl xcursor-theme Bibata-Modern-Classic 24
+#riverctl xcursor-theme Numix-Cursor-Light 24
 riverctl set-cursor-warp disabled
 riverctl focus-follows-cursor on-output-change
 
