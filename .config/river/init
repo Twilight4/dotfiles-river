@@ -14,9 +14,8 @@ riverctl map normal Super+Shift F toggle-float    # Toggle float
 riverctl map normal Super Y spawn 'lock'                                         # Lock screen
 riverctl map normal Super+Shift Y spawn 'lock-suspend'                           # Lock and suspend
 riverctl map normal Super+Control Q exit                                         # Exit wayland session/compositor
-riverctl map normal Super+Control S spawn 'systemctl poweroff'             # Shutdown
-riverctl map normal Super+Control R spawn 'systemctl reboot'               # Reboot
-#riverctl map normal Super+Control R spawn "~/.config/river/scripts/killall-and-restart"   # Reload river
+riverctl map normal Super+Control S spawn 'systemctl poweroff'                   # Shutdown
+riverctl map normal Super+Control R spawn 'systemctl reboot'                     # Reboot
 
 ###### Wofi Menu Keys ######
 riverctl map normal Super Z spawn 'pkill wofi || wofi-beats.sh'                  # Wofi radio
@@ -70,6 +69,7 @@ riverctl map normal Super+Alt B spawn '~/.config/hypr/scripts/wallpaper'
 ####### VPN #######
 riverctl map normal Super+Alt V spawn '~/.config/hypr/scripts/vpn'
 
+
 ##################
 # Super+Alt keys #
 ##################
@@ -105,7 +105,7 @@ riverctl spawn 'waybar'
 ####### Wallpaper #######
 # Resize the image to match your screens dimensions and avoid taking up a lot of memory by swaybg:
   # convert <input_jpg> -resize 1920x1080 <output_jpg>         
-[[ -e ~/.config/hypr/wallpapers/nordic.jpg ]] && riverctl spawn "swaybg -m fill -i ~/.config/hypr/wallpapers/nordic.jpg"
+[[ -e ~/.config/hypr/wallpapers/tracks.jpg ]] && riverctl spawn "swaybg -m fill -i ~/.config/hypr/wallpapers/tracks.jpg"
 
 ####### Clipboard manager ######
 riverctl spawn 'wl-clip-persist --clipboard regular'         # Persistent clipboard
@@ -115,7 +115,8 @@ riverctl spawn 'wl-paste --watch cliphist store'             # Store in clipboar
 riverctl spawn "~/.config/hypr/scripts/idle-handler"         # Screen locking when idle
 
 ####### GTK Themes ######
-riverctl spawn 'gsettings set org.gnome.desktop.interface gtk-theme "cachyos-nord"'
+#riverctl spawn 'gsettings set org.gnome.desktop.interface gtk-theme "cachyos-nord"'
+riverctl spawn 'gsettings set org.gnome.desktop.interface gtk-theme "Tokyonight-Dark-BL-LB"'
 #riverctl spawn 'gsettings set org.gnome.desktop.interface gtk-theme "Sweet-Dark-v40"'
 #riverctl spawn 'gsettings set org.gnome.desktop.interface icon-theme "Sweet-Blue"'
 #riverctl spawn 'gsettings set org.gnome.desktop.interface icon-theme "Sweet-Red"'
@@ -225,9 +226,9 @@ riverctl map normal Super M spawn 'kitty -1 -T kitty-1 --class kitty-2'         
 riverctl map normal Super I spawn '~/.config/river/scripts/tag-kitty-1'          # Terminal (Kitty-1)
 riverctl map normal Super O spawn '~/.config/river/scripts/tag-kitty-2'          # Terminal (Kitty-2)
 # Browser - firefox
-riverctl map normal Super W spawn '~/.config/river/scripts/tag-firefox'          # Browser (Firefox)
-riverctl map normal Super B spawn '~/.config/river/scripts/tag-firefox-1'        # Browser (Firefox-1)
-riverctl map normal Super+Shift B spawn '~/.config/river/scripts/tag-firefox-2'  # Browser (Firefox-2)
+riverctl map normal Super W spawn '~/.config/river/scripts/tag-mercury'          # Browser (Mercury)
+riverctl map normal Super B spawn '~/.config/river/scripts/tag-mercury-1'        # Browser (Mercury-1)
+riverctl map normal Super+Shift B spawn '~/.config/river/scripts/tag-mercury-2'  # Browser (Mercury-2)
 # Editor - emacs
 riverctl map normal Super E spawn '~/.config/river/scripts/tag-emacs'            # Editor (Emacs TUI)
 riverctl map normal Super U spawn '~/.config/river/scripts/tag-emacs-code'       # Editor (Emacs TUI)
@@ -304,7 +305,7 @@ riverctl float-filter-add app-id 'tty-clock'
 ###########################################################################################
 ####### Outputs #######
 #wlr-randr --output eDP-1 --mode 1920x1080@144.005005 --pos 0,0 --transform normal --scale 1.000000  # Laptop screen has proper config by default
-wlr-randr --output DP-2 --mode 1920x1080@120 --pos 1920,0 --transform normal --scale 1.000000
+#wlr-randr --output DP-2 --mode 1920x1080@120 --pos 1920,0 --transform normal --scale 1.000000
 #wlr-randr --output DP-2 --mode 1920x1080@165 --pos 1920,0 --transform normal --scale 1.000000  # Alternative resolution for DP-2
 #wlr-randr --output DP-3 --mode 2560x1080@75 --pos 2560,0 --transform normal --scale 1.000000
 #
