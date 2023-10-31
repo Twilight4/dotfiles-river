@@ -341,8 +341,8 @@ riverctl border-width 2
 riverctl keyboard-layout -options "ctrl:nocaps" us
 riverctl set-repeat 50 300
 # Cursor
-#riverctl hide-cursor timeout 5000
-#riverctl hide-cursor when-typing enabled
+riverctl hide-cursor timeout 5000
+riverctl hide-cursor when-typing enabled
 riverctl xcursor-theme Bibata-Modern-Classic 24
 #riverctl xcursor-theme Numix-Cursor-Light 24
 riverctl set-cursor-warp disabled
