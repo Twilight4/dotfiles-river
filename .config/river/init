@@ -13,9 +13,9 @@ riverctl map normal Super+Shift F toggle-float    # Toggle float
 ###### Quick Session Managing ######
 riverctl map normal Super Y spawn 'lock'                                         # Lock screen
 riverctl map normal Super+Shift Y spawn 'lock-suspend'                           # Lock and suspend
-riverctl map normal Super+Control+Shift Q exit                                   # Exit wayland session/compositor
-riverctl map normal Super+Control+Shift S spawn 'systemctl poweroff'             # Shutdown
-riverctl map normal Super+Control+Shift R spawn 'systemctl reboot'               # Reboot
+riverctl map normal Super+Control Q exit                                         # Exit wayland session/compositor
+riverctl map normal Super+Control S spawn 'systemctl poweroff'                   # Shutdown
+riverctl map normal Super+Control R spawn 'systemctl reboot'                     # Reboot
 
 ###### Wofi Menu Keys ######
 riverctl map normal Super Z spawn 'pkill wofi || wofi-beats.sh'                  # Wofi radio
@@ -80,7 +80,7 @@ riverctl map normal Super+Alt R spawn '~/.config/hypr/scripts/record-screen'
 #riverctl map normal Super+Control+Alt R spawn '~/.config/hypr/scripts/record-script-fullscreen'
 
 ####### Waybar toggle #######
-riverctl map normal Super+Control R spawn '~/.config/hypr/scripts/waybar-toggle'
+#riverctl map normal Super+Control R spawn '~/.config/hypr/scripts/waybar-toggle'    # Super+Control+R bound to reboot
 
 ###### System commands ######
 riverctl map normal None Control+Alt W spawn '~/.config/zsh/bash-scripts/cp-wlan.sh'
@@ -306,7 +306,7 @@ riverctl float-filter-add app-id 'tty-clock'
 ###########################################################################################
 ####### Outputs #######
 #wlr-randr --output eDP-1 --mode 1920x1080@144.005005 --pos 0,0 --transform normal --scale 1.000000  # Laptop screen has proper config by default
-#wlr-randr --output DP-2 --mode 1920x1080@120 --pos 1920,0 --transform normal --scale 1.000000
+wlr-randr --output DP-2 --mode 1920x1080@120 --pos 1920,0 --transform normal --scale 1.000000
 #wlr-randr --output DP-2 --mode 1920x1080@165 --pos 1920,0 --transform normal --scale 1.000000  # Alternative resolution for DP-2
 #wlr-randr --output DP-3 --mode 2560x1080@75 --pos 2560,0 --transform normal --scale 1.000000
 #
@@ -341,8 +341,8 @@ riverctl border-width 2
 riverctl keyboard-layout -options "ctrl:nocaps" us
 riverctl set-repeat 50 300
 # Cursor
-riverctl hide-cursor timeout 5000
-riverctl hide-cursor when-typing enabled
+#riverctl hide-cursor timeout 5000
+#riverctl hide-cursor when-typing enabled
 riverctl xcursor-theme Bibata-Modern-Classic 24
 #riverctl xcursor-theme Numix-Cursor-Light 24
 riverctl set-cursor-warp disabled
