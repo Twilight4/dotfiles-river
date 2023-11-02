@@ -52,7 +52,7 @@ riverctl map normal Super+Control+Shift U spawn 'notify-send -u low -t 4000 -i "
 #$w_size=
 # Screenshot
 riverctl map normal None Print spawn 'grim -g "$(slurp -b 1B1F28CC -c E06B74ff -s C778DD0D -w 2)" /tmp/screenshot.png | wl-copy'
-riverctl map normal Shift Print spawn 'grim -g "$(slurp -b 1B1F28CC -c E06B74ff -s C778DD0D -w 2)" - | swappy -f -'
+riverctl map normal Shift Print spawn 'grim -g "$(slurp -b 1B1F28CC -c E06B74ff -s C778DD0D -w 2)" - | swappy -f - && wl-paste --no-newline | wl-copy --type image/png && wl-paste --no-newline > /tmp/screenshot.png'
 # Screenshot Window
 #riverctl map normal Super Print spawn 'grim -g "$w_pos $w_size" - | wl-copy'
 #riverctl map normal Super+Shift Print spawn 'grim -g "$w_pos $w_size" - | swappy -f -'
