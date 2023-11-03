@@ -18,7 +18,7 @@ window#waybar {
 }
 
 window#waybar {
-    background: #1C2030;
+    background: #0F121C;
     border-bottom: 1px solid @unfocused_borders;
     color: @theme_text_color;
 }
@@ -61,7 +61,7 @@ window#waybar.hidden {
 
 .modules-left, .modules-right {
   background: @theme_base_color;
-  border: 1px solid #222222;
+  border: 1px solid #28344a;
   padding: 0px 0px;
 }
 
