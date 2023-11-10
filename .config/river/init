@@ -99,6 +99,7 @@ riverctl spawn 'emacs --daemon'
 #riverctl spawn '~/.config/river/scripts/autostart'
 #riverctl spawn 'mako'
 riverctl spawn 'udiskie'
+riverctl spawn '~/.config/zsh/bash-scripts/notify-log.sh /tmp/notify.log'
 riverctl spawn 'udev-block-notify'
 riverctl spawn 'waybar'
 
