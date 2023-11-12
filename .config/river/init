@@ -168,6 +168,7 @@ riverctl map-pointer normal Super BTN_LEFT move-view
 riverctl map-pointer normal Super BTN_RIGHT resize-view
 
 ####### Move Focus #######
+riverctl map normal None Alt Tab focus-view next
 riverctl map normal Super K focus-view next
 riverctl map normal Super J focus-view previous
 
