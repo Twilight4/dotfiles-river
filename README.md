@@ -1,4 +1,8 @@
 ## Quick Working Setup
+### Install river
+```bash
+sudo pacman -S river waybar swaylock-effects-git wl-color-picker
+```
 ### Desktop entry
 ```bash
 sudo bash -c 'cat > /usr/share/wayland-sessions/river.desktop' <<-'EOF'
