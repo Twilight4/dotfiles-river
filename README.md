@@ -17,7 +17,6 @@ gsettings set org.gnome.desktop.wm.preferences button-layout ""
 Right click on toolbar and click on `Customize Toolbar...` and in the bottom left uncheck `Title Bar`.
 ### Other small adjustments
 ```bash
-sed -i 's/background_opacity 0\.80/background_opacity 1/' ~/.config/kitty/kitty.conf
 sed -i 's/if \[\[ "$XDG_CURRENT_DESKTOP" == "Hyprland" \]\]; then/if \[\[ "$XDG_CURRENT_DESKTOP" == "river" \]\]; then/' ~/.config/rofi/applets/bin/clipboard.sh
 ```
 ### Default MIME types/GTK applications
