@@ -106,7 +106,7 @@ riverctl spawn 'waybar'
 ####### Wallpaper #######
 # Resize the image to match your screens dimensions and avoid taking up a lot of memory by swaybg:
   # convert <input_jpg> -resize 1920x1080 <output_jpg>         
-[[ -e ~/.config/hypr/wallpapers/tracks.jpg ]] && riverctl spawn "swaybg -m fill -i ~/.config/hypr/wallpapers/tracks.jpg"
+[[ -e ~/.config/hypr/wallpapers/tracks.jpg ]] && riverctl spawn "swaybg -m fill -i ~/pictures/wallpapers/default.jpg"
 
 ###### Clipboard manager ######
 riverctl spawn 'wl-clip-persist --clipboard regular'         # Persistent clipboard
