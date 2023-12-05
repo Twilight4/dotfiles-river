@@ -22,6 +22,7 @@ Right click on toolbar and click on `Customize Toolbar...` and in the bottom lef
 ### Other small adjustments
 ```bash
 sed -i 's/if \[\[ "$XDG_CURRENT_DESKTOP" == "Hyprland" \]\]; then/if \[\[ "$XDG_CURRENT_DESKTOP" == "river" \]\]; then/' ~/.config/rofi/applets/bin/clipboard.sh
+sed -i 's/^backgrounds*#1A1B26/#&/' ~/.config/kitty/theme.conf         # set background theme to default (black)
 ```
 ### Default MIME types/GTK applications
 Every graphical application uses xdg-open. It uses a database to automatically figure out the best program to open the provided path or URL based on MIME type. Sometimes it can breaks and you have to configure it yourself.
