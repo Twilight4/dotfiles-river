@@ -13,14 +13,14 @@ riverctl map normal Super+Shift F toggle-float    # Toggle float
 ###### Quick Session Managing ######
 riverctl map normal Super Y spawn 'lock'                                         # Lock screen
 riverctl map normal Super+Shift Y spawn 'lock-suspend'                           # Lock and suspend
-riverctl map normal Super+Control Q exit                                         # Exit wayland session/compositor
-riverctl map normal Super+Control S spawn 'systemctl poweroff'                   # Shutdown
-riverctl map normal Super+Control R spawn 'systemctl reboot'                     # Reboot
+riverctl map normal Super+Control P 'pkill nwgbar || nwgbar'                     # Session Manager
+#riverctl map normal Super+Control Q exit                                         # Exit wayland session/compositor
+#riverctl map normal Super+Control S spawn 'systemctl poweroff'                   # Shutdown
+#riverctl map normal Super+Control R spawn 'systemctl reboot'                     # Reboot
 
 ###### Wofi Menu Keys ######
 riverctl map normal Super Z spawn 'pkill wofi || wofi-beats.sh'                  # Wofi radio
 riverctl map normal Super X spawn 'pkill wofi || wofi-emoji.sh'                  # Emoji menu
-#riverctl map normal Super P spawn 'pkill wlogout || wlogout'                     # Session manager
 #riverctl map normal Super C spawn 'pkill wofi || wofi-clipboard.sh'              # Clipboard menu
 
 ###### Rofi Menu Keys ######
@@ -28,23 +28,16 @@ riverctl map normal Super R spawn 'pkill rofi || launcher.sh'                   
 riverctl map normal Super C spawn 'pkill rofi || clipboard.sh'                   # Clipboard menu
 
 ####### Floating Views #######
-riverctl map normal Super+Shift Return spawn 'footclient -a "foot-float"'        # Foot
+riverctl map normal Super+Shift Return spawn 'kitty --class "kitty-float"'       # Floating kitty
 riverctl map normal Super+Shift Z spawn 'webcam.sh'                              # Webcam
 riverctl map normal Super+Shift V spawn 'role-viewer'                            # Tools list 
 riverctl map normal Super V spawn 'hacking-variables'                            # Payload list
 riverctl map normal Super T spawn 'athena-welcome'                               # Athena welcome
-
-####### Fun Commands: musikcube, btop, cava, tty-clock, cmatrix, neofetch, pipes, mpv ######
-riverctl map normal Super+Control B spawn 'footclient -a btop -e btop'                                     # Btop
-riverctl map normal Super+Control Y spawn 'footclient -a cava -e cava'                                     # Cava
-riverctl map normal Super+Control U spawn 'footclient -a clock -e tty-clock -c -C 4 -r -s -f "%A, %B, %d"' # Clock
-riverctl map normal Super+Control I spawn 'footclient -a musikcube -e musikcube'                           # Music
-riverctl map normal Super+Control O spawn 'footclient -a cmatrix -e cmatrix -a'                            # Matrix
-riverctl map normal Super+Control P spawn 'footclient -a pipes -e ~/.config/zsh/bash-scripts/pipes.sh'     # Pipes
+riverctl map normal Super+Control Backslash spawn 'kitty --class btop -e btop'   # Btop
 
 ###### Updates ######
-#riverctl map normal Super+Control C spawn 'notify-send -u low -t 4000 "Updating cheatsheets..." && footclient --title update -a update -e ~/.config/hypr/scripts/cheatsheets push && notify-send "Cheatsheets pushed"'
-riverctl map normal Super+Control+Shift U spawn 'notify-send -u low -t 4000 -i "$HOME/.config/mako/icons/update.png" "Updating system..." && footclient --title paru -a paru -e paru --noconfirm -Syuu && notify-send "System Update Complete" ; echo Done - Press enter to exit; read _'
+#riverctl map normal Super+Control C spawn 'notify-send -u low -t 4000 "Updating cheatsheets..." && kitty --class update -T update -e ~/.config/.local/bin/cheatsheets.sh push && notify-send "Cheatsheets pushed"'
+riverctl map normal Super+Control+Shift U spawn 'notify-send -u low -t 4000 -i "$HOME/.config/mako/icons/update.png" "Updating system..." && kitty -T paru --class paru -e paru --noconfirm -Syuu && notify-send "System Update Complete" ; echo Done - Press enter to exit; read _'
 
 ####### Screenshot ######
 # Screenshot
@@ -294,7 +287,7 @@ riverctl float-filter-add title 'wdisplays'
 riverctl float-filter-add app-id 'musikcube'
 riverctl float-filter-add app-id 'ffplay'
 riverctl float-filter-add app-id 'musikcube'
-riverctl float-filter-add app-id 'foot-float'
+riverctl float-filter-add app-id 'kitty-float'
 riverctl float-filter-add app-id 'swappy'
 riverctl float-filter-add app-id 'blueman-manager'
 riverctl float-filter-add app-id 'xdg-desktop-portal-gtk'
