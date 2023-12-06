@@ -22,7 +22,6 @@ Right click on toolbar and click on `Customize Toolbar...` and in the bottom lef
 ### Other small adjustments
 ```bash
 sed -i 's/if \[\[ "$XDG_CURRENT_DESKTOP" == "Hyprland" \]\]; then/if \[\[ "$XDG_CURRENT_DESKTOP" == "river" \]\]; then/' ~/.config/rofi/applets/bin/clipboard.sh
-sed -i 's/^backgrounds*#1A1B26/#&/' ~/.config/kitty/theme.conf         # set background theme to default (black)
 ```
 ### Change zsh prompt to starship
 ```bash
