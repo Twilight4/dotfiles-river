@@ -30,11 +30,13 @@ sed -i '/^\[\[ ! -f ~\/.config\/zsh\/.p10k.zsh/d' ~/.config/zsh/.zshrc
 sed -i '/^if \[\[ -r "\${XDG_CACHE_HOME:-\$HOME\/.cache}\/p10k-instant-prompt-\${(%):-%n}.zsh" \]\]; then$/,/^  source "\${XDG_CACHE_HOME:-\$HOME\/.cache}\/p10k-instant-prompt-\${(%):-%n}.zsh"$/d;/^fi$/d' ~/.config/zsh/.zshrc
 sed -i '/^if \[\[ -r "\${XDG_CACHE_HOME:-\$HOME\/.cache}\/p10k-instant-prompt-\${(%):-%n}.zsh" \]\]; then$/,/^  source "\${XDG_CACHE_HOME:-\$HOME\/.cache}\/p10k-instant-prompt-\${(%):-%n}.zsh"$/d;/^fi$/d;/^source \/usr\/share\/zsh-theme-powerlevel10k\/powerlevel10k.zsh-theme$/d' ~/.config/zsh/.zshrc
 
-echo 'eval "$(starship init zsh)"' >> ~/.config/zsh/.zshrc
-echo 'function set_win_title(){' >> ~/.config/zsh/.zshrc
-echo '    echo -ne "\033]0; $USER@$HOST:${PWD/$HOME/~} \007"' >> ~/.config/zsh/.zshrc
-echo '}' >> ~/.config/zsh/.zshrc
-echo 'precmd_functions+=(set_win_title)' >> ~/.config/zsh/.zshrc
+cat << "EOF" >> ~/.config/zsh/.zshrc
+eval "$(starship init zsh)"
+function set_win_title(){
+    echo -ne "\033]0; $USER@$HOST:${PWD/$HOME/~} \007"
+}
+precmd_functions+=(set_win_title)
+EOF
 ```
 ### Default MIME types/GTK applications
 Every graphical application uses xdg-open. It uses a database to automatically figure out the best program to open the provided path or URL based on MIME type. Sometimes it can breaks and you have to configure it yourself.
