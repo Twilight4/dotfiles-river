@@ -1,14 +1,15 @@
-anchor=bottom-right
-font=monospace 10
+anchor=top-right
+font=JetBrains Mono 11
 background-color=#000000
 text-color=#ff0000
-width=350
+width=300
 margin=0,20,20
-padding=10
+padding=13
 border-size=1
+icons=0
 border-color=#ff0000
 border-radius=5
-default-timeout=10000
+default-timeout=5000
 group-by=summary
 
 [grouped]

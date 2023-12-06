@@ -29,7 +29,7 @@ riverctl map normal Super C spawn 'pkill rofi || clipboard.sh'                  
 
 ####### Floating Views #######
 riverctl map normal Super+Shift Return spawn 'kitty --class "kitty-float"'       # Floating kitty
-#riverctl map normal Super+Shift Z spawn 'webcam.sh'                              # Webcam
+riverctl map normal Super+Shift Z spawn 'webcam.sh'                              # Webcam
 #riverctl map normal Super+Shift V spawn 'role-viewer'                            # Tools list 
 #riverctl map normal Super V spawn 'hacking-variables'                            # Payload list
 #riverctl map normal Super T spawn 'athena-welcome'                               # Athena welcome
@@ -71,7 +71,7 @@ riverctl map normal Super+Alt R spawn '~/.config/hypr/scripts/record-screen'
 #riverctl map normal Super+Control+Alt R spawn '~/.config/hypr/scripts/record-script-fullscreen'
 
 ####### Waybar toggle #######
-#riverctl map normal Super+Control R spawn '~/.config/hypr/scripts/waybar-toggle'    # Super+Control+R bound to reboot
+riverctl map normal Super+Control W spawn '~/.config/hypr/scripts/waybar-reset'
 
 ###### System commands ######
 riverctl map normal None Control+Alt W spawn '~/.config/zsh/bash-scripts/cp-wlan.sh'
