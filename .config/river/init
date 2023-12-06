@@ -326,7 +326,8 @@ riverctl input pointer-1267-12738-ELAN0752:00_04F3:31C2_Touchpad scroll-method t
 ####### River Options #######
 riverctl attach-mode top
 riverctl background-color 0x002b36
-riverctl border-color-focused 0x7AA2F7FF
+riverctl border-color-focused 0xf7768e       # red
+#riverctl border-color-focused 0x7AA2F7FF    # blue
 riverctl border-color-unfocused 0x04404aaa
 #riverctl border-color-urgent
 riverctl border-width 2
