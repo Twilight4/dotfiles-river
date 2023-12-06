@@ -1,7 +1,7 @@
 ## Quick Working Setup
 ### Install river
 ```bash
-sudo pacman -S river waybar swaylock-effects-git wl-color-picker falkon mako wofi nwg-drawer nwg-launchers
+sudo pacman -S river waybar swaylock-effects-git wl-color-picker falkon mako nwg-drawer nwg-launchers wpaperd
 ```
 ### Desktop entry
 ```bash
