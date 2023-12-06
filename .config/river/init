@@ -36,7 +36,7 @@ riverctl map normal Super+Shift A spawn 'webcam.sh'                             
 riverctl map normal Super+Shift Backslash spawn 'kitty --class btop -e btop'   # Btop
 
 ###### Updates ######
-#riverctl map normal Super+Control C spawn 'notify-send -u low -t 4000 "Updating cheatsheets..." && kitty --class update -T update -e ~/.config/.local/bin/cheatsheets.sh push && notify-send "Cheatsheets pushed"'
+#riverctl map normal Super+Control+Shift C spawn 'notify-send -u low -t 4000 "Updating cheatsheets..." && kitty --class update -T update -e ~/.config/.local/bin/cheatsheets.sh push && notify-send "Cheatsheets pushed"'
 riverctl map normal Super+Control+Shift U spawn 'notify-send -u low -t 4000 -i "$HOME/.config/mako/icons/update.png" "Updating system..." && kitty -T paru --class paru -e paru --noconfirm -Syuu && notify-send "System Update Complete" ; echo Done - Press enter to exit; read _'
 
 ####### Screenshot ######
@@ -71,7 +71,7 @@ riverctl map normal Super+Alt R spawn '~/.config/hypr/scripts/record-screen'
 #riverctl map normal Super+Control+Alt R spawn '~/.config/hypr/scripts/record-script-fullscreen'
 
 ####### Waybar toggle #######
-riverctl map normal Super+Control W spawn '~/.config/hypr/scripts/waybar-reset'
+riverctl map normal Super+Alt W spawn '~/.config/hypr/scripts/waybar-reset'
 
 ###### System commands ######
 riverctl map normal None Control+Alt W spawn '~/.config/zsh/bash-scripts/cp-wlan.sh'
@@ -345,4 +345,4 @@ riverctl focus-follows-cursor on-output-change
 # Default layout generator
 riverctl default-layout rivertile
 # Start the default layout generator
-rivertile -view-padding 1 -outer-padding 2 -main-ratio 0.5 &
+rivertile -view-padding 1 -outer-padding 1 -main-ratio 0.5 &
