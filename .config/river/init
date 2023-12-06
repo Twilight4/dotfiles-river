@@ -8,7 +8,7 @@
 ###### WM Specific Keys ######
 riverctl map normal Super Q close                 # Close the focused view
 riverctl map normal Super F toggle-fullscreen     # Toggle fullscreen
-riverctl map normal Super+Shift F toggle-float    # Toggle float
+riverctl map normal Super T toggle-float          # Toggle float
 
 ###### Quick Session Managing ######
 riverctl map normal Super Y spawn 'lock'                                         # Lock screen
@@ -32,7 +32,7 @@ riverctl map normal Super+Shift Return spawn 'kitty --class "kitty-float"'      
 riverctl map normal Super+Shift Z spawn 'webcam.sh'                              # Webcam
 #riverctl map normal Super+Shift V spawn 'role-viewer'                            # Tools list 
 #riverctl map normal Super V spawn 'hacking-variables'                            # Payload list
-#riverctl map normal Super T spawn 'athena-welcome'                               # Athena welcome
+#riverctl map normal Super KEY spawn 'athena-welcome'                               # Athena welcome
 riverctl map normal Super+Control Backslash spawn 'kitty --class btop -e btop'   # Btop
 
 ###### Updates ######
