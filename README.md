@@ -28,7 +28,7 @@ sed -i 's/^backgrounds*#1A1B26/#&/' ~/.config/kitty/theme.conf         # set bac
 ```bash
 sed -i '/^\[\[ ! -f ~\/.config\/zsh\/.p10k.zsh/d' ~/.config/zsh/.zshrc
 sed -i '/^if \[\[ -r "\${XDG_CACHE_HOME:-\$HOME\/.cache}\/p10k-instant-prompt-\${(%):-%n}.zsh" \]\]; then$/,/^  source "\${XDG_CACHE_HOME:-\$HOME\/.cache}\/p10k-instant-prompt-\${(%):-%n}.zsh"$/d;/^fi$/d' ~/.config/zsh/.zshrc
-sed -i '/^if \[\[ -r "\${XDG_CACHE_HOME:-\$HOME\/.cache}\/p10k-instant-prompt-\${(%):-%n}.zsh" \]\]; then$/,/^  source "\${XDG_CACHE_HOME:-\$HOME\/.cache}\/p10k-instant-prompt-\${(%):-%n}.zsh"$/d;/^fi$/d;/^source \/usr\/share\/zsh-theme-powerlevel10k\/powerlevel10k.zsh-theme$/d' your_file.txt
+sed -i '/^if \[\[ -r "\${XDG_CACHE_HOME:-\$HOME\/.cache}\/p10k-instant-prompt-\${(%):-%n}.zsh" \]\]; then$/,/^  source "\${XDG_CACHE_HOME:-\$HOME\/.cache}\/p10k-instant-prompt-\${(%):-%n}.zsh"$/d;/^fi$/d;/^source \/usr\/share\/zsh-theme-powerlevel10k\/powerlevel10k.zsh-theme$/d' ~/.config/zsh/.zshrc
 
 echo 'eval "$(starship init zsh)"' >> ~/.config/zsh/.zshrc
 echo 'function set_win_title(){' >> ~/.config/zsh/.zshrc
