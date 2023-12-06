@@ -29,11 +29,11 @@ riverctl map normal Super C spawn 'pkill rofi || clipboard.sh'                  
 
 ####### Floating Views #######
 riverctl map normal Super+Shift Return spawn 'kitty --class "kitty-float"'       # Floating kitty
-riverctl map normal Super+Shift Z spawn 'webcam.sh'                              # Webcam
+riverctl map normal Super+Shift A spawn 'webcam.sh'                              # Webcam
 #riverctl map normal Super+Shift V spawn 'role-viewer'                            # Tools list 
 #riverctl map normal Super V spawn 'hacking-variables'                            # Payload list
 #riverctl map normal Super KEY spawn 'athena-welcome'                               # Athena welcome
-riverctl map normal Super+Control Backslash spawn 'kitty --class btop -e btop'   # Btop
+riverctl map normal Super+Shift Backslash spawn 'kitty --class btop -e btop'   # Btop
 
 ###### Updates ######
 #riverctl map normal Super+Control C spawn 'notify-send -u low -t 4000 "Updating cheatsheets..." && kitty --class update -T update -e ~/.config/.local/bin/cheatsheets.sh push && notify-send "Cheatsheets pushed"'
@@ -273,8 +273,7 @@ done
 ####### Floating Views #######
 # By Title
 riverctl float-filter-add title 'Picture-in-Picture'
-riverctl float-filter-add title 'Firefox — Sharing Indicator'
-riverctl float-filter-add title '"Close Firefox" firefox'
+riverctl float-filter-add title 'Mercury — Sharing Indicator'
 riverctl float-filter-add title 'qt5ct'
 riverctl float-filter-add title 'Calculator'
 riverctl float-filter-add title 'pavucontrol'
@@ -300,7 +299,7 @@ riverctl float-filter-add app-id 'tty-clock'
 ###########################################################################################
 ####### Outputs #######
 #wlr-randr --output eDP-1 --mode 1920x1080@144.005005 --pos 0,0 --transform normal --scale 1.000000  # Laptop screen has proper config by default
-wlr-randr --output DP-2 --mode 1920x1080@120 --pos 1920,0 --transform normal --scale 1.000000
+#wlr-randr --output DP-2 --mode 1920x1080@120 --pos 1920,0 --transform normal --scale 1.000000
 #wlr-randr --output DP-2 --mode 1920x1080@165 --pos 1920,0 --transform normal --scale 1.000000  # Alternative resolution for DP-2
 #wlr-randr --output DP-3 --mode 2560x1080@75 --pos 2560,0 --transform normal --scale 1.000000
 #
@@ -346,4 +345,4 @@ riverctl focus-follows-cursor on-output-change
 # Default layout generator
 riverctl default-layout rivertile
 # Start the default layout generator
-rivertile -view-padding 0 -outer-padding 0 -main-ratio 0.5 &
+rivertile -view-padding 2 -outer-padding 2 -main-ratio 0.5 &
