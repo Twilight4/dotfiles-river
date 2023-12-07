@@ -28,12 +28,11 @@ riverctl map normal Super R spawn 'pkill rofi || launcher.sh'                   
 riverctl map normal Super C spawn 'pkill rofi || clipboard.sh'                   # Clipboard menu
 
 ####### Floating Views #######
-riverctl map normal Super+Shift Return spawn 'kitty --class "kitty-float"'       # Floating kitty
+riverctl map normal Super+Shift M spawn 'kitty --class "kitty-float"'       # Floating kitty
 riverctl map normal Super+Shift A spawn 'webcam.sh'                              # Webcam
 #riverctl map normal Super+Shift V spawn 'role-viewer'                            # Tools list 
 #riverctl map normal Super V spawn 'hacking-variables'                            # Payload list
 #riverctl map normal Super KEY spawn 'athena-welcome'                               # Athena welcome
-riverctl map normal Super+Shift Backslash spawn 'kitty --class btop -e btop'   # Btop
 
 ###### Updates ######
 #riverctl map normal Super+Control+Shift C spawn 'notify-send -u low -t 4000 "Updating cheatsheets..." && kitty --class update -T update -e ~/.config/.local/bin/cheatsheets.sh push && notify-send "Cheatsheets pushed"'
@@ -231,8 +230,9 @@ riverctl map normal Super N spawn '~/.config/river/scripts/tag-elfeed'          
 riverctl map normal Super P spawn '~/.config/river/scripts/tag-agenda'           # Agenda (Emacs TUI)
 # Other
 riverctl map normal Super Slash spawn '~/.config/river/scripts/tag-super-productivity'  # Productivity tool (Super-productivity)
+riverctl map normal Super+Shift Backslash spawn '~/.config/river/scripts/tag-btop'      # Btop
 # Not bound
-#riverctl map normal Super H spawn '~/.config/river/scripts/tag-webcord'            # Messenger app (Webcord/Session)
+#riverctl map normal Super Backslash spawn '~/.config/river/scripts/tag-webcord'            # Messenger app (Webcord/Session)
 #riverctl map normal Super N spawn '~/.config/river/scripts/tag-newsboat'           # Newsfeed (Newsboat)
 
 # Define the letter tags for focus tag [0-8]
