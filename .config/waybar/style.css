@@ -57,20 +57,34 @@ window#waybar {
     border-radius: 20px 20px 20px 20px; 
 }
 
-#workspaces button {
-    padding: 2px 0px;
-    border-bottom: 2px;
-    color: #eceff4;
+#tags button {
+    padding: 3px 0px;
+    color: #e2e2e2;
     border-color: #d8dee9;
     border-style: solid;
-    margin-top:2px;
+    margin-top:10px;
+    min-width:20px;
 }
 
-#workspaces button.active {
-    border-color: #81a1c1;
+#tags button:hover {
+    background: rgba(26, 27, 38, 0.5);
+    border: none;
+    box-shadow: inherit;
+    text-shadow: inherit;
 }
 
-#clock, #battery, #cpu, #memory,#idle_inhibitor, #temperature,#custom-keyboard-layout, #backlight, #network, #pulseaudio, #tray, #window,#custom-launcher,#custom-power,#custom-pacman ,#custom-network_traffic,#custom-weather{
+#tags button.occupied {
+    color: #e2e2e2;
+    background-color: #393939;
+    border-radius: 0px;
+}
+
+#tags button.focused {
+    color: #e2e2e2;
+    background-color: #2b4375;
+}
+
+#clock, #custom-uptime, #battery, #disk, #cpu, #memory,#idle_inhibitor, #temperature,#custom-vpn-check,#custom-keyboard-layout, #backlight, #network, #pulseaudio, #tray, #window,#custom-launcher,#custom-pacman ,#custom-network_traffic,#custom-weather{
     padding: 0 3px;
     border-bottom: 2px;
     border-style: solid;
@@ -82,15 +96,27 @@ window#waybar {
 
  
 #clock {
- color:#a3be8c;
+ color:#d3869b;
+}
+
+#custom-uptime {
+ color:#d3869b;
+}
+
+#disk {
+ color:#d3869b;
+}
+
+#custom-pacman {
+ color:#d3869b;
 }
 
 #backlight {
-    color: #ebcb8b;
+    color: #d3869b;
 }
 
 #battery {
-    color: #d8dee9;
+    color: #d3869b;
 }
 
 #battery.charging {
@@ -115,7 +141,7 @@ window#waybar {
 }
 
 #cpu {
-    color:#a3be8c ;
+    color:#d3869b ;
 }
 
 #memory {
@@ -127,7 +153,7 @@ window#waybar {
 }
 
 #network{
-    color:#a3be8c;
+    color:#d3869b;
 }
 
 #network.disconnected {
@@ -135,7 +161,7 @@ window#waybar {
 }
 
 #pulseaudio {
-    color: #b48ead;
+    color: #d3869b;
 }
 
 #pulseaudio.muted {
@@ -143,15 +169,11 @@ window#waybar {
 }
 
 #temperature {
-    color: #8fbcbb;
+    color: #d3869b;
 }
 
 #temperature.critical {
     color: #bf616a;
-}
-
-#idle_inhibitor {
-   color: #ebcb8b;
 }
 
 #tray {
@@ -166,11 +188,8 @@ window#waybar {
     border-style: hidden;
     margin-top:1px;  
 }    
-#custom-keyboard-layout{
-   color:#d08770;
-}   
 #custom-network_traffic{
-   color:#d08770;
+   color:#d3869b;
 }
 
 

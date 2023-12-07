@@ -8,44 +8,29 @@
 
     // Choose the order of the modules
 
-    "modules-left": ["custom/launcher", "hyprland/workspaces", "hyprland/window"],
-    "modules-right": [ "custom/pacman", "custom/network_traffic", "custom/weather","backlight", "custom/keyboard-layout",  "temperature",  "cpu", "memory", "battery", "pulseaudio", "network", "tray", "idle_inhibitor", "clock","custom/power"],
+    "modules-left": ["river/tags", "river/window"],
+    "modules-right": ["custom/audio_idle_inhibitor", "custom/uptime", "custom/pacman", "cpu", "temperature", "memory", "disk", "custom/network_traffic", "custom/vpncheck", "network", "backlight", "pulseaudio", "battery", "clock", "tray"],
 
  // Modules configuration
-
-  "hyprland/workspaces": {
-    "format": "{icon}",
-    "on-click": "activate",
-    "all-outputs": true,
-    "sort-by-number": true,
-    "format-icons": {
-      "1": "1",
-      "2": "2",
-      "3": "3",
-      "4": "4",
-      "5": "5",
-      "6": "6",
-      "7": "7",
-      "8": "8",
-      "9": "9",
-      "10": "10",
-      "focused": "",
-      "default": ""
-    },
-    "on-scroll-up": "hyprctl dispatch workspace e+1",
-    "on-scroll-down": "hyprctl dispatch workspace e-1",
-    },
-    "hyprland/window": {
+"river/tags": {
+    "num-tags": 9,
+    "disable-click": true,
+		"tag-labels":[
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+      "󱎫",
+      "",
+      "",
+		],
+  },
+    "river/window": {
         "format": "{}",
 	"icon":true,
 	"icon-size" : 20
-    },
-    "idle_inhibitor": {
-        "format": "{icon}",
-       "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
     },
     "tray": {
         "icon-size": 20,
@@ -53,36 +38,56 @@
     },
     "clock": {
         "tooltip-format": "<big>{:%A, %d.%B %Y }</big>\n<tt><small>{calendar}</small></tt>",
-        "format": " {:%a %d %b  %I:%M %p}",	//12 hour format
-        //"format": " {:%a %d %b  %H:%M}",	//24 hour format
-        "format-alt": " {:%d/%m/%Y  %H:%M:%S}",
-        "timezones": [ "Europe/Berlin" ],
+        "format": " {:%a %d %b   %I:%M %p}",	//12 hour format
+        //"format": " {:%a %d %b   %H:%M}",	//24 hour format
+        "format-alt": " {:%d/%m/%Y   %H:%M:%S}",
+        "timezones": [ "Europe/Warsaw" ],
         //"max-length": 200
         "interval": 1,
-        "on-click": "~/.config/waybar/scripts/OCV",
+        "on-click": "~/.config/waybar/scripts/ocv.sh",
     },
     "cpu": {
-        "format": "🖳{usage}%",
-        "on-click": "foot -e htop"
+        "format": "<span font='13' rise='1000'></span> <span font='13'> {usage}%</span>",
+    },
+    "custom/vpncheck":{
+        "format":"<span font='13' rise='1000'></span> {}",
+        "exec": "~/.config/waybar/scripts/vpn-check.sh",
+        "interval": 120,
     },
     "memory": {
-        "format": "🖴 {: >3}%",
-        "on-click": "foot -e htop"
+        "format": "{: >3}%",
+    },
+	"custom/audio_idle_inhibitor": {
+		"format": "{icon}",
+		"exec": "sway-audio-idle-inhibit --dry-print-both-waybar",
+		"exec-if": "which sway-audio-idle-inhibit",
+		"return-type": "json",
+		"format-icons": {
+			"output": "",
+			"input": "",
+			"output-input": "  ",
+			"none": ""
+		}
+	},
+    "disk": {
+        "interval": 30,
+        "format": "🖴  {percentage_used}%",
+        "format-alt": "🖴  {free}",
+    },
+    "custom/uptime":{
+         "format": "<span font='13' rise='1000'></span> {}",
+         "exec": "~/.config/waybar/scripts/upt.sh",
+         "interval": 60,
     },
     "temperature": {
-        "thermal-zone": 7,  // Check with: # cat /sys/class/hwmon/hwmon*/temp1_input
-        "hwmon-path": "/sys/class/hwmon/hwmon7/temp1_input",
-        "critical-threshold": 80,
-        "format-critical": "{temperatureC}°C ",
-        "format": "{temperatureC}°C "
+        "format": "<span font='12' rise='1000'></span> {}°C",
+        "exec": "~/.config/waybar/scripts/cpu-temp.sh",
+        "interval": 15,
     },
     "backlight": {
-        // "device": "acpi_video1",
-        "format": "{icon} {percent: >3}%",
-        "format-icons": ["", ""],
-        "on-scroll-down": "brightnessctl -c backlight set 1%-",
-        "on-scroll-up": "brightnessctl -c backlight set +1%",
-        "on-click": "~/.config/waybar/scripts/backlight-hint.sh"
+         // "device": "acpi_video1",
+         "format": "{icon}  {percent: >3}%",
+         "format-icons": ["", "", "", ""],
     },
     "battery": {
         "states": {
@@ -100,53 +105,38 @@
     },
       "network": {
         //"interface": "wlp0s20f3", // (Optional) To force the use of this interface  "format-wifi": "  {essid}",
-        "format": "⚠Disabled",
-        "format-wifi": " ",
+        "format": "睊 Disconnected",
+        "format-wifi": "  {signalStrength}%",
         "format-ethernet": "{ifname}: {ipaddr}/{cidr}",
         "format-linked": "{ifname} (No IP)",
-        "format-disconnected": "⚠Disabled",
+        "format-disconnected": "睊 Disconnected",
         "format-alt": "{ifname}: {ipaddr}/{cidr}",
         "family": "ipv4",
         "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
-        "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
+        "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
         //"min-length": 2,
         //"max-length": 2,
         "on-click": "nm-connection-editor"
     },
      "custom/pacman": {
-        "format": " {}",
+        "format": "  {}",
         "interval": 7200,                     // every two hours
         "exec": "checkupdates | wc -l",       // # of updates
         //"exec": "i=$(checkupdates); echo \"$i\" |wc -l; echo \"$i\" |column -t |tr '\n' '\r'",       // # of updates and tooltip details
         "exec-if": "exit 0",                  // always run; consider advanced run conditions
-        "on-click": "foot -e update", // update system
         "signal": 8
     },
-    "custom/power": {
-      	"format":"⏻",
-       	"on-click": "nwgbar",
-      	"tooltip": false,
-   },
-   "custom/keyboard-layout": {
-      	"format": " Cheat", // Icon: keyboard
-        "on-click": "~/.config/waybar/scripts/keyhint.sh",
-     },
-     "custom/launcher": {
-    	"format":"",
-    	"on-click": "exec nwg-drawer -c 7 -is 70 -spacing 23",
-    	"tooltip": false,
-     },
      "custom/network_traffic": {
-             "exec": "~/.config/waybar/scripts/network_traffic.sh",
-             "return-type": "json",
-             "format-ethernet": "{icon} {ifname} ⇣{bandwidthDownBytes} ⇡{bandwidthUpBytes}",    // optional
+        "exec": "~/.config/waybar/scripts/network_traffic.sh",
+        "return-type": "json",
+        "format-ethernet": "{icon} {ifname} ⇣{bandwidthDownBytes} ⇡{bandwidthUpBytes}",    // optional
 },
     "pulseaudio": {
         "scroll-step": 3, // %, can be a float
         "format": "{icon} {volume}% {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
+        "format-bluetooth": "{volume}%  {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
         //"format-source": "{volume}% ",
         //"format-source-muted": "",
         "format-source": "",
@@ -163,10 +153,12 @@
         "on-click": "pavucontrol",
         "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
         },
-        // https://github.com/chubin/wttr.in
-        "custom/weather": {
-        "exec": "curl 'https://wttr.in/Essen?format=2'",
-        "interval": 900,
-	    "on-click": "yad --html --uri='https://wttr.in/Essen' --center --fixed --width=1000 --height=680 --timeout=60 --timeout-indicator=right"
+    // https://github.com/chubin/wttr.in
+    "custom/weather": {
+        "format": "{}",
+        "interval": 300,
+        "exec": "~/.config/waybar/scripts/weather.sh",
+        "return-type": "json",
+	      "on-click": "yad --html --uri='https://wttr.in/Essen' --center --fixed --width=1000 --height=680 --timeout=60 --timeout-indicator=right"
         },
     }
