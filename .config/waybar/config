@@ -30,7 +30,8 @@
     "river/window": {
         "format": "{}",
 	"icon":true,
-	"icon-size" : 20
+	"icon-size" : 20,
+    "max-length": 200
     },
     "tray": {
         "icon-size": 20,
