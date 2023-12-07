@@ -19,7 +19,7 @@ is_newsboat_running() {
 if ! is_newsboat_running; then
     focus_tag 6  # Use tag "N" (tag number 6)
     # Spawn 'newsboat' using the custom spawn command
-    riverctl spawn 'footclient -a newsboat -e newsboat'
+    riverctl spawn 'kitty --class newsboat -e newsboat'
 else
     focus_tag 6  # Use tag "N" (tag number 6)
 fi
