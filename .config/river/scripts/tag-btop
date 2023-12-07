@@ -17,9 +17,9 @@ is_btop_running() {
 
 # Focus on tag "N" if 'btop' is not running, else just focus
 if ! is_btop_running; then
-    focus_tag 6  # Use tag "N" (tag number 6)
+    focus_tag 9  # Use tag "N" (tag number 6)
     # Spawn 'btop' using the custom spawn command
     riverctl spawn 'kitty --class btop -e btop'
 else
-    focus_tag 6  # Use tag "N" (tag number 6)
+    focus_tag 9  # Use tag "N" (tag number 6)
 fi
