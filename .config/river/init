@@ -224,16 +224,15 @@ riverctl map normal Super W spawn '~/.config/river/scripts/tag-mercury'         
 riverctl map normal Super B spawn '~/.config/river/scripts/tag-mercury-1'        # Browser (Mercury-1)
 riverctl map normal Super+Shift B spawn '~/.config/river/scripts/tag-mercury-2'  # Browser (Mercury-2)
 # Editor - emacs
-riverctl map normal Super E spawn '~/.config/river/scripts/tag-emacs'            # Editor (Emacs TUI)
-riverctl map normal Super U spawn '~/.config/river/scripts/tag-emacs-code'       # Editor (Emacs TUI)
-riverctl map normal Super N spawn '~/.config/river/scripts/tag-elfeed'           # Newsfeed (Elfeed GUI - required for viewing pictures)
-riverctl map normal Super P spawn '~/.config/river/scripts/tag-agenda'           # Agenda (Emacs TUI)
+riverctl map normal Super E spawn '~/.config/river/scripts/tag-emacs'            # Editor (Emacs)
+riverctl map normal Super U spawn '~/.config/river/scripts/tag-emacs-code'       # Editor (Emacs)
+riverctl map normal Super P spawn '~/.config/river/scripts/tag-agenda'           # Agenda (Emacs)
 # Other
 riverctl map normal Super Slash spawn '~/.config/river/scripts/tag-super-productivity'  # Productivity tool (Super-productivity)
 riverctl map normal Super+Shift Backslash spawn '~/.config/river/scripts/tag-btop'      # Btop
+riverctl map normal Super N spawn '~/.config/river/scripts/tag-newsboat'                # Newsfeed (Newsboat)
 # Not bound
 #riverctl map normal Super Backslash spawn '~/.config/river/scripts/tag-webcord'            # Messenger app (Webcord/Session)
-#riverctl map normal Super N spawn '~/.config/river/scripts/tag-newsboat'           # Newsfeed (Newsboat)
 
 # Define the letter tags for focus tag [0-8]
 # Tag "H" is not bound bcs it's a tag for youtube where I manually move browser windows
