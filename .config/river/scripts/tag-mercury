@@ -10,9 +10,9 @@ focus_tag() {
     riverctl set-focused-tags "$tags_bit"
 }
 
-# Function to check if 'mercury-bin' process is running
+# Function to check if 'mercury' process is running
 is_mercury_running() {
-    pgrep -a "mercury-bin" | grep "default-default" >/dev/null
+    pgrep -a "mercury" | grep "default-default" >/dev/null
 }
 
 # Focus on tag "W" if 'mercury-bin' is not running, else just focus
