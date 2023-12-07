@@ -23,7 +23,7 @@ riverctl map normal Super X spawn 'pkill wofi || wofi-emoji.sh'                 
 #riverctl map normal Super C spawn 'pkill wofi || wofi-clipboard.sh'               # Clipboard menu
 
 ###### Rofi Menu Keys ######
-riverctl map normal Super Space spawn 'pkill nwg-drawer || nwg-drawer'
+riverctl map normal Super Space spawn 'pkill nwg-drawer || nwg-drawer -c 7 -is 70 -spacing 23'
 riverctl map normal Super R spawn 'pkill rofi || launcher.sh'                    # Launcher menu
 riverctl map normal Super C spawn 'pkill rofi || clipboard.sh'                   # Clipboard menu
 
