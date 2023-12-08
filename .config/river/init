@@ -83,13 +83,12 @@ riverctl map normal None Control+Alt T spawn  '~/.config/zsh/bash-scripts/cp-tun
 ####### Autostart ######
 riverctl spawn 'dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river'
 riverctl spawn 'systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river'
-riverctl spawn '/usr/lib/polkit-kde-authentification-agent-1'
-riverctl spawn 'foot --server'
+riverctl spawn '/usr/lib/polkit-kde-authentication-agent-1'
 riverctl spawn 'emacs --daemon'
 #riverctl spawn '~/.config/river/scripts/autostart'
 riverctl spawn 'mako'
 riverctl spawn 'udiskie'
-riverctl spawn '~/.config/zsh/bash-scripts/notify-log.sh /tmp/notify.log'
+riverctl spawn '~/.config/.local/bin/notify-log.sh /tmp/notify.log'
 riverctl spawn 'udev-block-notify'
 riverctl spawn 'waybar'
 
@@ -104,7 +103,7 @@ riverctl spawn 'wl-clip-persist --clipboard regular'         # Persistent clipbo
 riverctl spawn 'wl-paste --watch cliphist store'             # Store in clipboard history (cliphist wipe to clear the database)
 
 ###### Scripts ######
-riverctl spawn "~/.config/hypr/scripts/idle-handler"         # Screen locking when idle
+riverctl spawn "~/.config/hypr/scripts/swaylock-idle-handler"      # Screen locking when idle
 
 ###### GTK Themes ######
 riverctl spawn 'gsettings set org.gnome.desktop.interface gtk-theme "Tokyonight-Dark-BL-LB"'
