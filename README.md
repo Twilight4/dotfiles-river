@@ -24,16 +24,20 @@ cd dotfiles
 ### Option 2: Minimal Setup
 If user just want to have a working setup without additional tweaks:
 ```bash
+# Clone dotfiles
 git clone --depth 1 https://github.com/Twilight4/river-settings/
 git clone --depth 1 https://github.com/Twilight4/dotfiles/
 cp -r river-settings/.config/* ~/.config
 cp -r dotfiles/.config/* ~/.config
 rm -rf river-settings
 rm -rf dotfiles
-click the power button and logout
-ctrl+alt+f3 and log in
+
+# Click on the power button on waybar and log out
+# Press ctrl+alt+f3 and log in
 ./config/river/scripts/start
-sudo pacman -Rns hyprland-git hyprland-waybar
+
+# Remove hyprland from garuda installation
+sudo pacman -Rns hyprland-git waybar-hyprland-git
 ```
 
 ### Desktop entry
