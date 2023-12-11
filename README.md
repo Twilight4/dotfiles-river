@@ -89,6 +89,12 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 sudo pacman -Rns linux-zen linux-zen-headers
 ```
 
+#### Optional: install wifi driver
+```bash
+# My network device interface dissapears after linux update (adapter chipset Realtek 8852AE)
+# Check instructions here: https://github.com/lwfinger/rtw89
+```
+
 ### Desktop entry
 ```bash
 sudo bash -c 'cat > /usr/share/wayland-sessions/river.desktop' <<-'EOF'
