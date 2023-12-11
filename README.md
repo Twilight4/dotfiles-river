@@ -1,36 +1,24 @@
 ## Quick Working Setup
 ### Install river
 ```bash
-sudo pacman -S --needed river waybar falkon mako nwg-drawer wpaperd starship xdg-desktop-portal-wlr
+sudo pacman -S --needed river waybar lswt falkon mako nwg-drawer wpaperd starship xdg-desktop-portal-wlr
 paru -S --needed swaylock-effects-git wl-color-picker 
 ```
 
-### Option 1: Using install.sh script
+### Minimal Setup
 ```bash
-# Clone the repository
-cd ~/downloads
-git clone --depth 1 https://github.com/Twilight4/dotfiles.git
+# Clone the repositories
+git clone --depth 1 https://github.com/Twilight4/river-settings
+git clone --depth 1 https://github.com/Twilight4/dotfiles
+cp -r river-settings/.config/* ~/.config
+cp -r dotfiles/.config/* ~/.config
+rm -rf river-settings
+rm -rf dotfiles
 
 # Script install-tweaks.sh involves system-wide changes hence must be run as root
 su
 ./dotfiles/.install/install-tweaks.sh
 exit
-
-# Install dotfiles
-cd dotfiles
-./install.sh
-```
-
-### Option 2: Minimal Setup
-If user just want to have a working setup without additional tweaks:
-```bash
-# Clone dotfiles
-git clone --depth 1 https://github.com/Twilight4/river-settings/
-git clone --depth 1 https://github.com/Twilight4/dotfiles/
-cp -r river-settings/.config/* ~/.config
-cp -r dotfiles/.config/* ~/.config
-rm -rf river-settings
-rm -rf dotfiles
 
 # Click on the power button on waybar and log out
 # Press ctrl+alt+f3 and log in
@@ -38,6 +26,52 @@ rm -rf dotfiles
 
 # Remove hyprland from garuda installation
 #sudo pacman -Rns hyprland-git waybar-hyprland-git
+
+# Remove bloat after distro installation
+./.config/.install/remove-bloat.sh
+
+# Remove the hyprland-specific packages from listing
+nvim ./.config/.install/install-packages.sh
+
+# Copy the contents and install packages
+cat ./.config/.install/install-packages.sh | wl-copy
+sudo pacman -S --needed $(wl-paste)
+
+# Enable necessary services
+./.config/.install/enable-services.sh
+
+# Set necessary user groups
+./.config/.install/set-user-groups.sh
+
+# Install wallpapers
+./.config/.install/wallpaper.sh
+
+# Set up display manager
+./.config/.install/display-manager.sh
+
+# Clean up home dir
+./.config/.install/clone-dotfiles.sh
+
+# Clone and install dotfiles
+./.config/.install/clone-dotfiles.sh
+./.config/.install/install-dotfiles.sh
+
+# Services
+./.config/.install/auto-cpufreq.sh
+./.config/.install/supergfxd.conf
+
+# Adjustments
+./.config/.install/auto-cpufreq.sh
+./.config/.install/button-layout.sh
+
+# Set up zsh
+./.config/.install/zsh.sh
+
+# Reminder
+./.config/.install/final-message.sh
+
+# Emacs
+./desktop/workspace/arch-setup/tools-installation/emacs.sh
 ```
 
 ### Desktop entry
