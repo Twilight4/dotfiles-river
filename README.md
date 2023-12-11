@@ -113,6 +113,13 @@ precmd_functions+=(set_win_title)
 EOF
 ```
 
+### Automatically load river upon log in
+```bash
+echo 'if [ "$(tty)" = "/dev/tty1" ]; then
+    pgrep river || exec ~/.config/river/scripts/startr
+fi' > "$HOME/.config/zsh/.zprofile"
+```
+
 ### Default MIME types/GTK applications
 Every graphical application uses xdg-open. It uses a database to automatically figure out the best program to open the provided path or URL based on MIME type. Sometimes it can breaks and you have to configure it yourself.
 
@@ -120,11 +127,4 @@ Also to set the GTK default applications, for example if you want the "open in t
 ```bash
 nvim /usr/share/glib-2.0/schemas/org.gnome.desktop.default-applications.gschema.xml
 gsettings set org.gnome.desktop.default-applications.terminal exec alacritty.desktop
-```
-
-### Automatically load river upon log in
-```bash
-echo 'if [ "$(tty)" = "/dev/tty1" ]; then
-    pgrep river || exec ~/.config/river/scriptsstartr
-fi' > "$HOME/.config/zsh/.zprofile"
 ```
