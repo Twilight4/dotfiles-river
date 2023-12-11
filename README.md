@@ -74,6 +74,21 @@ sudo pacman -S --needed $(wl-paste)
 ./desktop/workspace/arch-setup/tools-installation/emacs.sh
 ```
 
+### Switch linux kernel to linux-amd-znver3
+```bash
+# Edit grub config
+sudo nvim /etc/default/grub
+# GRUB_DISABLE_SUBMENU=y
+# GRUB_SAVEDEFAULT=true
+# GRUB_DEFAULT=saved
+
+# Update grub
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+# Reboot and remove old kernel
+sudo pacman -Rns linux-zen linux-zen-headers
+```
+
 ### Desktop entry
 ```bash
 sudo bash -c 'cat > /usr/share/wayland-sessions/river.desktop' <<-'EOF'
