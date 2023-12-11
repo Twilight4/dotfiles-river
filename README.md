@@ -100,9 +100,9 @@ sed -i 's/if \[\[ "$XDG_CURRENT_DESKTOP" == "Hyprland" \]\]; then/if \[\[ "$XDG_
 
 ### Change zsh prompt to starship
 ```bash
-sed -i '/^\[\[ ! -f ~\/.config\/zsh\/.p10k.zsh/d' ~/.config/zsh/.zshrc
-sed -i '/^if \[\[ -r "\${XDG_CACHE_HOME:-\$HOME\/.cache}\/p10k-instant-prompt-\${(%):-%n}.zsh" \]\]; then$/,/^  source "\${XDG_CACHE_HOME:-\$HOME\/.cache}\/p10k-instant-prompt-\${(%):-%n}.zsh"$/d;/^fi$/d' ~/.config/zsh/.zshrc
-sed -i '/^if \[\[ -r "\${XDG_CACHE_HOME:-\$HOME\/.cache}\/p10k-instant-prompt-\${(%):-%n}.zsh" \]\]; then$/,/^  source "\${XDG_CACHE_HOME:-\$HOME\/.cache}\/p10k-instant-prompt-\${(%):-%n}.zsh"$/d;/^fi$/d;/^source \/usr\/share\/zsh-theme-powerlevel10k\/powerlevel10k.zsh-theme$/d' ~/.config/zsh/.zshrc
+sed -i.bak '/if \[\[ -r "${XDG_CACHE_HOME:-$HOME\/.cache}\/p10k-instant-prompt-${(%):-%n}.zsh" \]\]; then/,/fi/ s/^/# /' ~/.config/zsh/.zshrc
+sed -i.bak 's|^source /usr/share/zsh-theme-powerlevel10k/powerlevel10k\.zsh-theme|# &|' ~/.config/zsh/.zshrc
+sed -i.bak '/^\[\[ ! -f ~\/\.config\/zsh\/\.p10k\.zsh \]\]/ s|^|# |' ~/.config/zsh/.zshrc
 
 cat << "EOF" >> ~/.config/zsh/.zshrc
 eval "$(starship init zsh)"
