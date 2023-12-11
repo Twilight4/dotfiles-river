@@ -32,7 +32,11 @@ riverctl map normal Super+Shift M spawn 'kitty --class "kitty-float"'       # Fl
 riverctl map normal Super+Shift A spawn 'webcam.sh'                              # Webcam
 #riverctl map normal Super+Shift V spawn 'role-viewer'                            # Tools list 
 #riverctl map normal Super V spawn 'hacking-variables'                            # Payload list
-#riverctl map normal Super KEY spawn 'athena-welcome'                               # Athena welcome
+#riverctl map normal Super KEY spawn 'athena-assistant'                               # Athena welcome
+#riverctl map normal Super KEY spawn 'garuda-settings-manager'
+#riverctl map normal Super KEY spawn 'garuda-network-manager'
+#riverctl map normal Super KEY spawn 'garuda-boot-options'
+#riverctl map normal Super KEY spawn 'garuda-btrfs-assistant'
 
 ###### Updates ######
 #riverctl map normal Super+Control+Shift C spawn 'notify-send -u low -t 4000 "Updating cheatsheets..." && kitty --class update -T update -e ~/.config/.local/bin/cheatsheets.sh push && notify-send "Cheatsheets pushed"'
