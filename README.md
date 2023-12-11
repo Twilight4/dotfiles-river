@@ -34,10 +34,10 @@ rm -rf dotfiles
 
 # Click on the power button on waybar and log out
 # Press ctrl+alt+f3 and log in
-./config/river/scripts/startr
+#./config/river/scripts/startr
 
 # Remove hyprland from garuda installation
-sudo pacman -Rns hyprland-git waybar-hyprland-git
+#sudo pacman -Rns hyprland-git waybar-hyprland-git
 ```
 
 ### Desktop entry
