@@ -89,6 +89,7 @@ riverctl spawn 'dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG
 riverctl spawn 'systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river'
 riverctl spawn '/usr/lib/polkit-kde-authentication-agent-1'
 riverctl spawn 'emacs --daemon'
+#riverctl spawn 'nm-applet --indicator'
 #riverctl spawn '~/.config/river/scripts/autostart'
 riverctl spawn 'mako'
 riverctl spawn 'udiskie'
