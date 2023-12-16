@@ -191,10 +191,10 @@ riverctl map normal Super+Alt L send-layout-cmd rivertile "main-ratio +0.05"
 riverctl declare-mode resize
 
 ####### Enter resize mode #######
-riverctl map normal Super Backslash enter-mode resize
+riverctl map normal Super 0 enter-mode resize
 
 ####### Return to normal mode #######
-riverctl map resize Super Backslash enter-mode normal
+riverctl map resize Super 0 enter-mode normal
 
 ####### Move floating views #######
 riverctl map resize None H move left 100
@@ -235,8 +235,7 @@ riverctl map normal Super P spawn '~/.config/river/scripts/tag-agenda'          
 riverctl map normal Super Slash spawn '~/.config/river/scripts/tag-super-productivity'  # Productivity tool (Super-productivity)
 riverctl map normal Super+Shift Backslash spawn '~/.config/river/scripts/tag-btop'      # Btop
 riverctl map normal Super N spawn '~/.config/river/scripts/tag-newsboat'                # Newsfeed (Newsboat)
-# Not bound
-#riverctl map normal Super Backslash spawn '~/.config/river/scripts/tag-webcord'            # Messenger app (Webcord/Session)
+riverctl map normal Super Backslash spawn '~/.config/river/scripts/tag-webcord'         # Messenger app (Webcord/Session)
 
 # Define the letter tags for focus tag [0-8]
 # Tag "H" is not bound bcs it's a tag for youtube where I manually move browser windows
