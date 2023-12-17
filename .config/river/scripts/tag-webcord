@@ -17,11 +17,11 @@ is_electron_running() {
 
 # Focus on tag "W" if 'webcord' is not running, else just focus
 if ! is_electron_running; then
-    focus_tag 5
+    focus_tag 9
     # Spawn 'webcord' only if it was not running
     riverctl spawn 'webcord'
 else
-    focus_tag 5
+    focus_tag 9
     # Spawn 'webcord' command to open up client, the daemon is ran from autostart
     riverctl spawn 'webcord'
 fi
