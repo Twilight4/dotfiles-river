@@ -77,8 +77,8 @@ riverctl map normal Super+Alt R spawn '~/.config/hypr/scripts/record-screen'
 riverctl map normal Super+Alt W spawn '~/.config/hypr/scripts/waybar-reset'
 
 ###### System commands ######
-riverctl map normal None Control+Alt W spawn '~/.config/zsh/bash-scripts/cp-wlan.sh'
-riverctl map normal None Control+Alt T spawn  '~/.config/zsh/bash-scripts/cp-tun.sh'
+riverctl map normal None Control+Alt W spawn '~/.config/.local/bin/cp-wlan.sh'
+riverctl map normal None Control+Alt T spawn  '~/.config/.local/bin/cp-tun.sh'
 
 
 ###########################################################################################
