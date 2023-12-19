@@ -8,33 +8,9 @@
                 {
                     "description": "",
                     "keyword": "",
-                    "name": "Garuda Linux",
-                    "type": "url",
-                    "url": "https://start.garudalinux.org/",
-                    "visit_count": 0
-                },
-                {
-                    "description": "",
-                    "keyword": "",
-                    "name": "Forum",
-                    "type": "url",
-                    "url": "https://forum.garudalinux.org/",
-                    "visit_count": 0
-                },
-                {
-                    "description": "",
-                    "keyword": "",
                     "name": "Wiki",
                     "type": "url",
                     "url": "https://wiki.garudalinux.org",
-                    "visit_count": 0
-                },
-                {
-                    "description": "",
-                    "keyword": "",
-                    "name": "Uptimes",
-                    "type": "url",
-                    "url": "https://status.garudalinux.org",
                     "visit_count": 0
                 }
             ],
