@@ -50,7 +50,7 @@ sudo pacman -S --needed $(wl-paste)
 ./.config/.install/display-manager.sh
 
 # Clean up home dir
-./.config/.install/clone-dotfiles.sh
+./.config/.install/cleanup-homedir.sh
 
 # Clone and install dotfiles
 ./.config/.install/clone-dotfiles.sh
@@ -61,7 +61,6 @@ sudo pacman -S --needed $(wl-paste)
 ./.config/.install/supergfxd.conf
 
 # Adjustments
-./.config/.install/auto-cpufreq.sh
 ./.config/.install/button-layout.sh
 
 # Set up zsh
