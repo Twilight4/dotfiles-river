@@ -128,7 +128,7 @@
         "signal": 8
     },
      "custom/network_traffic": {
-        "exec": "~/.config/waybar/scripts/network_traffic.sh",
+        "exec": "~/.config/waybar/scripts/network_traffic.sh wlo1",
         "return-type": "json",
         "format-ethernet": "{icon} {ifname} ⇣{bandwidthDownBytes} ⇡{bandwidthUpBytes}",    // optional
 },
