@@ -16,20 +16,20 @@ is_mercury_running() {
 }
 
 is_profile_running() {
-    pgrep -a "mercury" | grep -i "work" >/dev/null
+    pgrep -a "mercury" | grep -i "osint" >/dev/null
 }
 
 # Focus on tag "W" if 'mercury' is not running, else just focus
 if ! is_mercury_running; then
     focus_tag 3
     # Spawn 'mercury-browser' only if it was not running
-    riverctl spawn 'mercury-browser -P work'
+    riverctl spawn 'mercury-browser -P osint'
 else
     # Check if it's running with profile, if so, focus on tag "W"
     if is_profile_running; then
         focus_tag 3
     else
         focus_tag 3
-        riverctl spawn 'mercury-browser -P work'
+        riverctl spawn 'mercury-browser -P osint'
     fi
 fi
