@@ -41,7 +41,7 @@ nord15 #b48ead
 /* Reset all styles */
 
 * {
-    color: #eceff4;
+    /* color: #eceff4; */
     border: 0;
     border-radius: 0;
     padding: 0 0;
@@ -54,11 +54,12 @@ nord15 #b48ead
 
 window#waybar {
     background:rgba (0, 0, 0, 0.8);
+    color: #eceff4;
 }
 
 #tags button {
     padding: 3px 0px;
-    color: #e2e2e2;
+    color: #d3d3d3;
     border-color: #d8dee9;
     border-style: solid;
     margin-top:10px;
@@ -73,14 +74,12 @@ window#waybar {
 }
 
 #tags button.occupied {
-    color: #e2e2e2;
-    background-color: #393939;
+    color: #bf4e6d;
     border-radius: 0px;
 }
 
 #tags button.focused {
-    color: #e2e2e2;
-    background-color: #2b4375;
+    color: #d3869b;
 }
 
 #clock, #custom-uptime, #battery, #disk, #cpu, #memory,#idle_inhibitor, #temperature,#custom-vpncheck,#custom-keyboard-layout, #backlight, #network, #pulseaudio, #tray, #window,#custom-launcher,#custom-pacman ,#custom-network_traffic,#custom-weather{
