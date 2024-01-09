@@ -53,16 +53,6 @@ riverctl map normal Shift Print spawn 'grim -g "$(slurp -b 1B1F28CC -c E06B74ff 
 riverctl map normal Control Print spawn 'grim - | wl-copy'
 riverctl map normal Control+Shift Print spawn 'grim - | swappy -f -'
 
-####### Caffeine #######
-riverctl map normal Super+Alt C spawn '~/.config/hypr/scripts/caffeine'
-
-####### Wallpaper #######
-#riverctl map normal Super+Alt B spawn '~/.config/hypr/scripts/wallpaper-swaybg'
-riverctl map normal Super+Alt B spawn 'killall -9 wpaperd && wpaperd'
-
-####### VPN #######
-riverctl map normal Super+Alt V spawn '~/.config/hypr/scripts/vpn'
-
 
 ##################
 # Super+Alt keys #
@@ -80,6 +70,18 @@ riverctl map normal Super+Alt W spawn '~/.config/hypr/scripts/waybar-reset'
 riverctl map normal None Control+Alt W spawn '~/.config/.local/bin/cp-wlan.sh'
 riverctl map normal None Control+Alt T spawn  '~/.config/.local/bin/cp-tun.sh'
 
+####### Caffeine #######
+riverctl map normal Super+Alt C spawn '~/.config/hypr/scripts/caffeine'
+
+####### Wallpaper #######
+#riverctl map normal Super+Alt B spawn '~/.config/hypr/scripts/wallpaper-swaybg'
+riverctl map normal Super+Alt B spawn 'killall -9 wpaperd && wpaperd'
+
+####### VPN #######
+riverctl map normal Super+Alt V spawn '~/.config/hypr/scripts/vpn'
+
+####### Newsboat #######
+riverctl map normal Super+Alt M spawn 'notify-send -u normal -t 5000 "$(newsboat -x reload)"'
 
 ###########################################################################################
 # AUTOSTART                                                                               #
@@ -235,7 +237,7 @@ riverctl map normal Super P spawn '~/.config/river/scripts/tag-agenda'          
 riverctl map normal Super Slash spawn '~/.config/river/scripts/tag-super-productivity'  # Productivity tool (Super-productivity)
 riverctl map normal Super+Shift Backslash spawn '~/.config/river/scripts/tag-btop'      # Btop
 riverctl map normal Super N spawn '~/.config/river/scripts/tag-newsboat'                # Newsfeed (Newsboat)
-riverctl map normal Super Backslash spawn '~/.config/river/scripts/tag-webcord'         # Messenger app (Webcord/Session)
+#riverctl map normal Super Backslash spawn '~/.config/river/scripts/tag-webcord'         # Messenger app (Session/Wire)
 
 # Define the letter tags for focus tag [0-8]
 # Tag "H" is not bound bcs it's a tag for youtube where I manually move browser windows
