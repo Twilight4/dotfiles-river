@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Define the letter tags
+tags=("I" "O" "W" "E" "U" "N" "P" "H" "L")
+
+# Function to focus a specific tag
+focus_tag() {
+    tag=$1
+    tags_bit=$((1 << (tag - 1)))
+    riverctl set-focused-tags "$tags_bit"
+}
+
+# Function to check if 'electron' process is running
+is_electron_running() {
+    pgrep -x "electron" >/dev/null
+}
+
+# Focus on tag "\" if 'wire-desktop' is not running, else just focus
+if ! is_electron_running; then
+    focus_tag 9
+    # Spawn 'wire-desktop' only if it was not running
+    riverctl spawn 'wire-desktop'
+else
+    focus_tag 9
+    # Spawn 'wire-desktop' command to open up client, the daemon is ran from autostart
+    riverctl spawn 'wire-desktop'
+fi
