@@ -29,10 +29,10 @@ riverctl map normal Super C spawn 'pkill rofi || clipboard.sh'                  
 
 ####### Floating Views #######
 riverctl map normal Super+Shift M spawn 'kitty --class "kitty-float"'       # Floating kitty
-riverctl map normal Super+Shift A spawn 'webcam.sh'                              # Webcam
-#riverctl map normal Super+Shift V spawn 'role-viewer'                            # Tools list 
-#riverctl map normal Super V spawn 'hacking-variables'                            # Payload list
-#riverctl map normal Super KEY spawn 'athena-assistant'                               # Athena welcome
+riverctl map normal Super+Shift A spawn 'webcam.sh'                         # Webcam
+#riverctl map normal Super+Shift V spawn 'role-viewer'                       # Tools list 
+#riverctl map normal Super V spawn 'hacking-variables'                       # Payload list
+#riverctl map normal Super KEY spawn 'athena-assistant'                      # Athena welcome
 #riverctl map normal Super KEY spawn 'garuda-settings-manager'
 #riverctl map normal Super KEY spawn 'garuda-network-manager'
 #riverctl map normal Super KEY spawn 'garuda-boot-options'
@@ -82,6 +82,7 @@ riverctl map normal Super+Alt V spawn '~/.config/hypr/scripts/vpn'
 
 ####### Newsboat #######
 riverctl map normal Super+Alt M spawn 'notify-send -u normal -t 5000 "$(newsboat -x reload)"'
+
 
 ###########################################################################################
 # AUTOSTART                                                                               #
@@ -237,7 +238,7 @@ riverctl map normal Super P spawn '~/.config/river/scripts/tag-agenda'          
 riverctl map normal Super Slash spawn '~/.config/river/scripts/tag-super-productivity'  # Productivity tool (Super-productivity)
 riverctl map normal Super+Shift Backslash spawn '~/.config/river/scripts/tag-btop'      # Btop
 riverctl map normal Super N spawn '~/.config/river/scripts/tag-newsboat'                # Newsfeed (Newsboat)
-#riverctl map normal Super Backslash spawn '~/.config/river/scripts/tag-webcord'         # Messenger app (Session/Wire)
+riverctl map normal Super Backslash spawn '~/.config/river/scripts/tag-wire'            # Messenger app (Session/Wire)
 
 # Define the letter tags for focus tag [0-8]
 # Tag "H" is not bound bcs it's a tag for youtube where I manually move browser windows
