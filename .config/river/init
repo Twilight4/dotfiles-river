@@ -107,9 +107,6 @@ riverctl spawn 'wpaperd'
 riverctl spawn 'wl-clip-persist --clipboard regular'         # Persistent clipboard
 riverctl spawn 'wl-paste --watch cliphist store'             # Store in clipboard history (cliphist wipe to clear the database)
 
-###### Scripts ######
-riverctl spawn "~/.config/hypr/scripts/swaylock-idle-handler"      # Screen locking when idle
-
 ###### GTK Themes ######
 riverctl spawn 'gsettings set org.gnome.desktop.interface gtk-theme "Tokyonight-Dark-BL-LB"'
 riverctl spawn 'gsettings set org.gnome.desktop.interface icon-theme "Sweet-Blue"'       # Sweet-Red/Sweet-Teal
