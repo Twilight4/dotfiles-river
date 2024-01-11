@@ -70,9 +70,6 @@ riverctl map normal Super+Alt W spawn '~/.config/hypr/scripts/waybar-reset'
 riverctl map normal None Control+Alt W spawn '~/.config/.local/bin/cp-wlan.sh'
 riverctl map normal None Control+Alt T spawn  '~/.config/.local/bin/cp-tun.sh'
 
-####### Caffeine #######
-riverctl map normal Super+Alt C spawn '~/.config/hypr/scripts/caffeine'
-
 ####### Wallpaper #######
 #riverctl map normal Super+Alt B spawn '~/.config/hypr/scripts/wallpaper-swaybg'
 riverctl map normal Super+Alt B spawn 'killall -9 wpaperd && wpaperd'
