@@ -19,7 +19,7 @@ riverctl map normal Super+Control R spawn 'systemctl reboot'                    
 
 ###### Wofi Menu Keys ######
 riverctl map normal Super Z spawn 'pkill wofi || wofi-beats.sh'                   # Wofi radio
-riverctl map normal Super X spawn 'pkill wofi || wofi-emoji.sh'                   # Emoji menu
+#riverctl map normal Super X spawn 'pkill wofi || wofi-emoji.sh'                   # Emoji menu
 #riverctl map normal Super C spawn 'pkill wofi || wofi-clipboard.sh'               # Clipboard menu
 
 ###### Rofi Menu Keys ######
