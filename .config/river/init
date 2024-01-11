@@ -282,16 +282,13 @@ riverctl float-filter-add title 'nwg-look'
 riverctl float-filter-add title 'zenity'
 riverctl float-filter-add title 'wdisplays'
 # By App-id
-riverctl float-filter-add app-id 'musikcube'
 riverctl float-filter-add app-id 'ffplay'
-riverctl float-filter-add app-id 'musikcube'
 riverctl float-filter-add app-id 'kitty-float'
 riverctl float-filter-add app-id 'swappy'
 riverctl float-filter-add app-id 'blueman-manager'
 riverctl float-filter-add app-id 'xdg-desktop-portal-gtk'
 riverctl float-filter-add app-id 'xdg-desktop-portal-kde'
 riverctl float-filter-add app-id 'org.kde.polkit-kde-authentication-agent-1'
-riverctl float-filter-add app-id 'tty-clock'
 
 ###########################################################################################
 # MISCS SETTINGS                                                                          #
