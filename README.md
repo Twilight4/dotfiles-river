@@ -92,6 +92,17 @@ sudo pacman -Rns linux-zen linux-zen-headers
 ```bash
 # My network device interface dissapears after linux update (adapter chipset Realtek 8852AE)
 # Check instructions here: https://github.com/lwfinger/rtw89
+
+# Troubleshooting
+sudo systemctl enable systemd-resolved
+sudo systemctl enable systemd-networkd
+pacman -Qs rtw89-dkms-git
+pacman -Qi rtw89-dkms-git
+
+# Update and restart
+paru -Syu
+reboot
+ip l
 ```
 
 ### Desktop entry
