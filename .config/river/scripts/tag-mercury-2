@@ -10,26 +10,26 @@ focus_tag() {
     riverctl set-focused-tags "$tags_bit"
 }
 
-# Function to check if 'mercury' process is running
-is_mercury_running() {
-    pgrep -x "mercury" >/dev/null
+# Function to check if 'mullvad' process is running
+is_mullvad_running() {
+    pgrep -x "mullvad" >/dev/null
 }
 
 is_profile_running() {
-    pgrep -a "mercury" | grep -i "osint" >/dev/null
+    pgrep -a "mullvad" | grep -i "osint" >/dev/null
 }
 
-# Focus on tag "W" if 'mercury' is not running, else just focus
-if ! is_mercury_running; then
+# Focus on tag "W" if 'mullvad' is not running, else just focus
+if ! is_mullvad_running; then
     focus_tag 3
-    # Spawn 'mercury-browser' only if it was not running
-    riverctl spawn 'mercury-browser -P osint'
+    # Spawn 'mullvad-browser' only if it was not running
+    riverctl spawn 'mullvad-browser -P osint'
 else
     # Check if it's running with profile, if so, focus on tag "W"
     if is_profile_running; then
         focus_tag 3
     else
         focus_tag 3
-        riverctl spawn 'mercury-browser -P osint'
+        riverctl spawn 'mullvad-browser -P osint'
     fi
 fi
