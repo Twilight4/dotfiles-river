@@ -220,10 +220,10 @@ riverctl map resize Alt L resize horizontal 100
 riverctl map normal Super M spawn 'kitty -1 -T kitty-1 --class kitty-2'          # Terminal standalone (Kitty)
 riverctl map normal Super I spawn '~/.config/river/scripts/tag-kitty-1'          # Terminal (Kitty-1)
 riverctl map normal Super O spawn '~/.config/river/scripts/tag-kitty-2'          # Terminal (Kitty-2)
-# Browser - firefox
-riverctl map normal Super W spawn '~/.config/river/scripts/tag-mercury'          # Browser (Mercury)
-riverctl map normal Super B spawn '~/.config/river/scripts/tag-mercury-1'        # Browser (Mercury-1)
-riverctl map normal Super+Shift B spawn '~/.config/river/scripts/tag-mercury-2'  # Browser (Mercury-2)
+# Browser - Mullvad
+riverctl map normal Super W spawn '~/.config/river/scripts/tag-mercury'          # Browser (Mullvad)
+riverctl map normal Super B spawn '~/.config/river/scripts/tag-mercury-1'        # Browser (Mullvad-1)
+riverctl map normal Super+Shift B spawn '~/.config/river/scripts/tag-mercury-2'  # Browser (Mullvad-2)
 # Editor - emacs
 riverctl map normal Super E spawn '~/.config/river/scripts/tag-emacs'            # Editor (Emacs)
 riverctl map normal Super U spawn '~/.config/river/scripts/tag-emacs-code'       # Editor (Emacs)
