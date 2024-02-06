@@ -272,7 +272,7 @@ done
 ####### Floating Views #######
 # By Title
 riverctl float-filter-add title 'Picture-in-Picture'
-riverctl float-filter-add title 'Mercury — Sharing Indicator'
+riverctl float-filter-add title 'Mullvad — Sharing Indicator'
 riverctl float-filter-add title 'qt5ct'
 riverctl float-filter-add title 'Calculator'
 riverctl float-filter-add title 'pavucontrol'
