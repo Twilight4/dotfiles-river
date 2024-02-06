@@ -10,15 +10,15 @@ focus_tag() {
     riverctl set-focused-tags "$tags_bit"
 }
 
-# Function to check if 'mercury' process is running
-is_mercury_running() {
+# Function to check if 'mullvad' process is running
+is_mullvad_running() {
     pgrep -a "mullvad" | grep "default-default" >/dev/null
 }
 
-# Focus on tag "W" if 'mercury-bin' is not running, else just focus
-if ! is_mercury_running; then
+# Focus on tag "W" if 'mullvad-bin' is not running, else just focus
+if ! is_mullvad_running; then
     focus_tag 3
-    # Spawn 'mercury-browser' only if it was not running
+    # Spawn 'mullvad-browser' only if it was not running
     riverctl spawn 'mullvad-browser -P default-default'
 else
     focus_tag 3
