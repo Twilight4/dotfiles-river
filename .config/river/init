@@ -55,7 +55,7 @@ riverctl map normal Control+Shift Print spawn 'grim - | swappy -f -'
 
 
 ##################
-# Super+Alt keys #
+# Super+Alt Keys #
 ##################
 ####### Screen record #######
 riverctl map normal Super+Alt R spawn '~/.config/hypr/scripts/record-screen'
