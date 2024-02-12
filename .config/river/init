@@ -290,6 +290,7 @@ riverctl float-filter-add app-id 'xdg-desktop-portal-gtk'
 riverctl float-filter-add app-id 'xdg-desktop-portal-kde'
 riverctl float-filter-add app-id 'org.kde.polkit-kde-authentication-agent-1'
 
+
 ###########################################################################################
 # MISCS SETTINGS                                                                          #
 ###########################################################################################
