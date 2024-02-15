@@ -3,7 +3,7 @@
 # See the river(1) and riverctl(1) man pages for documentation.
 
 ###########################################################################################
-# ACTION KEYS
+# ACTION KEYS                                                                             #
 ###########################################################################################
 ###### WM Specific Keys ######
 riverctl map normal Super Q close                 # Close the focused view
@@ -54,9 +54,9 @@ riverctl map normal Control Print spawn 'grim - | wl-copy'
 riverctl map normal Control+Shift Print spawn 'grim - | swappy -f -'
 
 
-##################
-# SUPER+ALT Keys #
-##################
+###########################################################################################
+# SUPER+ALT Keys                                                                          #
+###########################################################################################
 ####### Screen record #######
 riverctl map normal Super+Alt R spawn '~/.config/hypr/scripts/record-screen'
 #riverctl map normal Super+Alt R spawn '~/.config/hypr/scripts/record-script'
@@ -241,7 +241,7 @@ tags_focus=("" "" "" "" "" "" "" "H" "L")
 tags=("I" "O" "W" "E" "U" "N" "P" "H" "L")
 
 # Focus tag [0-8]
-for i in $(seq 1 9); do
+qfor i in $(seq 1 9); do
     tag="${tags_focus[i - 1]}"
     tags_bit=$((1 << (i - 1)))
     riverctl map normal Super "$tag" set-focused-tags "$tags_bit"
