@@ -319,7 +319,6 @@ riverctl border-color-unfocused 0x595959aa
 #riverctl border-color-urgent
 riverctl border-width 2
 # Keyboard
-#riverctl keyboard-layout -options "caps:swapescape" us
 riverctl keyboard-layout -options "ctrl:nocaps" us
 riverctl set-repeat 50 300
 # Cursor
