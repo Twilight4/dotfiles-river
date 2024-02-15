@@ -164,7 +164,7 @@ riverctl map normal Super J focus-view previous
 riverctl map normal Super+Shift K swap next
 riverctl map normal Super+Shift J swap previous
 
-####### Move to and Focus on Output (my setup has only 2) #######
+####### Move to and Focus on Output #######
 riverctl map normal Super Comma focus-output next
 riverctl map normal Super Period send-to-output next
 
