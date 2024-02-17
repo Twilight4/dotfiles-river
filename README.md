@@ -2,7 +2,7 @@
 ### Install river
 ```bash
 sudo pacman -S --needed river waybar lswt falkon mako nwg-drawer wpaperd starship xdg-desktop-portal-wlr
-paru -S --needed swaylock-effects-git wl-color-picker 
+paru -S --needed swaylock-effects-git wl-color-picker
 ```
 
 ### Minimal Setup
