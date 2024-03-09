@@ -87,7 +87,7 @@ sudo nvim /etc/default/grub
 # Update grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 
-# Reboot and remove old kernel
+# Reboot and uninstall the old kernel
 sudo pacman -Rns linux-zen linux-zen-headers
 ```
 
