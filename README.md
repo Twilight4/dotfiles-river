@@ -75,6 +75,9 @@ sudo pacman -S --needed $(wl-paste)
 
 ### Switch linux kernel to linux-amd-znver3
 ```bash
+# Update system
+sudo pacman -Syu
+
 # Make sure the packages are installed
 sudo pacman -Qs linux-amd-znver3 linux-amd-znver3-headers
 
