@@ -79,7 +79,7 @@ sudo pacman -S --needed $(wl-paste)
 sudo pacman -Syu
 
 # Make sure the packages are installed
-sudo pacman -Qs linux-amd-znver3 linux-amd-znver3-headers
+sudo pacman -Q linux-amd-znver3 linux-amd-znver3-headers
 
 # Edit grub config
 sudo nvim /etc/default/grub
