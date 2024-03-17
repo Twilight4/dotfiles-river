@@ -83,9 +83,10 @@ sudo pacman -Q linux-amd-znver3 linux-amd-znver3-headers
 
 # Edit grub config
 sudo nvim /etc/default/grub
-# GRUB_DISABLE_SUBMENU=y
-# GRUB_SAVEDEFAULT=true
-# GRUB_DEFAULT=saved
+#GRUB_DISABLE_SUBMENU=y
+#GRUB_SAVEDEFAULT=true
+#GRUB_DEFAULT=saved
+#GRUB_DISABLE_RECOVERY=true
 
 # Update grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
