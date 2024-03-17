@@ -73,46 +73,6 @@ sudo pacman -S --needed $(wl-paste)
 ./desktop/workspace/arch-setup/tools-installation/emacs.sh
 ```
 
-### Switch linux kernel to linux-amd-znver3
-```bash
-# Update system
-sudo pacman -Syu
-
-# Make sure the packages are installed
-sudo pacman -Q linux-amd-znver3 linux-amd-znver3-headers
-
-# Edit grub config
-sudo nvim /etc/default/grub
-#GRUB_DISABLE_SUBMENU=y
-#GRUB_SAVEDEFAULT=true
-#GRUB_DEFAULT=saved
-#GRUB_DISABLE_RECOVERY=true
-
-# Update grub
-sudo grub-mkconfig -o /boot/grub/grub.cfg
-
-# After reboot remove the old kernel
-#reboot
-sudo pacman -Rns linux-zen linux-zen-headers
-```
-
-#### Optional: install wifi driver
-```bash
-# My network device interface dissapears after linux update (adapter chipset Realtek 8852AE)
-# Check instructions here: https://github.com/lwfinger/rtw89
-
-# Troubleshooting
-sudo systemctl enable systemd-resolved
-sudo systemctl enable systemd-networkd
-pacman -Qs rtw89-dkms-git
-pacman -Qi rtw89-dkms-git
-
-# Update and restart
-paru -Syu
-reboot
-ip l
-```
-
 ### Desktop entry
 ```bash
 sudo bash -c 'cat > /usr/share/wayland-sessions/river.desktop' <<-'EOF'
